@@ -41,18 +41,37 @@ Skargi dot. procesu egzaminacyjnego są przepisywane z formularzy skargowych do 
 
 _Arkusz 1_ - Skargi dot. procesu egzaminacyjnego.
 
-Kolumna A - PKK Kantydanta (20 cyfrowy numer identyfikacyjny)
-Kolumna B - Pesel Egzaminatora (11 cyfrowy numer identyfikacyjny)
-Kolumna C - Termin egzaminu (data i godzina w formacie dd-mm-yyyy hh:mm)
-Kolumna D - Typ egzaminu (tekst "teoretyczny" lub "praktyczny")
-Kolumna E - Treść skargi (tekst)
-Kolumna F - Data złożenia skargi (data w formacie dd-mm-yyyy)
+- Kolumna A - PKK Kantydanta (20 cyfrowy numer identyfikacyjny)
+- Kolumna B - Pesel Egzaminatora (11 cyfrowy numer identyfikacyjny)
+- Kolumna C - Termin egzaminu (data i godzina w formacie dd-mm-yyyy hh:mm)
+- Kolumna D - Typ egzaminu (tekst "teoretyczny" lub "praktyczny")
+- Kolumna E - Typ skargi (tekst "związana z technicznym przebiegiem egzaminu", "związana z treścią pytań", "związana z egzaminatorem", "inne")
+- Kolumna F - Treść skargi (tekst)
+- Kolumna G - Data złożenia skargi (data w formacie dd-mm-yyyy)
 
 Kolejne wiersze zawierają kolejne skargi. Skargi są zapisywane w pliku w kolejności ich złożenia. Nowy plik z danymi skarg jest tworzony co miesiąc, a stary przechowywany jest w archiwum.
 
 _Arkusz 2_ - Lista egzaminatorów
 
-Kolumna A - Pesel Egzaminatora (11 cyfrowy numer identyfikacyjny)
-Kolumna B - Imię i nazwisko egzaminatora (tekst)
+- Kolumna A - Pesel Egzaminatora (11 cyfrowy numer identyfikacyjny)
+- Kolumna B - Imię i nazwisko egzaminatora (tekst)
 
 Kolejne wiersze zawierają kolejne wpisy dot. egzaminatorów. Dane aktualizowane są w miarę zmian w zespole egzaminatorów i przekopiowywane co miesiąc.
+
+## Scenariusze problemów analitycznych
+
+- **Problem 1**: Dlaczego nastąpił spadek/wzrost średniego czasu oczekiwania na termin egzaminu teoretycznego w porównaniu do poprzedniego miesiąca?
+    - Porównaj średnią liczbę zarezerwowanych terminów egzaminów teoretycznych na przestrzeni dni tygodnia w tym i poprzednim miesiącu.
+    - Podaj jak dużo kandydatów nie pojawiło się na egzaminie w tym i poprzednim miesiącu.
+    - Porównaj liczbę incydentów podczas egzaminów w tym i poprzednim miesiącu.
+    - Jak dużo terminów egzaminów zostało w pełni zarezerwowanych w tym i poprzednim miesiącu?
+    - Jaka jest średnia liczba podejść do egzaminu na jednego kandydata w tym i poprzednim miesiącu?
+    - Czy istnieje zapotrzebowanie na dodatkowe terminy egzaminów w okolicy świąt (Boże Narodzenie, Wielkanoc)? (czy stopień zarezerwowanych terminów 2 dni do przodu i do tyłu święta jest powyżej 70%) [DODATKOWE ZEW. DANE]
+    - Jaki jest średni czas między zarezerwowaniem terminu a jego odbyciem się w tym i poprzednim miesiącu? [ZMIANA W PROCESIE BIZNESOWYM - dodanie info o czasie rezerwacji terminu]
+
+- **Problem 2**: Jakie są najczęstsze problemy związane z przebiegiem egzaminu teoretycznego?
+    - Porównaj liczbę skarg technicznych w relacji do sal w których odbywają się egzaminy.
+    - Jakie pytania pojawiały się najczęściej w egzaminach do których złożono skargi związane z treścią pytań?
+    - Jacy egzaminatorzy byli najczęściej związani ze złożeniem skargi?
+    - Podaj liczbę skarg złożonych w egzaminach w których nie wystąpiły żadne incydenty.
+    - Jak dużo kandydatów nie zdołało odpowiedzieć na wszystkie pytania w egzaminie i złożyło skargę z kategorii "związana z treścią pytań" lub "inne"?
