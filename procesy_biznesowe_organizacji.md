@@ -30,7 +30,11 @@ Proces przeprowadzenia egzaminu teoretycznego składa się z następujących kro
 
 #### Pytania analityczne
 
-TODO
+- Porównaj średnią liczbę zarezerwowanych terminów egzaminów teoretycznych na przestrzeni dni tygodnia w tym i poprzednim miesiącu.
+- Podaj jak dużo kandydatów nie pojawiło się na egzaminie w tym i poprzednim miesiącu.
+- Porównaj liczbę incydentów podczas egzaminów w tym i poprzednim miesiącu.
+- Jak dużo terminów egzaminów zostało w pełni zarezerwowanych w tym i poprzednim miesiącu?
+- Jaka jest średnia liczba podejść do egzaminu na jednego kandydata w tym i poprzednim miesiącu?
 
 #### Źródła danych
 
@@ -53,7 +57,11 @@ Proces przeprowadzenia egzaminu praktycznego składa się z następujących krok
 
 #### Pytania analityczne
 
-TODO
+- Porównaj średnią liczbę zarezerwowanych terminów egzaminów praktycznych na przestrzeni dni tygodnia w tym i poprzednim miesiącu.
+- Podaj jak dużo kandydatów opuściło plac manewrowy podczas egzaminu w tym i poprzednim miesiącu.
+- Porównaj liczbę wypadków podczas egzaminów w tym i poprzednim miesiącu.
+- Jak dużo terminów egzaminów zostało w pełni zarezerwowanych w tym i poprzednim miesiącu?
+- Jaka jest najpopularniejsza trasa egzaminacyjna w tym i poprzednim miesiącu?
 
 #### Źródła danych
 
