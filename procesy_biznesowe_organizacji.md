@@ -2,16 +2,16 @@
 
 ## Cele biznesowe organizacji
 
-WORD w Gdańsku jest jednostką organizacyjną, która zajmuje się organizacją egzaminów na prawo jazdy. Celem organizacji jest zapewnienie bezpieczeństwa na drogach poprzez przeprowadzanie egzaminów na prawo jazdy, które pozwolą na wyłonienie kandydatów, którzy są w stanie bezpiecznie poruszać się po drogach. Organizacja chciałaby polepszyć jakość swoich usług poprzez lepsze monitorowanie procesów egzaminacyjnych oraz poprawę ich jakości.
+WORD w Gdańsku jest instytucją, która zajmuje się organizacją egzaminów na prawo jazdy. Jej celem jest zapewnienie bezpieczeństwa na drogach poprzez przeprowadzanie egzaminów na prawo jazdy, które pozwolą na wyłonienie kandydatów potrafiących bezpiecznie poruszać się po drogach.
 
-Aktualnie organizacja zmaga się z problemem związanym z dużą liczbą kandydatów na egzamin, co powoduje, że czas oczekiwania na egzamin jest bardzo długi. Ponadto, organizacja chciałaby zwiększyć zadowolenie klientów z usług poprzez zmniejszenie liczby składanych skarg. Wg. aktualnych pomiarów na egzamin teoretyczny oczekuje się średnio 14 dni, a na egzamin praktyczny 30 dni. Ponadto aktualnie liczba skarg na organizację wynosi średnio 500 skarg miesięcznie zarówno dla egzaminu teoretycznego jak i praktyczneg.
+Aktualnie organizacja zmaga się z problemem związanym z dużą liczbą kandydatów (spotęgowanych przez okres COVID), co powoduje, że czas oczekiwania na egzamin jest zbyt długi. Wg. aktualnych pomiarów, na egzamin teoretyczny oczekuje się średnio 14 dni, a na egzamin praktyczny 30. Ponadto, chcieliby zwiększyć zadowolenie klientów z ich usług poprzez zmniejszenie liczby składanych skarg na działanie instytucji. Aktualnie liczba skarg na organizację wynosi średnio 500 skarg miesięcznie dla obu form egzaminów.
 
-Aby cele te zostały zrealizowane, zarząd ustanowił następujące mierzalne cele:
+Aby cele te zostały zrealizowane, zarząd ustanowił następujące mierzalne cele na najbliższe 18 miesięcy:
 
-- Zmniejszanie czasu oczekiwania na oba rodzaje egzaminów o 50% w ciągu następnych 18 miesięcy (7 dni na egzamin teoretyczny oraz 15 dni na egzamin praktyczny). Aby to osiągnąć, organizacja musi zmniejszać średni czas oczekiwania o 3% miesięcznie.
-- Zmniejszenie ilości skarg na każdy z egzaminów o ok. 75% w ciągu następnych 18 miesięcy. Aby to osiągnąć, organizacja musi zmniejszać ilość napływających skarg o 6% miesięcznie.
+- Zmniejszanie czasu oczekiwania na oba rodzaje egzaminów o 50% (7 dni na egzamin teoretyczny oraz 15 dni na egzamin praktyczny). Aby to osiągnąć, organizacja musi zmniejszać średni czas oczekiwania o 3% miesięcznie.
+- Zmniejszenie ilości skarg na każdy z egzaminów o ok. 75%. Aby to osiągnąć, organizacja musi zmniejszać ilość napływających skarg o 6% miesięcznie.
 
-Najważniejszymi procesami biznesowymi w organizacji są procesy przeprowadzania egzaminów teoretycznych oraz praktycznych. Oba egzaminy są obowiązkowe dla kandydatów na prawo jazdy. W procesie przeprowadzania egzaminów teoretycznych kandydat odpowiada na pytania testowe, które sprawdzają jego wiedzę z zakresu przepisów ruchu drogowego. W procesie przeprowadzania egzaminów praktycznych kandydat wykonuje jazdę próbną, podczas której egzaminator ocenia jego umiejętności jazdy. W obu procesach kluczową rolę odgrywa egzaminator, który jest odpowiedzialny za przeprowadzenie egzaminu oraz ocenę kandydata.
+Najważniejszymi procesami biznesowymi w organizacji są procesy przeprowadzania egzaminów teoretycznych oraz praktycznych. Oba egzaminy są obowiązkowe dla kandydatów na prawo jazdy. W procesie przeprowadzania egzaminów teoretycznych kandydat odpowiada na pytania testowe, które sprawdzają jego wiedzę z zakresu przepisów ruchu drogowego. Egzamin przeprowadzany jest na stanowiskach komputerowych zainstalowanych w organizacji dzięki pomocy zautomatyzowanego systemu. Egzaminator dba o poprawne przyporządkowanie komputerów do kandydatów wg. wskazań systemu oraz odpowiada za poprawne przeprowadzenie egzaminu. Wyniki egzaminu są automatycznie obliczane przez komputer oraz prezentowane uczestnikowi po zakończeniu przez niego procesu egzaminacyjnego. W procesie przeprowadzania egzaminów praktycznych kandydat wykonuje jazdę próbną, podczas której egzaminator ocenia jego umiejętności jazdy. W tym procesie kluczową rolę odgrywa egzaminator, który jest odpowiedzialny za przeprowadzenie egzaminu oraz ocenę kandydata.
 
 ## Procesy biznesowe
 
@@ -30,6 +30,7 @@ Proces przeprowadzenia egzaminu teoretycznego składa się z następujących kro
 
 #### Pytania analityczne
 
+- Porównaj średni czas oczekiwania na egzamin teoretyczny w tym i poprzednim miesiącu.
 - Porównaj średnią liczbę zarezerwowanych terminów egzaminów teoretycznych na przestrzeni dni tygodnia w tym i poprzednim miesiącu.
 - Podaj jak dużo kandydatów nie pojawiło się na egzaminie w tym i poprzednim miesiącu.
 - Porównaj liczbę incydentów podczas egzaminów w tym i poprzednim miesiącu.
