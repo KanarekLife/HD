@@ -32,9 +32,6 @@ Skargi dot. procesu egzaminacyjnego są przepisywane z formularzy skargowych do 
 
 // TODO: Uzupełnić tabelę po weryfikacji przez prowadzącego
 
-// ERRATA: `ZaplanowanePytanieNaEgzaminTeoretyczny` powinno mieć atrybut `Id` zamiast klucza kompozytowego
-// ERRATA: `PrzebiegEgzaminuKandydata` powinno mieć atrybut `CzasRezerwacjiTerminu`
-
 | Nazwa tabeli | Atrybut | Typ atrybutu | Opis |
 | ------------ | ------- | ------------ | ---- |
 |              |         |              |      |
@@ -128,7 +125,7 @@ Kolejne wiersze zawierają kolejne wpisy dot. egzaminatorów. Dane aktualizowane
         - **typ skargi** - _Plik Excel_, arkusz `Arkusz 1`, kolumna `TypSkargi`
 
     2. Jakie pytania pojawiały się najczęściej w egzaminach do których złożono skargi związane z treścią pytań?
-        - **id pytania** - _Baza Danych_, tabela `ZaplanowanePytaniaNaEgzaminTeoretyczny`, atrybut `Id`
+        - **id pytania** - _Baza Danych_, tabela `ZaplanowanePytania`, atrybut `Id`
         - **pkk kandydata** - _Plik Excel_, arkusz `Arkusz 1`, kolumna `PKK Kandydata`
         - **termin egzaminu** - _Plik Excel_, arkusz `Arkusz 1`, kolumna `Termin egzaminu`
         - **pesel egzaminatora** - _Plik Excel_, arkusz `Arkusz 1`, kolumna `PeselEgzaminatora`
@@ -148,8 +145,8 @@ Kolejne wiersze zawierają kolejne wpisy dot. egzaminatorów. Dane aktualizowane
         - **pkk kandydata** - _Plik Excel_, arkusz `Arkusz 1`, kolumna `PKK Kandydata`
         - **termin egzaminu** - _Plik Excel_, arkusz `Arkusz 1`, kolumna `ZaplanowanyTermin`
         - **pesel egzaminatora** - _Plik Excel_, arkusz `Arkusz 1`, kolumna `PeselEgzaminatora`
-        - **czy kandydat odpowiedział na pytanie** - _Baza Danych_, tabela `ZaplanowanePytanieNaEgzaminTeoretyczny`, atrybut `CzasUdzieleniaOdpowiedzi`
-        - **liczba pytań** - _Baza Danych_, liczba rzędów w tabeli `ZaplanowanePytanieNaEgzaminTeoretyczny` powiązanych z `PrzebiegiemEgzaminuKandydata`
+        - **czy kandydat odpowiedział na pytanie** - _Baza Danych_, tabela `ZaplanowanePytania`, atrybut `CzasUdzieleniaOdpowiedzi`
+        - **liczba pytań** - _Baza Danych_, liczba rzędów w tabeli `ZaplanowanePytania` powiązanych z `PrzebiegiEgzaminówKandydata`
 
 ## Wymagane zmiany w procesie biznesowym
 
