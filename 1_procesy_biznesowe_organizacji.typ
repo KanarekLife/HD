@@ -1,6 +1,21 @@
-# Specyfikacja procesów biznesowych: Wojewódzki Ośrodek Ruchu Drogowego w Gdańsku
+#set text(
+  font: "New Computer Modern",
+  size: 11pt
+)
 
-## Cele biznesowe organizacji
+#set page(
+  paper: "a4",
+  margin: 1cm,
+  numbering: "1/1"
+)
+
+#set pad(left: 1cm)
+
+= Specyfikacja procesów biznesowych: Wojewódzki Ośrodek Ruchu Drogowego w Gdańsku
+
+#pad(top: 10pt, align(center)[Stanisław Nieradko 193044, Bartłomiej Krawisz 193319])
+
+== Cele biznesowe organizacji
 
 WORD w Gdańsku jest instytucją, która zajmuje się organizacją egzaminów na prawo jazdy. Jej celem jest zapewnienie bezpieczeństwa na drogach poprzez przeprowadzanie egzaminów na prawo jazdy, które pozwolą na wyłonienie kandydatów potrafiących bezpiecznie poruszać się po drogach.
 
@@ -9,15 +24,15 @@ Aktualnie organizacja zmaga się z problemem związanym z dużą liczbą kandyda
 Aby cele te zostały zrealizowane, zarząd ustanowił następujące mierzalne cele na najbliższe 18 miesięcy:
 
 - Zmniejszanie czasu oczekiwania na oba rodzaje egzaminów o 50% (7 dni na egzamin teoretyczny oraz 15 dni na egzamin praktyczny). Aby to osiągnąć, organizacja musi zmniejszać średni czas oczekiwania o 3% miesięcznie.
-- Zmniejszenie ilości skarg na każdy z egzaminów o ok. 75%. Aby to osiągnąć, organizacja musi zmniejszać ilość napływających skarg o 6% miesięcznie.
+- Zmniejszenie liczby skarg dot. przebiegu egzaminu teoretycznego o min 75% (z 500 do mniej niż, lub równo 125)
 
 Najważniejszymi procesami biznesowymi w organizacji są procesy przeprowadzania egzaminów teoretycznych oraz praktycznych. Oba egzaminy są obowiązkowe dla kandydatów na prawo jazdy. W procesie przeprowadzania egzaminów teoretycznych kandydat odpowiada na pytania testowe, które sprawdzają jego wiedzę z zakresu przepisów ruchu drogowego. Egzamin przeprowadzany jest na stanowiskach komputerowych zainstalowanych w organizacji dzięki pomocy zautomatyzowanego systemu. Egzaminator dba o poprawne przyporządkowanie komputerów do kandydatów wg. wskazań systemu oraz odpowiada za poprawne przeprowadzenie egzaminu. Wyniki egzaminu są automatycznie obliczane przez komputer oraz prezentowane uczestnikowi po zakończeniu przez niego procesu egzaminacyjnego. W procesie przeprowadzania egzaminów praktycznych kandydat wykonuje jazdę próbną, podczas której egzaminator ocenia jego umiejętności jazdy. W tym procesie kluczową rolę odgrywa egzaminator, który jest odpowiedzialny za przeprowadzenie egzaminu oraz ocenę kandydata.
 
-## Procesy biznesowe
+== Procesy biznesowe organizacji
 
-### Przeprowadzenie egzaminu teoretycznego
+=== Proces przeprowadzania egzaminów teoretycznych
 
-#### Opis procesu
+==== Opis procesu
 
 Proces przeprowadzenia egzaminu teoretycznego składa się z następujących kroków:
 
@@ -28,7 +43,9 @@ Proces przeprowadzenia egzaminu teoretycznego składa się z następujących kro
 - Kandydat otrzymuje wynik egzaminu oraz zaświadczenie o wyniku egzaminu.
 - W przypadku nieprawidłowości w przebiegu egzaminu, kandydat ma prawo złożyć skargę poprzez wypełnienie formularza w okienku recepcji.
 
-#### Pytania analityczne
+#pagebreak()
+
+==== Pytania analityczne
 
 - Porównaj średni czas oczekiwania na egzamin teoretyczny w tym i poprzednim miesiącu.
 - Porównaj średnią liczbę zarezerwowanych terminów egzaminów teoretycznych na przestrzeni dni tygodnia w tym i poprzednim miesiącu.
@@ -37,15 +54,15 @@ Proces przeprowadzenia egzaminu teoretycznego składa się z następujących kro
 - Jak dużo terminów egzaminów zostało w pełni zarezerwowanych w tym i poprzednim miesiącu?
 - Jaka jest średnia liczba podejść do egzaminu na jednego kandydata w tym i poprzednim miesiącu?
 
-#### Źródła danych
+==== Źródła danych
 
 Dane dotyczące przebiegu egzaminu teoretycznego są przechowywane w bazie danych systemu przeprowadzania egzaminów teoretycznych. System przechowuje informacje o kandydatach, egzaminatorach, wynikach egzaminów oraz czasie / terminie jego przeprowadzenia. Przechowywane są również informacje o incydentach, które miały miejsce podczas egzaminu.
 
 Skargi dot. procesu egzaminacyjnego są przepisywane z formularzy skargowych do pliku excel przez pracownika recepcji. Plik ten rotowany jest co miesiąc oraz przekazywany do kierownictwa co 2 tygodnie.
 
-### Przeprowadzenie egzaminu praktycznego
+=== Proces przeprowadzania egzaminów praktycznych
 
-#### Opis procesu
+==== Opis procesu
 
 Proces przeprowadzenia egzaminu praktycznego składa się z następujących kroków:
 
@@ -56,7 +73,7 @@ Proces przeprowadzenia egzaminu praktycznego składa się z następujących krok
 - Po zakończeniu jazdy próbnej egzaminator podsumowuje ocenę kandydata oraz wydaje decyzję o wyniku egzaminu.
 - W przypadku nieprawidłowości w przebiegu egzaminu, kandydat ma prawo złożyć skargę poprzez wypełnienie formularza w okienku recepcji.
 
-#### Pytania analityczne
+==== Pytania analityczne
 
 - Porównaj średnią liczbę zarezerwowanych terminów egzaminów praktycznych na przestrzeni dni tygodnia w tym i poprzednim miesiącu.
 - Podaj jak dużo kandydatów opuściło plac manewrowy podczas egzaminu w tym i poprzednim miesiącu.
@@ -64,6 +81,6 @@ Proces przeprowadzenia egzaminu praktycznego składa się z następujących krok
 - Jak dużo terminów egzaminów zostało w pełni zarezerwowanych w tym i poprzednim miesiącu?
 - Jaka jest najpopularniejsza trasa egzaminacyjna w tym i poprzednim miesiącu?
 
-#### Źródła danych
+==== Źródła danych
 
-Dane dotyczące przebiegu egzaminu praktycznego są przechowywane w bazie danych systemu przeprowadzania egzaminów praktycznych. System przechowuje informacje o kandydatach, egzaminatorach, zaliczonych przez kandydatów częściach egzaminu oraz wyznaczonym do tego celu samochodzie egzaminacyjnym. Reszta danych pobierana jest z kamer i czujników w samochodzie i zapisywana w oddzielnej bazie danych.
+Dane dotyczące przebiegu egzaminu praktycznego są przechowywane w bazie danych systemu przeprowadzania egzaminów praktycznych. System przechowuje informacje o kandydatach, egzaminatorach, zaliczonych przez kandydatów częściach egzaminu oraz wyznaczonym do tego celu samochodzie egzaminacyjnym. Reszta danych (takich jak trasa przejazdu, czas jej trwania i inne) pobierana jest z kamer i czujników w samochodzie i zapisywana w oddzielnej bazie danych.
