@@ -62,7 +62,7 @@ Skargi dot. procesu egzaminacyjnego są przepisywane z formularzy skargowych do 
   table.cell(rowspan: 3)[#align(center)[#rotate(90deg, reflow: true)[*Egzaminatorzy*]]], [Id], [GUID], [PK],
     [Pesel], [nvarchar(11)], [Numer pesel egzaminatora],
     [Nazwa], [nvarchar(max)], [Imię i nazwisko egzaminatora],
-  [#align(center)[#rotate(90deg, reflow: true)[*SaleEgzaminacyjne*]]], [NumerSali], [int], [PK],
+  [#align(center)[#rotate(90deg, reflow: true)[*SaleEgzaminacyjne*]]], [NumerSali], [int], [PK, numer sali egzaminacyjnej],
   table.cell(rowspan: 2)[#align(center)[#rotate(90deg, reflow: true)[*StanowiskaEgzaminacyjne*]]], [Id], [GUID], [PK],
     [NumerSali], [int], [FK do SaleEgzaminacyjne, numer sali],
   table.cell(rowspan: 2)[#align(center)[#rotate(90deg, reflow: true)[*Kandydaci*]]], [PKK], [nvarchar(20)], [PK, numer PKK kandydata],
