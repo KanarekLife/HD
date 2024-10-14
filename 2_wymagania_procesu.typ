@@ -96,6 +96,19 @@ Skargi dot. procesu egzaminacyjnego są przepisywane z formularzy skargowych do 
     [CzasZakonczeniaEgzaminu], [datetime2 NULL], [Data i godzina zakończenia egzaminu],
 )
 
+Opis Tabel:
+
+- *Egzaminatorzy* - Tabela przechowująca informacje o egzaminatorach.
+- *SaleEgzaminacyjne* - Tabela przechowująca informacje o salach egzaminacyjnych.
+- *StanowiskaEgzaminacyjne* - Tabela przechowująca informacje o stanowiskach egzaminacyjnych w salach egzaminacyjnych.
+- *Kandydaci* - Tabela przechowująca informacje o kandydatach.
+- *Incydenty* - Tabela przechowująca informacje o incydentach podczas egzaminu.
+- *EgzaminyTeoretyczne* - Tabela przechowująca informacje o egzaminach teoretycznych (przeszłych oraz przyszłych).
+- *Pytania* - Tabela przechowująca informacje o pytaniach egzaminacyjnych.
+- *ZaplanowanePytania* - Tabela przechowująca informacje o pytaniach przypisanych do egzaminu teoretycznego.
+- *PrzebiegiEgzaminowKandydata* - Tabela przechowująca informacje o przebiegu egzaminu kandydata.
+
+
 === Plik excel z danymi dot. skarg
 
 _Arkusz 1_ - Skargi dot. procesu egzaminacyjnego.
