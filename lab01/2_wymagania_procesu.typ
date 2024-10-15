@@ -108,6 +108,7 @@ Opis Tabel:
 - *ZaplanowanePytania* - Tabela przechowująca informacje o pytaniach przypisanych do egzaminu teoretycznego.
 - *PrzebiegiEgzaminowKandydata* - Tabela przechowująca informacje o przebiegu egzaminu kandydata.
 
+#pagebreak()
 
 === Plik excel z danymi dot. skarg
 
@@ -130,8 +131,6 @@ _Arkusz 2_ - Lista egzaminatorów
 
 Kolejne wiersze zawierają kolejne wpisy dot. egzaminatorów. Dane aktualizowane są w miarę zmian w zespole egzaminatorów i przekopiowywane co miesiąc.
 
-#pagebreak()
-
 == Scenariusze problemów analitycznych
 
 - *Problem 1*: Dlaczego nastąpił spadek/wzrost średniego czasu oczekiwania na termin egzaminu teoretycznego w porównaniu do poprzedniego miesiąca?
@@ -143,12 +142,14 @@ Kolejne wiersze zawierają kolejne wpisy dot. egzaminatorów. Dane aktualizowane
     6. Czy istnieje zapotrzebowanie na dodatkowe terminy egzaminów w okolicy świąt (Boże Narodzenie, Wielkanoc)? (czy stopień zarezerwowanych terminów 2 dni do przodu i do tyłu święta jest powyżej 70%) [DODATKOWE ZEW. DANE]
     7. Porównaj popularność godzin egzaminów w tym i poprzednim miesiącu na podstawie typu kandydata (np. osoby pracujące, uczniowie, studenci) [WYMAGA ZMIANA W PROCESIE BIZNESOWYM - dodanie informacji o typie kandydata]
 
-- *Problem 2*: Jakie są najczęstsze problemy związane z przebiegiem egzaminu teoretycznego, które prowadzą do skarg?
+- *Problem 2*: Jakie są najczęstsze problemy związane z przebiegiem egzaminu teoretycznego, które prowadzą do skarg? (chcemy poznać powody dlaczego ludzie składają skargi aby móc je wyeliminować)
     1. Porównaj liczbę skarg technicznych w relacji do sal w których odbywają się egzaminy.
     2. Jakie pytania pojawiały się najczęściej w egzaminach do których złożono skargi związane z treścią pytań?
     3. Jacy egzaminatorzy byli najczęściej związani ze złożeniem skargi?
     4. Podaj liczbę skarg złożonych w egzaminach w których nie wystąpiły żadne incydenty zgłoszone przez egzaminatorów.
     5. Jak dużo kandydatów nie zdołało odpowiedzieć na wszystkie pytania w egzaminie i złożyło skargę z kategorii "związana z treścią pytań" lub "inne"?
+
+#pagebreak()
 
 == Dane potrzebne do problemów analitycznych
 
@@ -171,7 +172,7 @@ Kolejne wiersze zawierają kolejne wpisy dot. egzaminatorów. Dane aktualizowane
         - *termin egzaminu* - _Baza Danych_, tabela `EgzaminyTeoretyczne`, atrybut `ZaplanowanyTermin`
         - *pkk kandydata* - _Baza Danych_, tabela `Kandydaci`, atrybut `PKK`
         - *liczba podejść do egzaminu* - _Baza Danych_, liczba powiązanych z kandydatów `PrzebiegówEgzaminuKandydata` gdzie atrybut `CzasPotwierdzeniaGotowsciPrzezKandydata` nie jest pusty
-#pagebreak()
+
     5. Jak dużo terminów egzaminów zostało w pełni zarezerwowanych w tym i poprzednim miesiącu?
         - *termin egzaminu* - _Baza Danych_, tabela `EgzaminyTeoretyczne`, atrybut `ZaplanowanyTermin`
         - *liczba zarezerwowanych miejsc na egzaminie* - _Baza Danych_, liczba powiązanych z egzaminem `PrzebiegówEgzaminuKandydata`
@@ -187,6 +188,8 @@ Kolejne wiersze zawierają kolejne wpisy dot. egzaminatorów. Dane aktualizowane
         - *termin egzaminu* - _Baza Danych_, tabela `EgzaminyTeoretyczne`, atrybut `ZaplanowanyTermin`
         - *pkk kandydata* - _Baza Danych_, tabela `Kandydaci`, atrybut `PKK`
         - *typ kandydata* - Aktualnie nie mamy takiej informacji w bazie danych, należy zmodyfikować proces biznesowy poprzez wymóg informacji o typie kandydata podczas rezerwacji terminu i zapisywania tej informacji w bazie danych.
+
+#pagebreak()
 
 - *Problem 2*: Jakie są najczęstsze problemy związane z przebiegiem egzaminu teoretycznego, które prowadzą do skarg?
 
@@ -211,7 +214,7 @@ Kolejne wiersze zawierają kolejne wpisy dot. egzaminatorów. Dane aktualizowane
         - *liczba incydentów podczas egzaminu* - _Baza Danych_, liczba `IncydentówPodczasEgzaminu` powiązanych z egzaminem
         - *termin egzaminu* - _Plik Excel_, arkusz `Arkusz 1`, kolumna `Termin egzaminu`
         - *pesel egzaminatora* - _Plik Excel_, arkusz `Arkusz 1`, kolumna `PeselEgzaminatora`
-#pagebreak()
+
     5. Jak dużo kandydatów nie zdołało odpowiedzieć na wszystkie pytania w egzaminie i złożyło skargę z kategorii "związana z treścią pytań" lub "inne"?
         - *typ skargi* - _Plik Excel_, arkusz `Arkusz 1`, kolumna `TypSkargi`
         - *pkk kandydata* - _Plik Excel_, arkusz `Arkusz 1`, kolumna `PKK Kandydata`
