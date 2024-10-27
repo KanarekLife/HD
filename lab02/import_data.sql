@@ -9,7 +9,6 @@ DELETE FROM StanowiskaEgzaminacyjne
 DELETE FROM Kandydaci
 DELETE FROM SaleEgzaminacyjne
 DELETE FROM Egzaminatorzy
-GO
 
 
 BULK INSERT Egzaminatorzy
@@ -49,7 +48,6 @@ DELETE FROM StanowiskaEgzaminacyjne
 DELETE FROM Kandydaci
 DELETE FROM SaleEgzaminacyjne
 DELETE FROM Egzaminatorzy
-GO
 
 BULK INSERT Egzaminatorzy
     FROM '/mnt/second_dump/egzaminatorzy.csv'
