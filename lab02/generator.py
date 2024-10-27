@@ -279,7 +279,7 @@ def generate_incidents(c: sqlite3.Cursor, conn: sqlite3.Connection, number_of_in
     df.to_sql('Incydenty', conn, if_exists='append')
 
 
-def replace_guids(filename: str):
+def replace_guids(filename: str, table: str):
     with open(filename, encoding='utf-16') as f:
         content = f.readlines()
     
@@ -287,14 +287,18 @@ def replace_guids(filename: str):
 
     headers = header.split(',')
     ids = [i for i, header in enumerate(headers) if 'Id' in header]
-    
+
+    # insert_prompt = f'INSERT INTO {table}({header.strip()}) VALUES (\''
+
     for i in ids:
         for j, line in enumerate(content):
-            line = line.split(',')
+            line = line.strip().split(',')
             if not re.match(r'^\d+$', line[i]):
                 break
-            line[i] = f'28c52b60-a9da-452b-8d86-{line[i]:012}'
-            content[j] = ','.join(line)
+            line[i] = f'28c52b60-a9da-452b-8d86-{line[i]:>012}'
+            content[j] = ','.join(line) + '\n'
+            # prompt = insert_prompt + "','".join(line) + '\');\n'
+            # content[j] = prompt
 
     content = ''.join(content)
 
@@ -400,8 +404,8 @@ def dump_data(conn: sqlite3.Connection, target_dir: Path, whole_dump: bool = Fal
         for table, filename in columns_to_files.items():
             pd.read_sql(f'SELECT * FROM {table}', conn).to_csv(filename, index=False, encoding='utf-16')
     
-    for filename in columns_to_files.values():
-        replace_guids(filename)
+    for table, filename in columns_to_files.items():
+        replace_guids(filename, table)
 
     with open(target_dir / 'zaplanowane_pytania.csv', encoding='utf-16') as f:
         content = f.read()
@@ -410,7 +414,7 @@ def dump_data(conn: sqlite3.Connection, target_dir: Path, whole_dump: bool = Fal
         f.write(content)
     
     Path(target_dir / 'pytania.csv').write_text(Path(QUESTIONS_CSV).read_text(encoding='utf-16'), encoding='utf-16')
-    replace_guids(target_dir / 'pytania.csv')
+    replace_guids(target_dir / 'pytania.csv', 'Pytania')
 
 
 def verify_integrity(c: sqlite3.Cursor, conn: sqlite3.Connection):
@@ -457,7 +461,7 @@ def generate_first_dump(start_date: str, interrupt_date: str):
     global processes_to_bring_back, lowest_process_id_with_null_start
     print('Generating first dump')
 
-    target_dir = Path('.') / 'first_dump'
+    target_dir = Path('.') / 'data/first_dump'
     target_dir.mkdir(exist_ok=True, parents=True)
 
     conn, c = print_process_with_timer('Setting up database', setup_database)
@@ -496,7 +500,7 @@ def refill_exam_processes(c: sqlite3.Cursor, conn: sqlite3.Connection):
 def generate_second_dump(interrupt_date: str, end_date: str, c: sqlite3.Cursor, conn: sqlite3.Connection):
     print('Generating second dump')
 
-    target_dir = Path('.') / 'second_dump'
+    target_dir = Path('.') / 'data/second_dump'
     target_dir.mkdir(exist_ok=True, parents=True)
     
     highest_prev_exam_id = c.execute('SELECT MAX(Id) FROM EgzaminyTeoretyczne').fetchone()[0]
