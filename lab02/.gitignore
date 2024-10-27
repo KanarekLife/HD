@@ -1,1 +1,4 @@
 ﻿.idea/
+
+# Ignore all .csv files except pytania.csv and holidays.csv
+*_dump
