@@ -22,7 +22,7 @@ INT_DATE = '2021-12-31'
 END_DATE = '2022-03-31'
 NUMBER_OF_EGZAMINATORS = 10
 NUMBER_OF_ROOMS = 5
-NUMBER_OF_CANDIDATES = 20000
+NUMBER_OF_CANDIDATES = 400000
 NUMBER_OF_CONCURRENT_EXAMS = min(NUMBER_OF_ROOMS, NUMBER_OF_EGZAMINATORS)
 NUMBER_OF_INCIDENTS = 100
 NUMBER_OF_COMPLAINTS = 100
@@ -51,8 +51,6 @@ QUESTIONS_COUNT = 30
 QUESTIONS_CSV = 'data/pytania.csv'
 
 FIRST_BATCH_RATIO = (pd.to_datetime(INT_DATE) - pd.to_datetime(START_DATE)) / (pd.to_datetime(END_DATE) - pd.to_datetime(START_DATE))
-
-print(FIRST_BATCH_RATIO)
 
 TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 
@@ -234,7 +232,7 @@ def generate_planned_questions(c: sqlite3.Cursor, conn: sqlite3.Connection):
     planned_questions_times *= exam_process_durations[:, np.newaxis]
     planned_questions_times = np.reshape(planned_questions_times, (1, -1))[0]
 
-    planned_questions_result = np.random.choice([0, 1], planned_questions_count, p=[0.1, 0.9])
+    planned_questions_result = np.random.choice([0, 1], planned_questions_count, p=[0.3, 0.7])
     planned_questions_result[planned_questions_times == 0] = -69
 
     planned_questions_times = np.reshape(planned_questions_times, (-1, QUESTIONS_COUNT))
@@ -300,7 +298,7 @@ def replace_guids(filename: str, table: str):
             # prompt = insert_prompt + "','".join(line) + '\');\n'
             # content[j] = prompt
 
-    content = ''.join(content)
+    content = header + ''.join(content)
 
     with open(filename, 'w', encoding='utf-16') as f:
         f.write(content)
@@ -357,7 +355,6 @@ def generate_excel(c: sqlite3.Cursor, conn: sqlite3.Connection, number_of_compla
         'Treść skargi': content_without_incident['tresc'].to_numpy(),
         'Data złożenia skargi': exam_process_without_incident['ComplaintDate'].dt.strftime('%d-%m-%Y')
     })
-    # res2['Treść skargi'] = contents_df.sample(len(res2))['tresc'].to_numpy()
 
     res = pd.concat([res1, res2])
     res.sort_values('Termin egzaminu', inplace=True)
@@ -418,13 +415,33 @@ def dump_data(conn: sqlite3.Connection, target_dir: Path, whole_dump: bool = Fal
 
 
 def verify_integrity(c: sqlite3.Cursor, conn: sqlite3.Connection):
-    # every reservation time should be after the last failed exam by the same candidate
-    # reservation time should be not less than EXAM_REPETITION_COOLDOWN days before the exam
-
-    query = ('SELECT PKK, CzasRezerwacjiTerminu, CzasRozpoczeciaEgzaminu '
-                'FROM PrzebiegiEgzaminowKandydata '
-                'WHERE CzasRozpoczeciaEgzaminu IS NOT NULL '
-                'ORDER BY PKK, CzasRozpoczeciaEgzaminu')
+    query = '''UPDATE ZaplanowanePytania
+SET CzyZostalaUdzielonaPoprawnaOdpowiedz = 0
+WHERE Id IN (
+    SELECT Id
+    FROM ZaplanowanePytania
+    WHERE IdPrzebieguEgzaminu IN (
+        SELECT Id
+        FROM PrzebiegiEgzaminowKandydata
+        WHERE PKKKandydata IN (
+            -- Kandydaci z ponad 1 egzaminem
+            SELECT PKKKandydata
+            FROM PrzebiegiEgzaminowKandydata
+            GROUP BY PKKKandydata
+            HAVING COUNT(*) > 1
+        )
+          AND Id NOT IN (
+            -- Id ostatnich przebiegów egzaminów kandydata
+            SELECT MAX(Id)
+            FROM PrzebiegiEgzaminowKandydata
+            GROUP BY PKKKandydata
+            HAVING COUNT(*) > 1
+        )
+    )
+    AND CzyZostalaUdzielonaPoprawnaOdpowiedz = 1
+    AND PriorytetPytania < 11
+)'''
+    c.execute(query)
 
 
 def make_some_modifications(c: sqlite3.Cursor, conn: sqlite3.Connection):
@@ -455,10 +472,10 @@ def make_some_modifications(c: sqlite3.Cursor, conn: sqlite3.Connection):
 
 processes_to_bring_back = None
 lowest_process_id_with_null_start = None
-
+planned_questions_to_bring_back = None
 
 def generate_first_dump(start_date: str, interrupt_date: str):
-    global processes_to_bring_back, lowest_process_id_with_null_start
+    global processes_to_bring_back, lowest_process_id_with_null_start, planned_questions_to_bring_back
     print('Generating first dump')
 
     target_dir = Path('.') / 'data/first_dump'
@@ -472,18 +489,20 @@ def generate_first_dump(start_date: str, interrupt_date: str):
 
     offseted_end_date = (pd.to_datetime(interrupt_date) + pd.Timedelta(days=40)).strftime(TIME_FORMAT)
     print_process_with_timer('Generating exams', generate_exams, (c, conn, start_date, offseted_end_date))
+    print_process_with_timer('Generating planned questions', generate_planned_questions, (c, conn))
 
-    # verify_integrity()
+    verify_integrity(c, conn)
 
     processes_to_bring_back = pd.read_sql('SELECT * FROM PrzebiegiEgzaminowKandydata', conn)
+    planned_questions_to_bring_back = pd.read_sql('SELECT * FROM ZaplanowanePytania', conn)
     c.execute('DELETE FROM PrzebiegiEgzaminowKandydata WHERE CzasRezerwacjiTerminu > ?', (interrupt_date,))
     c.execute('UPDATE PrzebiegiEgzaminowKandydata SET CzasPotwierdzeniaGotowosciPrzezKandydata = NULL, CzasRozpoczeciaEgzaminu = NULL, CzasZakonczeniaEgzaminu = NULL WHERE CzasRozpoczeciaEgzaminu > ?', (interrupt_date,))
+    c.execute('DELETE FROM ZaplanowanePytania WHERE IdPrzebieguEgzaminu NOT IN (SELECT Id FROM PrzebiegiEgzaminowKandydata)')
 
     lowest_process_id_with_null_start = c.execute('SELECT MIN(Id) FROM PrzebiegiEgzaminowKandydata WHERE CzasRozpoczeciaEgzaminu IS NULL').fetchone()[0]
     if lowest_process_id_with_null_start is None:
         raise Exception('No processes with null start time')
 
-    print_process_with_timer('Generating planned questions', generate_planned_questions, (c, conn))
     print_process_with_timer('Generating incidents', generate_incidents, (c, conn, int(NUMBER_OF_INCIDENTS*FIRST_BATCH_RATIO)))
     print_process_with_timer('Generating excel', generate_excel, (c, conn, int(NUMBER_OF_COMPLAINTS*FIRST_BATCH_RATIO)))
 
@@ -493,8 +512,10 @@ def generate_first_dump(start_date: str, interrupt_date: str):
 
 
 def refill_exam_processes(c: sqlite3.Cursor, conn: sqlite3.Connection):
+    c.execute('DELETE FROM ZaplanowanePytania')
     c.execute('DELETE FROM PrzebiegiEgzaminowKandydata')
     processes_to_bring_back.to_sql('PrzebiegiEgzaminowKandydata', conn, if_exists='append', index=False)
+    planned_questions_to_bring_back.to_sql('ZaplanowanePytania', conn, if_exists='append', index=False)
 
 
 def generate_second_dump(interrupt_date: str, end_date: str, c: sqlite3.Cursor, conn: sqlite3.Connection):
@@ -516,12 +537,19 @@ def generate_second_dump(interrupt_date: str, end_date: str, c: sqlite3.Cursor, 
     offseted_end_date = (pd.to_datetime(end_date) + pd.Timedelta(days=40)).strftime(TIME_FORMAT)
 
     last_exam_date = pd.to_datetime(c.execute('SELECT MAX(ZaplanowanyTermin) FROM EgzaminyTeoretyczne').fetchone()[0])
-    # set to midnight next day
+
     last_exam_date = last_exam_date.replace(hour=0, minute=0, second=0) + pd.Timedelta(days=1)
     last_exam_date = last_exam_date.strftime(TIME_FORMAT)
 
     print_process_with_timer('Generating exams', generate_exams, (c, conn, last_exam_date, offseted_end_date))
     print_process_with_timer('Generating planned questions', generate_planned_questions, (c, conn))
+
+    verify_integrity(c, conn)
+
+    c.execute('DELETE FROM PrzebiegiEgzaminowKandydata WHERE CzasRezerwacjiTerminu > ?', (end_date,))
+    c.execute('UPDATE PrzebiegiEgzaminowKandydata SET CzasPotwierdzeniaGotowosciPrzezKandydata = NULL, CzasRozpoczeciaEgzaminu = NULL, CzasZakonczeniaEgzaminu = NULL WHERE CzasRozpoczeciaEgzaminu > ?', (end_date,))
+    c.execute('DELETE FROM ZaplanowanePytania WHERE IdPrzebieguEgzaminu NOT IN (SELECT Id FROM PrzebiegiEgzaminowKandydata)')
+
     print_process_with_timer('Generating incidents', generate_incidents, (c, conn, NUMBER_OF_INCIDENTS - int(NUMBER_OF_INCIDENTS*FIRST_BATCH_RATIO), interrupt_date))
     print_process_with_timer('Generating excel', generate_excel, (c, conn, NUMBER_OF_COMPLAINTS - int(NUMBER_OF_COMPLAINTS*FIRST_BATCH_RATIO), interrupt_date))
 
@@ -546,12 +574,3 @@ faker.Faker.seed(SEED)
 
 c, conn = generate_first_dump(START_DATE, INT_DATE)
 generate_second_dump(INT_DATE, END_DATE, c, conn)
-
-# TODO
-# - incidents - done
-# - dumping in the middle - done
-# - excel file - done
-# - GUIDs - done
-# - modification in const data between dumps - done
-# - previous exams taken by the same candidate should be failed (and reservation time should be after the last failed exam)
-# - remove title rows from csv files
