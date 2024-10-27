@@ -28,11 +28,11 @@ for i, (table, csv) in enumerate(csv_by_table.items()):
     print(f'Processing {table}...')
 
     # create updates
+    updates = ''
     if 'Id' in first.columns and table != 'ZaplanowanePytania':
         diff = first.merge(second, on='Id', suffixes=('_first', '_second'))
         diff = diff[~diff.eq(diff.shift(-1, axis=1)).all(axis=1)]
         prompt = f'UPDATE {table} SET\n'
-        updates = ''
         for _, row in diff.iterrows():
             for col, dt in zip(first.columns, first.dtypes):
                 if col == 'Id':
@@ -52,4 +52,4 @@ for i, (table, csv) in enumerate(csv_by_table.items()):
         if inserts and updates:
             f.write('\n')
         f.write(inserts)
-        f.write('GO\n\n')
+        f.write('\n\nGO\n')
