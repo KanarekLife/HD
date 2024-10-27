@@ -85,11 +85,11 @@ def setup_database():
     conn = sqlite3.connect(':memory:')
     c = conn.cursor()
 
-    with open('initialize_database_schema.sql') as f:
+    with open('schemas/initialize_database_schema.sql') as f:
         query_lines = f.readlines()
     query_lines = [line.strip() for line in query_lines if line.startswith('CREATE TABLE')]
     query = ';'.join(query_lines)
-    query = query.replace('max', '256')
+    query = query.replace('max', '255')
     query = query.replace('uniqueidentifier', 'INTEGER')
 
     c.executescript(query)
@@ -258,7 +258,7 @@ def generate_planned_questions(c: sqlite3.Cursor, conn: sqlite3.Connection):
 
 
 def generate_incidents(c: sqlite3.Cursor, conn: sqlite3.Connection, number_of_incidents: int, start_date: str = START_DATE):
-    incidents_source = json.load(open('incydenty.json'))
+    incidents_source = json.load(open('data/incydenty.json'))
     all_reasons = np.array([incident['powod'] for incident in incidents_source])
     all_contents = np.array([incident['tresc'] for incident in incidents_source])
     exams = pd.read_sql('SELECT Id FROM PrzebiegiEgzaminowKandydata WHERE CzasRozpoczeciaEgzaminu IS NOT NULL AND CzasRozpoczeciaEgzaminu > ? ORDER BY RANDOM() LIMIT ?', conn, params=(start_date, number_of_incidents,))
@@ -305,7 +305,7 @@ def replace_guids(filename: str, table: str):
 
 
 def generate_excel(c: sqlite3.Cursor, conn: sqlite3.Connection, number_of_complaints: int, start_date: str = START_DATE):
-    complain_contents = json.load(open('skargi.json', encoding='utf-8'))
+    complain_contents = json.load(open('data/skargi.json', encoding='utf-8'))
     contents_df = pd.DataFrame(complain_contents)
 
     query = ('SELECT * FROM PrzebiegiEgzaminowKandydata '
