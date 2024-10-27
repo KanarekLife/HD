@@ -10,7 +10,7 @@ def chunk(it, size):
 first_dump = Path('data/first_dump')
 second_dump = Path('data/second_dump')
 
-result_file = second_dump / 'second_phase.sql'
+result_file = second_dump / 'apply.sql'
 
 csv_by_table = {
     'Egzaminatorzy': 'egzaminatorzy.csv',
