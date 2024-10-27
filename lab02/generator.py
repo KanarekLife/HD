@@ -281,27 +281,29 @@ def generate_incidents(c: sqlite3.Cursor, conn: sqlite3.Connection, number_of_in
 
 def replace_guids(filename: str):
     with open(filename, encoding='utf-16') as f:
-        content = f.read()
+        content = f.readlines()
+    
+    header, content = content[0], content[1:]
 
-    content = re.sub(r'\n(\d),', r'\n28c52b60-a9da-452b-8d86-00000000000\1,', content)
-    content = re.sub(r'\n(\d\d),', r'\n28c52b60-a9da-452b-8d86-0000000000\1,', content)
-    content = re.sub(r'\n(\d\d\d),', r'\n28c52b60-a9da-452b-8d86-000000000\1,', content)
-    content = re.sub(r'\n(\d\d\d\d),', r'\n28c52b60-a9da-452b-8d86-00000000\1,', content)
-    content = re.sub(r'\n(\d\d\d\d\d),', r'\n28c52b60-a9da-452b-8d86-0000000\1,', content)
-    content = re.sub(r'\n(\d\d\d\d\d\d),', r'\n28c52b60-a9da-452b-8d86-000000\1,', content)
-    content = re.sub(r'\n(\d\d\d\d\d\d\d),', r'\n28c52b60-a9da-452b-8d86-00000\1,', content)
-    content = re.sub(r'\n(\d\d\d\d\d\d\d\d),', r'\n28c52b60-a9da-452b-8d86-0000\1,', content)
-    content = re.sub(r'\n(\d\d\d\d\d\d\d\d\d),', r'\n28c52b60-a9da-452b-8d86-000\1,', content)
-    content = re.sub(r'\n(\d\d\d\d\d\d\d\d\d\d),', r'\n28c52b60-a9da-452b-8d86-00\1,', content)
-    content = re.sub(r'\n(\d\d\d\d\d\d\d\d\d\d\d),', r'\n28c52b60-a9da-452b-8d86-0\1,', content)
-    content = re.sub(r'\n(\d\d\d\d\d\d\d\d\d\d\d\d),', r'\n28c52b60-a9da-452b-8d86-\1,', content)
+    headers = header.split(',')
+    ids = [i for i, header in enumerate(headers) if 'Id' in header]
+    
+    for i in ids:
+        for j, line in enumerate(content):
+            line = line.split(',')
+            if not re.match(r'^\d+$', line[i]):
+                break
+            line[i] = f'28c52b60-a9da-452b-8d86-{line[i]:012}'
+            content[j] = ','.join(line)
+
+    content = ''.join(content)
 
     with open(filename, 'w', encoding='utf-16') as f:
         f.write(content)
 
 
 def generate_excel(c: sqlite3.Cursor, conn: sqlite3.Connection, number_of_complaints: int, start_date: str = START_DATE):
-    complain_contents = json.load(open('skargi.json'))
+    complain_contents = json.load(open('skargi.json', encoding='utf-8'))
     contents_df = pd.DataFrame(complain_contents)
 
     query = ('SELECT * FROM PrzebiegiEgzaminowKandydata '
@@ -409,7 +411,6 @@ def dump_data(conn: sqlite3.Connection, target_dir: Path, whole_dump: bool = Fal
     
     Path(target_dir / 'pytania.csv').write_text(Path(QUESTIONS_CSV).read_text(encoding='utf-16'), encoding='utf-16')
     replace_guids(target_dir / 'pytania.csv')
-
 
 
 def verify_integrity(c: sqlite3.Cursor, conn: sqlite3.Connection):
