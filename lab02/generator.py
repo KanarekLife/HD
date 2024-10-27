@@ -38,6 +38,7 @@ EXAM_DURATION_MAX_OFFSET = 10  # minutes
 
 EXAM_HOURS = np.array([8, 10.5, 12, 14, 16, 18]) * pd.Timedelta(hours=1)
 EXAM_START_MAX_DELAY = 5  # minutes
+EXAM_REPETITION_COOLDOWN = 12 # days
 
 STANDS_OCCUPANCY_PERCENTAGE_MIN = 0.8
 STANDS_OCCUPANCY_PERCENTAGE_MAX = 1.0
@@ -180,7 +181,7 @@ def generate_exams(c: sqlite3.Cursor, conn: sqlite3.Connection, date_from: str, 
         exam_process_stand_ids[i:i+stand_count] = stands[stand_indexes]
         i += stand_count
 
-    MAX_CLOSE_DISTANCE = NUMBER_OF_STANDS_PER_ROOM_MAX * NUMBER_OF_CONCURRENT_EXAMS * len(EXAM_HOURS) * 12
+    MAX_CLOSE_DISTANCE = NUMBER_OF_STANDS_PER_ROOM_MAX * NUMBER_OF_CONCURRENT_EXAMS * len(EXAM_HOURS) * EXAM_REPETITION_COOLDOWN
 
     exam_process_candidates = random_locally_unique_blocks(all_candidates, MAX_CLOSE_DISTANCE, exam_process_count)
 
@@ -391,12 +392,14 @@ def dump_data(conn: sqlite3.Connection, target_dir: Path, whole_dump: bool = Fal
     for table, filename in columns_to_files.items():
         columns_to_files[table] = target_dir / filename
 
+    Path('skargi.xlsx').rename(target_dir / 'skargi.xlsx')
+
     if whole_dump:
         for table, filename in columns_to_files.items():
             pd.read_sql(f'SELECT * FROM {table}', conn).to_csv(filename, index=False, encoding='utf-16')
     
-    # for filename in columns_to_files.values():
-    #     replace_guids(filename)
+    for filename in columns_to_files.values():
+        replace_guids(filename)
 
     with open(target_dir / 'zaplanowane_pytania.csv', encoding='utf-16') as f:
         content = f.read()
@@ -407,7 +410,42 @@ def dump_data(conn: sqlite3.Connection, target_dir: Path, whole_dump: bool = Fal
     Path(target_dir / 'pytania.csv').write_text(Path(QUESTIONS_CSV).read_text(encoding='utf-16'), encoding='utf-16')
     replace_guids(target_dir / 'pytania.csv')
 
-    Path('skargi.xlsx').rename(target_dir / 'skargi.xlsx')
+
+
+def verify_integrity(c: sqlite3.Cursor, conn: sqlite3.Connection):
+    # every reservation time should be after the last failed exam by the same candidate
+    # reservation time should be not less than EXAM_REPETITION_COOLDOWN days before the exam
+
+    query = ('SELECT PKK, CzasRezerwacjiTerminu, CzasRozpoczeciaEgzaminu '
+                'FROM PrzebiegiEgzaminowKandydata '
+                'WHERE CzasRozpoczeciaEgzaminu IS NOT NULL '
+                'ORDER BY PKK, CzasRozpoczeciaEgzaminu')
+
+
+def make_some_modifications(c: sqlite3.Cursor, conn: sqlite3.Connection):
+    female_egzaminators = pd.read_sql('SELECT * FROM Egzaminatorzy '
+                                     'WHERE Pesel LIKE "_________0_" '
+                                     'OR Pesel LIKE "_________2_" '
+                                     'OR Pesel LIKE "_________4_" '
+                                     'OR Pesel LIKE "_________6_" '
+                                     'OR Pesel LIKE "_________8_"', conn)
+    male_egzaminators = pd.read_sql('SELECT * FROM Egzaminatorzy '
+                                    'WHERE Pesel LIKE "_________1_" '
+                                    'OR Pesel LIKE "_________3_" '
+                                    'OR Pesel LIKE "_________5_" '
+                                    'OR Pesel LIKE "_________7_" '
+                                    'OR Pesel LIKE "_________9_"', conn)
+    to_change = min(len(female_egzaminators), len(male_egzaminators), 3)
+
+    female_egzaminators = female_egzaminators.sample(to_change)
+    male_egzaminators = male_egzaminators.sample(to_change)
+
+    for (_, f), (_, m) in zip(female_egzaminators.iterrows(), male_egzaminators.iterrows()):
+        f_name, f_surname = f['Nazwa'].split()
+        m_name, m_surname = m['Nazwa'].split()
+        f_surname = f'{f_surname}-{m_surname}'
+        new_f_name = f'{f_name} {f_surname}'
+        c.execute('UPDATE Egzaminatorzy SET Nazwa = ? WHERE Pesel = ?', (new_f_name, f['Pesel']))
 
 
 processes_to_bring_back = None
@@ -430,7 +468,7 @@ def generate_first_dump(start_date: str, interrupt_date: str):
     offseted_end_date = (pd.to_datetime(interrupt_date) + pd.Timedelta(days=40)).strftime(TIME_FORMAT)
     print_process_with_timer('Generating exams', generate_exams, (c, conn, start_date, offseted_end_date))
 
-
+    # verify_integrity()
 
     processes_to_bring_back = pd.read_sql('SELECT * FROM PrzebiegiEgzaminowKandydata', conn)
     c.execute('DELETE FROM PrzebiegiEgzaminowKandydata WHERE CzasRezerwacjiTerminu > ?', (interrupt_date,))
@@ -450,31 +488,6 @@ def generate_first_dump(start_date: str, interrupt_date: str):
 
 
 def refill_exam_processes(c: sqlite3.Cursor, conn: sqlite3.Connection):
-    # unfilled_exam_processes = pd.read_sql('SELECT * FROM PrzebiegiEgzaminowKandydata '
-    #                                       'JOIN EgzaminyTeoretyczne ON PrzebiegiEgzaminowKandydata.IdEgzaminuTeoretycznego = EgzaminyTeoretyczne.Id '
-    #                                       'WHERE CzasRozpoczeciaEgzaminu IS NULL', conn)
-
-    # unfilled_exam_processes['CzasPotwierdzeniaGotowosciPrzezKandydata'] = pd.to_datetime(unfilled_exam_processes['ZaplanowanyTermin']) + pd.to_timedelta(np.random.randint(0, EXAM_START_MAX_DELAY*60, len(unfilled_exam_processes)), unit='s')
-    # unfilled_exam_processes['CzasRozpoczeciaEgzaminu'] = unfilled_exam_processes['CzasPotwierdzeniaGotowosciPrzezKandydata'] + pd.to_timedelta(np.random.randint(0, EXAM_START_MAX_DELAY*60, len(unfilled_exam_processes)), unit='s')
-    # durations = np.random.randint((EXAM_DURATION - EXAM_DURATION_MAX_OFFSET)*60, (EXAM_DURATION + EXAM_DURATION_MAX_OFFSET)*60, len(unfilled_exam_processes))
-    # unfilled_exam_processes['CzasZakonczeniaEgzaminu'] = unfilled_exam_processes['CzasRozpoczeciaEgzaminu'] + pd.to_timedelta(durations, unit='s')
-
-    # c.execute('DELETE FROM PrzebiegiEgzaminowKandydata WHERE CzasRozpoczeciaEgzaminu IS NULL')
-
-    # df = pd.DataFrame({
-    #     'Id': unfilled_exam_processes['Id'].iloc[:, 0],
-    #     'IdEgzaminuTeoretycznego': unfilled_exam_processes['IdEgzaminuTeoretycznego'],
-    #     'IdStanowiskaEgzaminacyjnego': unfilled_exam_processes['IdStanowiskaEgzaminacyjnego'],
-    #     'PKKKandydata': unfilled_exam_processes['PKKKandydata'],
-    #     'CzasRezerwacjiTerminu': unfilled_exam_processes['CzasRezerwacjiTerminu'],
-    #     'CzasPotwierdzeniaGotowosciPrzezKandydata': unfilled_exam_processes['CzasPotwierdzeniaGotowosciPrzezKandydata'],
-    #     'CzasRozpoczeciaEgzaminu': unfilled_exam_processes['CzasRozpoczeciaEgzaminu'],
-    #     'CzasZakonczeniaEgzaminu': unfilled_exam_processes['CzasZakonczeniaEgzaminu']
-    # }).set_index('Id')
-    # df.to_sql('PrzebiegiEgzaminowKandydata', conn, if_exists='append', index_label='Id')
-
-    # replacw with processes_to_bring_back
-    # delete everything from processes
     c.execute('DELETE FROM PrzebiegiEgzaminowKandydata')
     processes_to_bring_back.to_sql('PrzebiegiEgzaminowKandydata', conn, if_exists='append', index=False)
 
@@ -488,6 +501,8 @@ def generate_second_dump(interrupt_date: str, end_date: str, c: sqlite3.Cursor, 
     highest_prev_exam_id = c.execute('SELECT MAX(Id) FROM EgzaminyTeoretyczne').fetchone()[0]
     if highest_prev_exam_id is None:
         highest_prev_exam_id = 0
+
+    print_process_with_timer('Making some modifications', make_some_modifications, (c, conn))
 
     refill_exam_processes(c, conn)
 
@@ -514,22 +529,7 @@ def generate_second_dump(interrupt_date: str, end_date: str, c: sqlite3.Cursor, 
     end_date = pd.to_datetime(end_date).replace(hour=0, minute=0, second=0) + pd.Timedelta(days=1)
     end_date = end_date.strftime(TIME_FORMAT)
 
-    exams = pd.read_sql('SELECT * FROM EgzaminyTeoretyczne WHERE Id > ?', conn, params=(highest_prev_exam_id,))
-    exams.to_csv(target_dir / 'egzaminy_teoretyczne.csv', index=False, encoding='utf-16')
-
-    incidents = pd.read_sql('SELECT * FROM Incydenty WHERE IdEgzaminu IN (SELECT Id FROM EgzaminyTeoretyczne WHERE ZaplanowanyTermin > ? AND ZaplanowanyTermin < ?)', conn, params=(interrupt_date, end_date))
-    incidents.to_csv(target_dir / 'incydenty.csv', index=False, encoding='utf-16')
-
-    exam_processes = pd.read_sql('SELECT * FROM PrzebiegiEgzaminowKandydata WHERE Id >= ?', conn, params=(lowest_process_id_with_null_start,))
-    exam_processes.to_csv(target_dir / 'przebiegi_egzaminow_kandydata.csv', index=False, encoding='utf-16')
-
-    planned_questions = pd.read_sql('SELECT * FROM ZaplanowanePytania WHERE IdPrzebieguEgzaminu IN (SELECT Id FROM PrzebiegiEgzaminowKandydata WHERE CzasPotwierdzeniaGotowosciPrzezKandydata > ? AND CzasPotwierdzeniaGotowosciPrzezKandydata < ?)', conn, params=(interrupt_date, end_date))
-    planned_questions.to_csv(target_dir / 'zaplanowane_pytania.csv', index=False, encoding='utf-16')
-
-    candidates = pd.read_sql('SELECT * FROM Kandydaci WHERE PKK NOT IN (SELECT PKK FROM Kandydaci WHERE ROWID <= ?)', conn, params=(int(NUMBER_OF_CANDIDATES*FIRST_BATCH_RATIO),))
-    candidates.to_csv(target_dir / 'kandydaci.csv', index=False, encoding='utf-16')
-
-    dump_data(conn, target_dir, False)
+    dump_data(conn, target_dir, True)
     print('took', time.time() - s, 'seconds')
 
     c.close()
@@ -545,8 +545,8 @@ generate_second_dump(INT_DATE, END_DATE, c, conn)
 # TODO
 # - incidents - done
 # - dumping in the middle - done
-# - modification in const data between dumps
-# - previous exams taken by the same candidate should be failed (and reservation time should be after the last failed exam)
-# - remove title rows from csv files
 # - excel file - done
 # - GUIDs - done
+# - modification in const data between dumps - done
+# - previous exams taken by the same candidate should be failed (and reservation time should be after the last failed exam)
+# - remove title rows from csv files
