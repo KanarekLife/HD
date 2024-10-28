@@ -18,11 +18,11 @@ from typing import Literal, TypeAlias
 SEED = 2137
 
 START_DATE = '2021-01-01'
-INT_DATE = '2021-12-31'
-END_DATE = '2022-03-31'
+INT_DATE = '2021-04-30'
+END_DATE = '2021-06-30'
 NUMBER_OF_EGZAMINATORS = 10
 NUMBER_OF_ROOMS = 5
-NUMBER_OF_CANDIDATES = 400000
+NUMBER_OF_CANDIDATES = 400
 NUMBER_OF_CONCURRENT_EXAMS = min(NUMBER_OF_ROOMS, NUMBER_OF_EGZAMINATORS)
 NUMBER_OF_INCIDENTS = 100
 NUMBER_OF_COMPLAINTS = 100
@@ -366,6 +366,7 @@ def generate_excel(c: sqlite3.Cursor, conn: sqlite3.Connection, number_of_compla
         'Imię i nazwisko egzaminatora': examiners_df['Nazwa']
     })
 
+    Path('skargi.xlsx').unlink(missing_ok=True)
     with pd.ExcelWriter('skargi.xlsx') as writer:
         res.to_excel(writer, sheet_name='Skargi', index=False)
         examiners_res.to_excel(writer, sheet_name='Lista egzaminatorów', index=False)
@@ -395,6 +396,7 @@ def dump_data(conn: sqlite3.Connection, target_dir: Path, whole_dump: bool = Fal
     for table, filename in columns_to_files.items():
         columns_to_files[table] = target_dir / filename
 
+    Path(target_dir / 'skargi.xlsx').unlink(missing_ok=True)
     Path('skargi.xlsx').rename(target_dir / 'skargi.xlsx')
 
     if whole_dump:

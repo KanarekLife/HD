@@ -10,7 +10,6 @@ DELETE FROM Kandydaci
 DELETE FROM SaleEgzaminacyjne
 DELETE FROM Egzaminatorzy
 
-
 BULK INSERT Egzaminatorzy
     FROM '/mnt/first_dump/egzaminatorzy.csv'
     WITH ( ROWTERMINATOR = '\n', FIELDTERMINATOR = ',', FIRSTROW = 2 )
