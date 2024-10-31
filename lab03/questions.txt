@@ -1,0 +1,1 @@
+- Czy wymiar czas jest potrzebny jeżeli nie jest potrzebny do żadnego z 10 podstawowych zapytań analitycznych? (dot. także reszty nie potrzebnych informacji)

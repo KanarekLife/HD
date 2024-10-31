@@ -1,0 +1,17 @@
+ Problem 1: Dlaczego nastąpił spadek/wzrost średniego czasu oczekiwania na termin egzaminu
+teoretycznego w porównaniu do poprzedniego miesiąca?
+    1. Porównaj średni czas oczekiwania na egzamin teoretyczny w tym i poprzednim miesiącu. [Fakt_OdbyciaSieEgzaminu]
+    2. Porównaj średnią liczbę zarezerwowanych terminów egzaminów teoretycznych na przestrzeni dni tygodnia
+    w tym i poprzednim miesiącu. [Fakt_ZarezerwowanieTerminu]
+    3. Podaj jak dużo kandydatów nie pojawiło się na egzaminie w tym i poprzednim miesiącu. [Fakt_OdbyciaSieEgzaminu]
+    4. Jaka jest średnia liczba podejść do egzaminu na jednego kandydata w tym i poprzednim miesiącu? [Fakt_OdbyciaSieEgzaminu]
+    5. Jak dużo terminów egzaminów zostało w pełni zarezerwowanych w tym i poprzednim miesiącu? [Fakt_ZarezerwowanieTerminu]
+• Problem 2: Jakie są najczęstsze problemy związane z przebiegiem egzaminu teoretycznego, które prowadzą
+do skarg? (chcemy poznać powody dlaczego ludzie składają skargi aby móc je wyeliminować)
+    1. Porównaj liczbę skarg technicznych w relacji do sal w których odbywają się egzaminy. [Fakt_Skarga]
+    2. Jakie pytania pojawiały się najczęściej w egzaminach do których złożono skargi związane z treścią pytań? [Fakt_PytaniePodczasEgzaminuZeSkarga]
+    3. Jacy egzaminatorzy byli najczęściej związani ze złożeniem skargi? [Fakt_Skarga]
+    4. Podaj liczbę skarg złożonych w egzaminach w których nie wystąpiły żadne incydenty zgłoszone przez
+    egzaminatorów. [Fakt_Skarga]
+    5. Jak dużo kandydatów nie zdołało odpowiedzieć na wszystkie pytania w egzaminie i złożyło skargę z
+    kategorii “związana z treścią pytań” lub “inne”? [Fakt_Skarga]
