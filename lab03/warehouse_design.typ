@@ -106,6 +106,7 @@ Ziarnistość:
 Miary i funkcje agregujące:
 - Liczba rezerwacji - `COUNT(*)`
 - Łączna liczba rezerwacji na termin - `MAX(LiczbaRezerwacjiNaTerminPoTejRezerwacji)`
+- Średnia liczba rezerwacji na termin - `MAX(LiczbaRezerwacjiNaTerminPoTejRezerwacji) / COUNT(*)`
 
 2. *Fakt_OdbycieSieEgzaminu*: Fakt odbycia się (lub nie) egzaminu kandydata. Termin dotyczy egzaminu odbywającego się o konkretnej dacie i godzinie, w konkretnej sali egzaminacyjnej pod okiem konkretnego egzaminatora przez konkretnego kandydata. Fakt rozróżniany jest także przez wynik egzaminu (czy kandydat stawił się, zdał czy nie zdał egzaminu).
 
@@ -119,6 +120,7 @@ Ziarnistość:
 
 Miary i funkcje agregujące:
 - Liczba egzaminów - `COUNT(*)`
+- Średnia liczba podejść do egzaminu - `COUNT(*) / COUNT(DISTINCT PKK_Kandydata)`
 - Średni czas oczekiwania na egzamin - `SUM(CzasOczekiwaniaNaEgzamin) / COUNT(*)`
 - Maksymalny czas oczekiwania na egzamin - `MAX(CzasOczekiwaniaNaEgzamin)`
 - Minimalny czas oczekiwania na egzamin - `MIN(CzasOczekiwaniaNaEgzamin)`
@@ -158,6 +160,188 @@ Miary i funkcje agregujące:
 
 == Definicje Wymiarów
 
+1. *Fakt_ZarezerwowanieTerminuEgzaminu*
+
+#text(size: 10pt)[
+  #table(
+    columns: (auto, auto, auto),
+    table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
+    [*CzyTerminJestPelnyPoTejRezerwacji*], [Fakt_ZarezerwowanieTerminuEgzaminu.
+    CzyTerminJestPelnyPoTejRezerwacji], [Wymiar Zdegenerowany],
+    [*Wymiar_TerminEgzaminuKandydata*], [Wymiar_TerminEgzaminuKandydata], [Wymiar],
+    [*PKK_Kandydata*], [Wymiar_TerminEgzaminuKandydata.
+    PKK_Kandydata], [Atrybut Wymiaru],
+    [*NumerSaliEgzaminacyjnej*], [Wymiar_TerminEgzaminuKandydata.
+    NumerSaliEgzaminacyjnej], [Atrybut Wymiaru],
+    [*Data Egzaminu*], [Wymiar_Data], [Wymiar],
+    [*Rok Egzaminu*], [Wymiar_Data.Rok], [Atrybut Wymiaru],
+    [*Miesiąc Egzaminu*], [Wymiar_Data.Miesiac], [Atrybut Wymiaru],
+    [*Dzień Egzaminu*], [Wymiar_Data.Data], [Atrybut Wymiaru],
+    [*Dzień Tygodnia Egzaminu*], [Wymiar_Data.DzienTygodnia], [Atrybut Wymiaru],
+    [*Hierarchia Daty Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.Data], [Wymiar Hierachi],
+    [*Hierarchia Dnia Tygodnia Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.DzienTygodnia], [Wymiar Hierachi],
+    [*Czas Egzaminu*], [Wymiar_Czas], [Wymiar],
+    [*Godzina Egzaminu*], [Wymiar_Czas.Godzina], [Atrybut Wymiaru],
+    [*Egzaminator*], [Wymiar_Egzaminator], [Wymiar],
+    [*Pesel Egzaminatora*], [Wymiar_Egzaminator.Pesel], [Atrybut Wymiaru],
+    [*Imię i Nazwisko Egzaminatora*], [Wymiar_Egzaminator.ImieINazwisko], [Atrybut Wymiaru]
+  )
+]
+
+2. *Fakt_OdbycieSieEgzaminu*
+
+#text(size: 10pt)[
+  #table(
+    columns: (auto, auto, auto),
+    table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
+    [*WynikEgzaminu*], [Fakt_OdbycieSieEgzaminu.WynikEgzaminu], [Wymiar Zdegenerowany],
+    [*Wymiar_TerminEgzaminuKandydata*], [Wymiar_TerminEgzaminuKandydata], [Wymiar],
+    [*PKK_Kandydata*], [Wymiar_TerminEgzaminuKandydata.
+    PKK_Kandydata], [Atrybut Wymiaru],
+    [*NumerSaliEgzaminacyjnej*], [Wymiar_TerminEgzaminuKandydata.
+    NumerSaliEgzaminacyjnej], [Atrybut Wymiaru],
+    [*Data Egzaminu*], [Wymiar_Data], [Wymiar],
+    [*Rok Egzaminu*], [Wymiar_Data.Rok], [Atrybut Wymiaru],
+    [*Miesiąc Egzaminu*], [Wymiar_Data.Miesiac], [Atrybut Wymiaru],
+    [*Dzień Egzaminu*], [Wymiar_Data.Data], [Atrybut Wymiaru],
+    [*Dzień Tygodnia Egzaminu*], [Wymiar_Data.DzienTygodnia], [Atrybut Wymiaru],
+    [*Hierarchia Daty Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.Data], [Wymiar Hierachi],
+    [*Hierarchia Dnia Tygodnia Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.DzienTygodnia], [Wymiar Hierachi],
+    [*Czas Egzaminu*], [Wymiar_Czas], [Wymiar],
+    [*Godzina Egzaminu*], [Wymiar_Czas.Godzina], [Atrybut Wymiaru],
+    [*Egzaminator*], [Wymiar_Egzaminator], [Wymiar],
+    [*Pesel Egzaminatora*], [Wymiar_Egzaminator.Pesel], [Atrybut Wymiaru],
+    [*Imię i Nazwisko Egzaminatora*], [Wymiar_Egzaminator.ImieINazwisko], [Atrybut Wymiaru]
+  )
+]
+
+3. *Fakt_OdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga*
+
+#text(size: 10pt)[
+  #table(
+    columns: (auto, auto, auto),
+    table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
+    [*TypSkargi*], [Fakt_OdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga.TypSkargi], [Wymiar Zdegenerowany],
+    [*Pytanie*], [Wymiar_Pytanie], [Wymiar],
+    [*Treść Pytania*], [Wymiar_Pytanie.Tresc], [Atrybut Wymiaru],
+    [*Termin Kandydata*], [Wymiar_TerminEgzaminuKandydata], [Wymiar],
+    [*PKK_Kandydata*], [Wymiar_TerminEgzaminuKandydata.
+    PKK_Kandydata], [Atrybut Wymiaru],
+    [*NumerSaliEgzaminacyjnej*], [Wymiar_TerminEgzaminuKandydata.
+    NumerSaliEgzaminacyjnej], [Atrybut Wymiaru],
+    [*Data Egzaminu*], [Wymiar_Data], [Wymiar],
+    [*Rok Egzaminu*], [Wymiar_Data.Rok], [Atrybut Wymiaru],
+    [*Miesiąc Egzaminu*], [Wymiar_Data.Miesiac], [Atrybut Wymiaru],
+    [*Dzień Egzaminu*], [Wymiar_Data.Data], [Atrybut Wymiaru],
+    [*Dzień Tygodnia Egzaminu*], [Wymiar_Data.DzienTygodnia], [Atrybut Wymiaru],
+    [*Hierarchia Daty Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.Data], [Wymiar Hierachi],
+    [*Hierarchia Dnia Tygodnia Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.DzienTygodnia], [Wymiar Hierachi],
+    [*Czas Egzaminu*], [Wymiar_Czas], [Wymiar],
+    [*Godzina Egzaminu*], [Wymiar_Czas.Godzina], [Atrybut Wymiaru],
+    [*Egzaminator*], [Wymiar_Egzaminator], [Wymiar],
+    [*Pesel Egzaminatora*], [Wymiar_Egzaminator.Pesel], [Atrybut Wymiaru],
+    [*Imię i Nazwisko Egzaminatora*], [Wymiar_Egzaminator.ImieINazwisko], [Atrybut Wymiaru]
+  )
+]
+
+4. *Fakt_ZlozenieSkargiNaPrzebiegEgzaminu*
+
+#text(size: 10pt)[
+  #table(
+    columns: (auto, auto, auto),
+    table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
+    [*Junk*], [Wymiar_Junk], [Wymiar],
+    [*TypSkargi*], [Wymiar_Junk.TypSkargi], [Atrybut Wymiaru],
+    [*IncydentyPodczasEgzaminu*], [Wymiar_Junk.IncydentyPodczasEgzaminu], [Atrybut Wymiaru],
+    [*KandydatOdpowiedzialNaWszystkiePytania*], [Wymiar_Junk.KandydatOdpowiedzialNaWszystkiePytania], [Atrybut Wymiaru],
+    [*Termin Kandydata*], [Wymiar_TerminEgzaminuKandydata], [Wymiar],
+    [*PKK_Kandydata*], [Wymiar_TerminEgzaminuKandydata.
+    PKK_Kandydata], [Atrybut Wymiaru],
+    [*NumerSaliEgzaminacyjnej*], [Wymiar_TerminEgzaminuKandydata.
+    NumerSaliEgzaminacyjnej], [Atrybut Wymiaru],
+    [*Data Egzaminu*], [Wymiar_Data], [Wymiar],
+    [*Rok Egzaminu*], [Wymiar_Data.Rok], [Atrybut Wymiaru],
+    [*Miesiąc Egzaminu*], [Wymiar_Data.Miesiac], [Atrybut Wymiaru],
+    [*Dzień Egzaminu*], [Wymiar_Data.Data], [Atrybut Wymiaru],
+    [*Dzień Tygodnia Egzaminu*], [Wymiar_Data.DzienTygodnia], [Atrybut Wymiaru],
+    [*Hierarchia Daty Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.Data], [Wymiar Hierachi],
+    [*Hierarchia Dnia Tygodnia Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.DzienTygodnia], [Wymiar Hierachi],
+    [*Czas Egzaminu*], [Wymiar_Czas], [Wymiar],
+    [*Godzina Egzaminu*], [Wymiar_Czas.Godzina], [Atrybut Wymiaru],
+    [*Egzaminator*], [Wymiar_Egzaminator], [Wymiar],
+    [*Pesel Egzaminatora*], [Wymiar_Egzaminator.Pesel], [Atrybut Wymiaru],
+    [*Imię i Nazwisko Egzaminatora*], [Wymiar_Egzaminator.ImieINazwisko], [Atrybut Wymiaru]
+  )
+]
+
 == Sprawdzenie Możliwości Implementacji Zapytań Analitycznych Na Modelu Wymiarowym
 
+=== Porównaj średni czas oczekiwania na egzamin teoretyczny w tym i poprzednim miesiącu.
+
+Miara: _Średni czas oczekiwania na egzamin_
+
+Wymiar: _Data Egzaminu_ (atrybuty: Miesiąc Egzaminu)
+
+=== Porównaj średnią liczbę zarezerwowanych terminów egzaminów teoretycznych na przestrzeni dni tygodnia.
+
+Miara: _Średnia liczba rezerwacji na termin_
+
+Wymiar: _Data Egzaminu_ (atrybuty: Dzień Tygodnia Egzaminu)
+
+=== Podaj jak dużo kandydatów nie pojawiło się na egzaminie w tym i poprzednim miesiącu.
+
+Miara: _Liczba egzaminów_
+
+Wymiar: _Wynik Egzaminu_
+
+Wymiar: _Data Egzaminu_ (atrybuty: Miesiąc Egzaminu)
+
+=== Jaka jest średnia liczba podejść do egzaminu na jednego kandydata w tym i poprzednim miesiącu?
+
+Miara: _Średnia liczba podejść do egzaminu_
+
+Wymiar: _Wymiar_TerminEgzaminuKandydata_ (atrybuty: PKK_Kandydata)
+
+Wymiar: _Data Egzaminu_ (atrybuty: Miesiąc Egzaminu)
+
+=== Jak dużo terminów egzaminów zostało w pełni zarezerwowanych w tym i poprzednim miesiącu?
+
+Miara: _Liczba rezerwacji_
+
+Wymiar: _CzyTerminJestPelnyPoTejRezerwacji_
+
+=== Porównaj liczbę skarg technicznych w relacji do sal w których odbywają się egzaminy.
+
+Miara: _Liczba skarg_
+
+Wymiar: _Wymiar_Junk_ (atrybuty: Typ Skargi)
+
+Wymiar: _Wymiar_TerminEgzaminuKandydata_ (atrybuty: NumerSaliEgzaminacyjnej)
+
+=== Jakie pytania pojawiały się najczęściej w egzaminach do których złożono skargi związane z treścią pytań?
+
+Miara: _Liczba odpowiedzi na pytania_
+
+Wymiar: _TypSkargi_
+
+=== Jacy egzaminatorzy byli najczęściej związani ze złożeniem skargi?
+
+Miara: _Liczba skarg_
+
+Wymiar: _Wymiar_Egzaminator_ (atrybuty: Pesel)
+
+=== Podaj liczbę skarg złożonych w egzaminach w których nie wystąpiły żadne incydenty zgłoszone przez egzaminatorów.
+
+Miara: _Liczba skarg_
+
+Wymiar: _Wymiar_Junk_ (atrybuty: IncydentyPodczasEgzaminu)
+
+=== Jak dużo kandydatów nie zdołało odpowiedzieć na wszystkie pytania w egzaminie i złożyło skargę z kategorii “związana z treścią pytań” lub “inne”?
+
+Miara: _Liczba skarg_
+
+Wymiar: _Wymiar_Junk_ (atrybuty: KandydatOdpowiedzialNaWszystkiePytania, TypSkargi)
+
 == Sprawdzenie Możliwości Zasilienia Hurtowni Danych Za Pomocą Danych Źródłowych
+
+TODO
