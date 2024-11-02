@@ -21,10 +21,11 @@ Hurtownia Danych zaprojektowana jest dla procesu przeprowadzania egzaminu teoret
 = Model Relacyjny
 
 #align(center)[
-  #image("./mermaid-diagram-2024-11-02-124243.svg")
+  #image("mermaid-diagram-2024-11-02-210645.svg")
   #link("https://mermaid.live/edit#pako:eNq1Vttu2kAQ_ZXVPjsRgUCAtza0VZJCUEBKhZCiwZ7CYryLfBFdB17yb_mvjm0MNjZNQlS_WJ6dOXM7M95nbioLeZuj2xEwdcEZS0bPo3YEuE8d8IE9J6Lo-cVuOolwzPt3Y549icTZ7wdlZz-7Aj0BZlbUCxx0t_KcaScUKId6qiwpoGDRIWH-cDOWubCvQ_AKYcfCYtg_lBUKeQTo2zQEh0595RbwsmdF2D56uMhZOAJvehCuhGer7MF1qL_YfgALieVB9LUPUmAhgERe1oqhi55ZDjZEl4Lexh7cgbS0VdbkRC8oKha9bSmRqpaU_chRpoK5Lvfv7p52DgvtH8BCpJamnkuc7zJ9R57r9dnZep3jd5tySjP6kHXMqJOts_xJQXIwt4G0C32JhHtRRzhsqJcDG9ypIAwfzZkUZig1W7ohTgRODeZHbGDLiC0Gw71XgwlJnON5uBtpagulr_vKMjO9I_SvLti7c7ViWw2WqhhsNF0oL1RS7WEKWocO0_rcW0u1EkjTCIsePHqh9nxb4J7lqSLr0TCMLPX6Aq8vbG-GJusB2xmyraWx88CyLkp109h2U_MdbP9pBC6G6KpVNIYHg_HuwcknTUOfKN6i5_dxIancQ5w_RH5WYM6jZlKaS3x9kdqgbRK9s5XrIniBi-wndXsCe7seJLgHcLkReTupPFOP8TnP2hj13ppoU-BA4CcL9KilsDPci3ru-bAS1HJPoBGTILSIAcS66FVWnGhA780QbRFlCb10Rx0rI5Fqon1tzvo0ZcTwol4XbE87tKshsdgqdlRsamZ-SP8qycnlHS1UiNSvZOB70N8O-SeKXbJV8kXZD3w63VGB8suhhF5vRfqxGpyKG-_QUp7uNoFUhJL8Yg-yGiVe4NSqpkvlf6zrzcnJnFj4zzhJbzAJKDc4_cYdEBbdO-PSUiVm6FBukcJqJvw4zQ0pQuCrgZYmb_tugAZ3VTCd8fZvWHj0FSwpVtxeXHfSJUjefuZ_ePusVmucV-vVZq15Ubu8atQbBte8fXF5Xr1qNC8r1Uqr1ai0as2NwUOlCKJ23ryqt2r1-kW1VW9Waq2rGG8UHyYhoCWoG93k2hzfnjd_AXTDw2c")[_Link do diagramu_]
 ]
 
+#set text(size: 10pt)
 #table(
   columns: (auto, auto, auto, auto),
   table.header([*Tabela*], [*Atrybut*], [*Typ*], [*Opis*]),
@@ -88,6 +89,7 @@ Hurtownia Danych zaprojektowana jest dla procesu przeprowadzania egzaminu teoret
     [_ImieINazwisko_], [255 znaków], [Imię i nazwisko egzaminatora],
     [_CzyAktualne_], [boolean], [Czy krotka jest najbardziej aktualną (Implementacja SCD 2)]
 )
+#set text(size: 11pt)
 
 = Model Wymiarowy
 
@@ -160,6 +162,12 @@ Miary i funkcje agregujące:
 
 == Definicje Wymiarów
 
+#let hierarchy(item1, item2, item3) = [
+  • #item1 \
+  •• #item2 \
+  ••• #item3
+]
+
 1. *Fakt_ZarezerwowanieTerminuEgzaminu*
 
 #text(size: 10pt)[
@@ -178,8 +186,10 @@ Miary i funkcje agregujące:
     [*Miesiąc Egzaminu*], [Wymiar_Data.Miesiac], [Atrybut Wymiaru],
     [*Dzień Egzaminu*], [Wymiar_Data.Data], [Atrybut Wymiaru],
     [*Dzień Tygodnia Egzaminu*], [Wymiar_Data.DzienTygodnia], [Atrybut Wymiaru],
-    [*Hierarchia Daty Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.Data], [Wymiar Hierachi],
-    [*Hierarchia Dnia Tygodnia Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.DzienTygodnia], [Wymiar Hierachi],
+    [*Hierarchia Daty Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.Data")], [Wymiar Hierachi],
+    [*Hierarchia Dnia Tygodnia Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.DzienTygodnia")], [Wymiar Hierachi],
+    [*Hierarchia Terminu Egzaminu*], [#hierarchy("Wymiar_TerminEgzaminuKandydata.
+    NumerSaliEgzaminacyjnej", "Wymiar_Egzaminator.ImieINazwisko", "Wymiar_Data.Data")], [Wymiar Hierarchi],
     [*Czas Egzaminu*], [Wymiar_Czas], [Wymiar],
     [*Godzina Egzaminu*], [Wymiar_Czas.Godzina], [Atrybut Wymiaru],
     [*Egzaminator*], [Wymiar_Egzaminator], [Wymiar],
@@ -205,8 +215,10 @@ Miary i funkcje agregujące:
     [*Miesiąc Egzaminu*], [Wymiar_Data.Miesiac], [Atrybut Wymiaru],
     [*Dzień Egzaminu*], [Wymiar_Data.Data], [Atrybut Wymiaru],
     [*Dzień Tygodnia Egzaminu*], [Wymiar_Data.DzienTygodnia], [Atrybut Wymiaru],
-    [*Hierarchia Daty Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.Data], [Wymiar Hierachi],
-    [*Hierarchia Dnia Tygodnia Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.DzienTygodnia], [Wymiar Hierachi],
+    [*Hierarchia Daty Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.Data")], [Wymiar Hierachi],
+    [*Hierarchia Dnia Tygodnia Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.DzienTygodnia")], [Wymiar Hierachi],
+    [*Hierarchia Terminu Egzaminu*], [#hierarchy("Wymiar_TerminEgzaminuKandydata.
+    NumerSaliEgzaminacyjnej", "Wymiar_Egzaminator.ImieINazwisko", "Wymiar_Data.Data")], [Wymiar Hierarchi],
     [*Czas Egzaminu*], [Wymiar_Czas], [Wymiar],
     [*Godzina Egzaminu*], [Wymiar_Czas.Godzina], [Atrybut Wymiaru],
     [*Egzaminator*], [Wymiar_Egzaminator], [Wymiar],
@@ -234,8 +246,10 @@ Miary i funkcje agregujące:
     [*Miesiąc Egzaminu*], [Wymiar_Data.Miesiac], [Atrybut Wymiaru],
     [*Dzień Egzaminu*], [Wymiar_Data.Data], [Atrybut Wymiaru],
     [*Dzień Tygodnia Egzaminu*], [Wymiar_Data.DzienTygodnia], [Atrybut Wymiaru],
-    [*Hierarchia Daty Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.Data], [Wymiar Hierachi],
-    [*Hierarchia Dnia Tygodnia Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.DzienTygodnia], [Wymiar Hierachi],
+    [*Hierarchia Daty Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.Data")], [Wymiar Hierachi],
+    [*Hierarchia Dnia Tygodnia Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.DzienTygodnia")], [Wymiar Hierachi],
+    [*Hierarchia Terminu Egzaminu*], [#hierarchy("Wymiar_TerminEgzaminuKandydata.
+    NumerSaliEgzaminacyjnej", "Wymiar_Egzaminator.ImieINazwisko", "Wymiar_Data.Data")], [Wymiar Hierarchi],
     [*Czas Egzaminu*], [Wymiar_Czas], [Wymiar],
     [*Godzina Egzaminu*], [Wymiar_Czas.Godzina], [Atrybut Wymiaru],
     [*Egzaminator*], [Wymiar_Egzaminator], [Wymiar],
@@ -264,8 +278,10 @@ Miary i funkcje agregujące:
     [*Miesiąc Egzaminu*], [Wymiar_Data.Miesiac], [Atrybut Wymiaru],
     [*Dzień Egzaminu*], [Wymiar_Data.Data], [Atrybut Wymiaru],
     [*Dzień Tygodnia Egzaminu*], [Wymiar_Data.DzienTygodnia], [Atrybut Wymiaru],
-    [*Hierarchia Daty Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.Data], [Wymiar Hierachi],
-    [*Hierarchia Dnia Tygodnia Egzaminu*], [Wymiar_Data.Rok -> Wymiar_Data.Miesiac -> Wymiar_Data.DzienTygodnia], [Wymiar Hierachi],
+    [*Hierarchia Daty Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.Data")], [Wymiar Hierachi],
+    [*Hierarchia Dnia Tygodnia Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.DzienTygodnia")], [Wymiar Hierachi],
+    [*Hierarchia Terminu Egzaminu*], [#hierarchy("Wymiar_TerminEgzaminuKandydata.
+    NumerSaliEgzaminacyjnej", "Wymiar_Egzaminator.ImieINazwisko", "Wymiar_Data.Data")], [Wymiar Hierarchi],
     [*Czas Egzaminu*], [Wymiar_Czas], [Wymiar],
     [*Godzina Egzaminu*], [Wymiar_Czas.Godzina], [Atrybut Wymiaru],
     [*Egzaminator*], [Wymiar_Egzaminator], [Wymiar],

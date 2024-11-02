@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css"?>
+<svg aria-roledescription="er" role="graphics-document document"
+    style="overflow: hidden; max-width: 100%;" xmlns="http://www.w3.org/2000/svg" width="100%"
+    id="graph-div" height="100%" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:ev="http://www.w3.org/2001/xml-events">
+    <defs>
+        <marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="0"
+            id="MD_PARENT_START">
+            <path d="M 18,7 L9,13 L1,7 L9,1 Z"></path>
+        </marker>
+        <style id="svg-pan-zoom-controls-styles" type="text/css">.svg-pan-zoom-control { cursor:
+            pointer; fill: black; fill-opacity: 0.333; } .svg-pan-zoom-control:hover { fill-opacity:
+            0.8; } .svg-pan-zoom-control-background { fill: white; fill-opacity: 0.5; }
+            .svg-pan-zoom-control-background { fill-opacity: 0.8; }</style>
+    </defs>
+    <defs>
+        <marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="19"
+            id="MD_PARENT_END">
+            <path d="M 18,7 L9,13 L1,7 L9,1 Z"></path>
+        </marker>
+    </defs>
+    <defs>
+        <marker orient="auto" markerHeight="18" markerWidth="18" refY="9" refX="0"
+            id="ONLY_ONE_START">
+            <path d="M9,0 L9,18 M15,0 L15,18" fill="none" stroke="gray"></path>
+        </marker>
+    </defs>
+    <defs>
+        <marker orient="auto" markerHeight="18" markerWidth="18" refY="9" refX="18"
+            id="ONLY_ONE_END">
+            <path d="M3,0 L3,18 M9,0 L9,18" fill="none" stroke="gray"></path>
+        </marker>
+    </defs>
+    <defs>
+        <marker orient="auto" markerHeight="18" markerWidth="30" refY="9" refX="0"
+            id="ZERO_OR_ONE_START">
+            <circle r="6" cy="9" cx="21" fill="white" stroke="gray"></circle>
+            <path d="M9,0 L9,18" fill="none" stroke="gray"></path>
+        </marker>
+    </defs>
+    <defs>
+        <marker orient="auto" markerHeight="18" markerWidth="30" refY="9" refX="30"
+            id="ZERO_OR_ONE_END">
+            <circle r="6" cy="9" cx="9" fill="white" stroke="gray"></circle>
+            <path d="M21,0 L21,18" fill="none" stroke="gray"></path>
+        </marker>
+    </defs>
+    <defs>
+        <marker orient="auto" markerHeight="36" markerWidth="45" refY="18" refX="18"
+            id="ONE_OR_MORE_START">
+            <path d="M0,18 Q 18,0 36,18 Q 18,36 0,18 M42,9 L42,27" fill="none" stroke="gray"></path>
+        </marker>
+    </defs>
+    <defs>
+        <marker orient="auto" markerHeight="36" markerWidth="45" refY="18" refX="27"
+            id="ONE_OR_MORE_END">
+            <path d="M3,9 L3,27 M9,18 Q27,0 45,18 Q27,36 9,18" fill="none" stroke="gray"></path>
+        </marker>
+    </defs>
+    <defs>
+        <marker orient="auto" markerHeight="36" markerWidth="57" refY="18" refX="18"
+            id="ZERO_OR_MORE_START">
+            <circle r="6" cy="18" cx="48" fill="white" stroke="gray"></circle>
+            <path d="M0,18 Q18,0 36,18 Q18,36 0,18" fill="none" stroke="gray"></path>
+        </marker>
+    </defs>
+    <defs>
+        <marker orient="auto" markerHeight="36" markerWidth="57" refY="18" refX="39"
+            id="ZERO_OR_MORE_END">
+            <circle r="6" cy="18" cx="9" fill="white" stroke="gray"></circle>
+            <path d="M21,18 Q39,0 57,18 Q39,36 21,18" fill="none" stroke="gray"></path>
+        </marker>
+    </defs>
+    <g id="viewport-20241102200635706" class="svg-pan-zoom_viewport"
+        transform="matrix(0.6534501314163208,0,0,0.6534501314163208,48.57194519042969,327.0111083984375)"
+        style="transform: translateY(0);">
+        <style>#graph-div{font-family:"trebuchet
+            ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#graph-div
+            .error-icon{fill:#552222;}#graph-div .error-text{fill:#552222;stroke:#552222;}#graph-div
+            .edge-thickness-normal{stroke-width:1px;}#graph-div
+            .edge-thickness-thick{stroke-width:3.5px;}#graph-div
+            .edge-pattern-solid{stroke-dasharray:0;}#graph-div
+            .edge-thickness-invisible{stroke-width:0;fill:none;}#graph-div
+            .edge-pattern-dashed{stroke-dasharray:3;}#graph-div
+            .edge-pattern-dotted{stroke-dasharray:2;}#graph-div
+            .marker{fill:#333333;stroke:#333333;}#graph-div .marker.cross{stroke:#333333;}#graph-div
+            svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#graph-div
+            p{margin:0;}#graph-div .entityBox{fill:#ECECFF;stroke:#9370DB;}#graph-div
+            .attributeBoxOdd{fill:#ffffff;stroke:#9370DB;}#graph-div
+            .attributeBoxEven{fill:#f2f2f2;stroke:#9370DB;}#graph-div
+            .relationshipLabelBox{fill:hsl(80, 100%,
+            96.2745098039%);opacity:0.7;background-color:hsl(80, 100%, 96.2745098039%);}#graph-div
+            .relationshipLabelBox rect{opacity:0.5;}#graph-div
+            .relationshipLine{stroke:#333333;}#graph-div
+            .entityTitleText{text-anchor:middle;font-size:18px;fill:#333;}#graph-div
+            #MD_PARENT_START{fill:#f5f5f5!important;stroke:#333333!important;stroke-width:1;}#graph-div
+            #MD_PARENT_END{fill:#f5f5f5!important;stroke:#333333!important;stroke-width:1;}#graph-div
+            :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+        <g></g>
+        <path marker-start="url(#ONLY_ONE_START)" marker-end="url(#ONLY_ONE_END)"
+            style="stroke: gray; fill: none;"
+            d="M667,395.224L647.875,406.02C628.75,416.816,590.5,438.408,571.375,457.537C552.25,476.667,552.25,493.333,552.25,501.667L552.25,510"
+            class="er relationshipLine"></path>
+        <path marker-start="url(#ONLY_ONE_START)" marker-end="url(#ONLY_ONE_END)"
+            style="stroke: gray; fill: none;"
+            d="M780.066,410L780.18,418.333C780.294,426.667,780.522,443.333,780.636,469.167C780.75,495,780.75,530,780.75,547.5L780.75,565"
+            class="er relationshipLine"></path>
+        <path marker-start="url(#ONLY_ONE_START)" marker-end="url(#ONLY_ONE_END)"
+            style="stroke: gray; fill: none;"
+            d="M891,395.224L910.125,406.02C929.25,416.816,967.5,438.408,986.625,463.037C1005.75,487.667,1005.75,515.333,1005.75,529.167L1005.75,543"
+            class="er relationshipLine"></path>
+        <path marker-start="url(#ONLY_ONE_START)" marker-end="url(#ONLY_ONE_END)"
+            style="stroke: gray; fill: none;"
+            d="M194.5,132L194.5,144C194.5,156,194.5,180,273.25,209.246C352,238.491,509.5,272.982,588.25,290.228L667,307.473"
+            class="er relationshipLine"></path>
+        <path marker-start="url(#ONLY_ONE_START)" marker-end="url(#ONLY_ONE_END)"
+            style="stroke: gray; fill: none;"
+            d="M660.5,154L660.5,162.333C660.5,170.667,660.5,187.333,668.215,204C675.93,220.667,691.359,237.333,699.074,245.667L706.789,254"
+            class="er relationshipLine"></path>
+        <path marker-start="url(#ONLY_ONE_START)" marker-end="url(#ONLY_ONE_END)"
+            style="stroke: gray; fill: none;"
+            d="M1609.327,132L1587.814,144C1566.301,156,1523.276,180,1403.554,209.926C1283.833,239.852,1087.417,275.704,989.208,293.63L891,311.557"
+            class="er relationshipLine"></path>
+        <path marker-start="url(#ONLY_ONE_START)" marker-end="url(#ONLY_ONE_END)"
+            style="stroke: gray; fill: none;"
+            d="M1709.231,132L1714.359,144C1719.487,156,1729.744,180,1734.872,204C1740,228,1740,252,1740,264L1740,276"
+            class="er relationshipLine"></path>
+        <path marker-start="url(#ONLY_ONE_START)" marker-end="url(#ONLY_ONE_END)"
+            style="stroke: gray; fill: none;"
+            d="M1118,132L1104,144C1090,156,1062,180,1024.167,203.963C986.333,227.927,938.667,251.854,914.833,263.817L891,275.78"
+            class="er relationshipLine"></path>
+        <path marker-start="url(#ONLY_ONE_START)" marker-end="url(#ONLY_ONE_END)"
+            style="stroke: gray; fill: none;"
+            d="M1189.731,132L1194.859,144C1199.987,156,1210.244,180,1215.372,207.667C1220.5,235.333,1220.5,266.667,1220.5,282.333L1220.5,298"
+            class="er relationshipLine"></path>
+        <g transform="translate(475.75,510 )"
+            id="entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7">
+            <rect height="178" width="153" y="0" x="0" class="er entityBox"></rect>
+            <text transform="translate(76.5,12)"
+                style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7"
+                class="er entityLabel">Wymiar_Data</text>
+            <rect height="22" width="22" y="24" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-1-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="103" y="24" x="22" class="er attributeBoxOdd"></rect>
+            <text transform="translate(27,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-1-name"
+                class="er entityLabel">ID_Data</text>
+            <rect height="22" width="28" y="24" x="125" class="er attributeBoxOdd"></rect>
+            <text transform="translate(130,35)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-1-comment"
+                class="er entityLabel">PK</text>
+            <rect height="22" width="22" y="46" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-2-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="103" y="46" x="22" class="er attributeBoxEven"></rect>
+            <text transform="translate(27,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-2-name"
+                class="er entityLabel">Data</text>
+            <rect height="22" width="28" y="46" x="125" class="er attributeBoxEven"></rect>
+            <text transform="translate(130,57)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-2-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="22" y="68" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-3-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="103" y="68" x="22" class="er attributeBoxOdd"></rect>
+            <text transform="translate(27,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-3-name"
+                class="er entityLabel">Rok</text>
+            <rect height="22" width="28" y="68" x="125" class="er attributeBoxOdd"></rect>
+            <text transform="translate(130,79)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-3-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="22" y="90" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,101)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-4-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="103" y="90" x="22" class="er attributeBoxEven"></rect>
+            <text transform="translate(27,101)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-4-name"
+                class="er entityLabel">Miesiac</text>
+            <rect height="22" width="28" y="90" x="125" class="er attributeBoxEven"></rect>
+            <text transform="translate(130,101)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-4-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="22" y="112" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,123)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-5-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="103" y="112" x="22" class="er attributeBoxOdd"></rect>
+            <text transform="translate(27,123)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-5-name"
+                class="er entityLabel">NumerMiesiaca</text>
+            <rect height="22" width="28" y="112" x="125" class="er attributeBoxOdd"></rect>
+            <text transform="translate(130,123)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-5-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="22" y="134" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,145)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-6-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="103" y="134" x="22" class="er attributeBoxEven"></rect>
+            <text transform="translate(27,145)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-6-name"
+                class="er entityLabel">DzienTygodnia</text>
+            <rect height="22" width="28" y="134" x="125" class="er attributeBoxEven"></rect>
+            <text transform="translate(130,145)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-6-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="22" y="156" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,167)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-7-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="103" y="156" x="22" class="er attributeBoxOdd"></rect>
+            <text transform="translate(27,167)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-7-name"
+                class="er entityLabel">NumerDniaTygodnia</text>
+            <rect height="22" width="28" y="156" x="125" class="er attributeBoxOdd"></rect>
+            <text transform="translate(130,167)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarData-ce1bddb7-79b3-5b0a-8615-0d57b8f0d5e7-attr-7-comment"
+                class="er entityLabel"></text>
+        </g>
+        <g transform="translate(728.75,565 )"
+            id="entity-WymiarCzas-46459eab-84d3-55fa-95be-3e7cbd464201">
+            <rect height="68" width="104" y="0" x="0" class="er entityBox"></rect>
+            <text transform="translate(52,12)"
+                style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0"
+                id="text-entity-WymiarCzas-46459eab-84d3-55fa-95be-3e7cbd464201"
+                class="er entityLabel">Wymiar_Czas</text>
+            <rect height="22" width="22.666666666666668" y="24" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarCzas-46459eab-84d3-55fa-95be-3e7cbd464201-attr-1-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="52.666666666666664" y="24" x="22.666666666666668"
+                class="er attributeBoxOdd"></rect>
+            <text transform="translate(27.666666666666668,35)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarCzas-46459eab-84d3-55fa-95be-3e7cbd464201-attr-1-name"
+                class="er entityLabel">ID_Czas</text>
+            <rect height="22" width="28.666666666666668" y="24" x="75.33333333333333"
+                class="er attributeBoxOdd"></rect>
+            <text transform="translate(80.33333333333333,35)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarCzas-46459eab-84d3-55fa-95be-3e7cbd464201-attr-1-comment"
+                class="er entityLabel">PK</text>
+            <rect height="22" width="22.666666666666668" y="46" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarCzas-46459eab-84d3-55fa-95be-3e7cbd464201-attr-2-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="52.666666666666664" y="46" x="22.666666666666668"
+                class="er attributeBoxEven"></rect>
+            <text transform="translate(27.666666666666668,57)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarCzas-46459eab-84d3-55fa-95be-3e7cbd464201-attr-2-name"
+                class="er entityLabel">Godzina</text>
+            <rect height="22" width="28.666666666666668" y="46" x="75.33333333333333"
+                class="er attributeBoxEven"></rect>
+            <text transform="translate(80.33333333333333,57)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarCzas-46459eab-84d3-55fa-95be-3e7cbd464201-attr-2-comment"
+                class="er entityLabel"></text>
+        </g>
+        <g transform="translate(932.75,543 )"
+            id="entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364">
+            <rect height="112" width="146" y="0" x="0" class="er entityBox"></rect>
+            <text transform="translate(73,12)"
+                style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364"
+                class="er entityLabel">Wymiar_Egzaminator</text>
+            <rect height="22" width="25.666666666666668" y="24" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364-attr-1-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="88.66666666666667" y="24" x="25.666666666666668"
+                class="er attributeBoxOdd"></rect>
+            <text transform="translate(30.666666666666668,35)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364-attr-1-name"
+                class="er entityLabel">ID_Egzaminator</text>
+            <rect height="22" width="31.666666666666668" y="24" x="114.33333333333334"
+                class="er attributeBoxOdd"></rect>
+            <text transform="translate(119.33333333333334,35)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364-attr-1-comment"
+                class="er entityLabel">PK</text>
+            <rect height="22" width="25.666666666666668" y="46" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364-attr-2-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="88.66666666666667" y="46" x="25.666666666666668"
+                class="er attributeBoxEven"></rect>
+            <text transform="translate(30.666666666666668,57)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364-attr-2-name"
+                class="er entityLabel">Pesel</text>
+            <rect height="22" width="31.666666666666668" y="46" x="114.33333333333334"
+                class="er attributeBoxEven"></rect>
+            <text transform="translate(119.33333333333334,57)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364-attr-2-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="25.666666666666668" y="68" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364-attr-3-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="88.66666666666667" y="68" x="25.666666666666668"
+                class="er attributeBoxOdd"></rect>
+            <text transform="translate(30.666666666666668,79)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364-attr-3-name"
+                class="er entityLabel">ImieINazwisko</text>
+            <rect height="22" width="31.666666666666668" y="68" x="114.33333333333334"
+                class="er attributeBoxOdd"></rect>
+            <text transform="translate(119.33333333333334,79)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364-attr-3-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="25.666666666666668" y="90" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,101)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364-attr-4-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="88.66666666666667" y="90" x="25.666666666666668"
+                class="er attributeBoxEven"></rect>
+            <text transform="translate(30.666666666666668,101)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364-attr-4-name"
+                class="er entityLabel">CzyAktualne</text>
+            <rect height="22" width="31.666666666666668" y="90" x="114.33333333333334"
+                class="er attributeBoxEven"></rect>
+            <text transform="translate(119.33333333333334,101)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarEgzaminator-0f3b0771-fe18-5b70-8a38-727fccc5b364-attr-4-comment"
+                class="er entityLabel"></text>
+        </g>
+        <g transform="translate(1159.5,298 )"
+            id="entity-WymiarPytanie-323f6abd-c67f-5729-888e-0d88b798322d">
+            <rect height="68" width="122" y="0" x="0" class="er entityBox"></rect>
+            <text transform="translate(61,12)"
+                style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0"
+                id="text-entity-WymiarPytanie-323f6abd-c67f-5729-888e-0d88b798322d"
+                class="er entityLabel">Wymiar_Pytanie</text>
+            <rect height="22" width="25" y="24" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarPytanie-323f6abd-c67f-5729-888e-0d88b798322d-attr-1-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="66" y="24" x="25" class="er attributeBoxOdd"></rect>
+            <text transform="translate(30,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarPytanie-323f6abd-c67f-5729-888e-0d88b798322d-attr-1-name"
+                class="er entityLabel">ID_Pytania</text>
+            <rect height="22" width="31" y="24" x="91" class="er attributeBoxOdd"></rect>
+            <text transform="translate(96,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarPytanie-323f6abd-c67f-5729-888e-0d88b798322d-attr-1-comment"
+                class="er entityLabel">PK</text>
+            <rect height="22" width="25" y="46" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarPytanie-323f6abd-c67f-5729-888e-0d88b798322d-attr-2-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="66" y="46" x="25" class="er attributeBoxEven"></rect>
+            <text transform="translate(30,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarPytanie-323f6abd-c67f-5729-888e-0d88b798322d-attr-2-name"
+                class="er entityLabel">Tresc</text>
+            <rect height="22" width="31" y="46" x="91" class="er attributeBoxEven"></rect>
+            <text transform="translate(96,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarPytanie-323f6abd-c67f-5729-888e-0d88b798322d-attr-2-comment"
+                class="er entityLabel"></text>
+        </g>
+        <g transform="translate(667,254 )"
+            id="entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308">
+            <rect height="156" width="224" y="0" x="0" class="er entityBox"></rect>
+            <text transform="translate(112,12)"
+                style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308"
+                class="er entityLabel">Wymiar_TerminEgzaminuKandydata</text>
+            <rect height="22" width="28.666666666666668" y="24" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-1-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="160.66666666666666" y="24" x="28.666666666666668"
+                class="er attributeBoxOdd"></rect>
+            <text transform="translate(33.66666666666667,35)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-1-name"
+                class="er entityLabel">ID_TerminuEgzaminuKandydata</text>
+            <rect height="22" width="34.666666666666664" y="24" x="189.33333333333331"
+                class="er attributeBoxOdd"></rect>
+            <text transform="translate(194.33333333333331,35)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-1-comment"
+                class="er entityLabel">PK</text>
+            <rect height="22" width="28.666666666666668" y="46" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-2-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="160.66666666666666" y="46" x="28.666666666666668"
+                class="er attributeBoxEven"></rect>
+            <text transform="translate(33.66666666666667,57)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-2-name"
+                class="er entityLabel">ID_DataEgzaminu</text>
+            <rect height="22" width="34.666666666666664" y="46" x="189.33333333333331"
+                class="er attributeBoxEven"></rect>
+            <text transform="translate(194.33333333333331,57)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-2-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="28.666666666666668" y="68" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-3-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="160.66666666666666" y="68" x="28.666666666666668"
+                class="er attributeBoxOdd"></rect>
+            <text transform="translate(33.66666666666667,79)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-3-name"
+                class="er entityLabel">ID_CzasEgzaminu</text>
+            <rect height="22" width="34.666666666666664" y="68" x="189.33333333333331"
+                class="er attributeBoxOdd"></rect>
+            <text transform="translate(194.33333333333331,79)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-3-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="28.666666666666668" y="90" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,101)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-4-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="160.66666666666666" y="90" x="28.666666666666668"
+                class="er attributeBoxEven"></rect>
+            <text transform="translate(33.66666666666667,101)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-4-name"
+                class="er entityLabel">ID_Egzaminatora</text>
+            <rect height="22" width="34.666666666666664" y="90" x="189.33333333333331"
+                class="er attributeBoxEven"></rect>
+            <text transform="translate(194.33333333333331,101)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-4-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="28.666666666666668" y="112" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,123)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-5-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="160.66666666666666" y="112" x="28.666666666666668"
+                class="er attributeBoxOdd"></rect>
+            <text transform="translate(33.66666666666667,123)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-5-name"
+                class="er entityLabel">PKK_Kandydata</text>
+            <rect height="22" width="34.666666666666664" y="112" x="189.33333333333331"
+                class="er attributeBoxOdd"></rect>
+            <text transform="translate(194.33333333333331,123)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-5-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="28.666666666666668" y="134" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,145)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-6-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="160.66666666666666" y="134" x="28.666666666666668"
+                class="er attributeBoxEven"></rect>
+            <text transform="translate(33.66666666666667,145)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-6-name"
+                class="er entityLabel">NumerSaliEgzaminacyjnej</text>
+            <rect height="22" width="34.666666666666664" y="134" x="189.33333333333331"
+                class="er attributeBoxEven"></rect>
+            <text transform="translate(194.33333333333331,145)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarTerminEgzaminuKandydata-92e35c0b-7789-5d14-89ca-4880b0bcf308-attr-6-comment"
+                class="er entityLabel"></text>
+        </g>
+        <g transform="translate(1381.5,276 )"
+            id="entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a">
+            <rect height="112" width="717" y="0" x="0" class="er entityBox"></rect>
+            <text transform="translate(358.5,12)"
+                style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a"
+                class="er entityLabel">Wymiar_Junk</text>
+            <rect height="22" width="33" y="24" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a-attr-1-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="206" y="24" x="33" class="er attributeBoxOdd"></rect>
+            <text transform="translate(38,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a-attr-1-name"
+                class="er entityLabel">ID_Junk</text>
+            <rect height="22" width="478" y="24" x="239" class="er attributeBoxOdd"></rect>
+            <text transform="translate(244,35)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a-attr-1-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="33" y="46" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a-attr-2-type"
+                class="er entityLabel">Dim</text>
+            <rect height="22" width="206" y="46" x="33" class="er attributeBoxEven"></rect>
+            <text transform="translate(38,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a-attr-2-name"
+                class="er entityLabel">TypSkargi</text>
+            <rect height="22" width="478" y="46" x="239" class="er attributeBoxEven"></rect>
+            <text transform="translate(244,57)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a-attr-2-comment"
+                class="er entityLabel">techniczny przebieg, tresc pytan, egzaminator, inne</text>
+            <rect height="22" width="33" y="68" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a-attr-3-type"
+                class="er entityLabel">Dim</text>
+            <rect height="22" width="206" y="68" x="33" class="er attributeBoxOdd"></rect>
+            <text transform="translate(38,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a-attr-3-name"
+                class="er entityLabel">IncydentyPodczasEgzaminu</text>
+            <rect height="22" width="478" y="68" x="239" class="er attributeBoxOdd"></rect>
+            <text transform="translate(244,79)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a-attr-3-comment"
+                class="er entityLabel">Brak Incydentow Podczas Egzaminu, Zgloszono Incydenty Podczas
+                Egzaminu</text>
+            <rect height="22" width="33" y="90" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,101)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a-attr-4-type"
+                class="er entityLabel">Dim</text>
+            <rect height="22" width="206" y="90" x="33" class="er attributeBoxEven"></rect>
+            <text transform="translate(38,101)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a-attr-4-name"
+                class="er entityLabel">KandydatOdpowiedzialNaWszystkiePytania</text>
+            <rect height="22" width="478" y="90" x="239" class="er attributeBoxEven"></rect>
+            <text transform="translate(244,101)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-WymiarJunk-ac00b456-b031-53dd-81f9-85b61bd9cf8a-attr-4-comment"
+                class="er entityLabel">Kandydat Nie Zdołał Odpowiedziec Na Wszystkie Pytania,
+                Kandydat Odpowiedzial Na Wszystkie Pytania</text>
+        </g>
+        <g transform="translate(20,42 )"
+            id="entity-FaktZarezerowanieTerminuEgzaminu-9cd4358d-a6e9-5cb5-9770-682d4f6ff7f3">
+            <rect height="90" width="349" y="0" x="0" class="er entityBox"></rect>
+            <text transform="translate(174.5,12)"
+                style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0"
+                id="text-entity-FaktZarezerowanieTerminuEgzaminu-9cd4358d-a6e9-5cb5-9770-682d4f6ff7f3"
+                class="er entityLabel">Fakt_ZarezerowanieTerminuEgzaminu</text>
+            <rect height="22" width="53" y="24" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktZarezerowanieTerminuEgzaminu-9cd4358d-a6e9-5cb5-9770-682d4f6ff7f3-attr-1-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="212" y="24" x="53" class="er attributeBoxOdd"></rect>
+            <text transform="translate(58,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktZarezerowanieTerminuEgzaminu-9cd4358d-a6e9-5cb5-9770-682d4f6ff7f3-attr-1-name"
+                class="er entityLabel">ID_TerminuEgzaminuKandydata</text>
+            <rect height="22" width="84" y="24" x="265" class="er attributeBoxOdd"></rect>
+            <text transform="translate(270,35)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktZarezerowanieTerminuEgzaminu-9cd4358d-a6e9-5cb5-9770-682d4f6ff7f3-attr-1-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="53" y="46" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktZarezerowanieTerminuEgzaminu-9cd4358d-a6e9-5cb5-9770-682d4f6ff7f3-attr-2-type"
+                class="er entityLabel">Dim</text>
+            <rect height="22" width="212" y="46" x="53" class="er attributeBoxEven"></rect>
+            <text transform="translate(58,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktZarezerowanieTerminuEgzaminu-9cd4358d-a6e9-5cb5-9770-682d4f6ff7f3-attr-2-name"
+                class="er entityLabel">CzyTerminJestPelnyPoTejRezerwacji</text>
+            <rect height="22" width="84" y="46" x="265" class="er attributeBoxEven"></rect>
+            <text transform="translate(270,57)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktZarezerowanieTerminuEgzaminu-9cd4358d-a6e9-5cb5-9770-682d4f6ff7f3-attr-2-comment"
+                class="er entityLabel">Niepełny, Pełny</text>
+            <rect height="22" width="53" y="68" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktZarezerowanieTerminuEgzaminu-9cd4358d-a6e9-5cb5-9770-682d4f6ff7f3-attr-3-type"
+                class="er entityLabel">Measure</text>
+            <rect height="22" width="212" y="68" x="53" class="er attributeBoxOdd"></rect>
+            <text transform="translate(58,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktZarezerowanieTerminuEgzaminu-9cd4358d-a6e9-5cb5-9770-682d4f6ff7f3-attr-3-name"
+                class="er entityLabel">LiczbaRezerwacjiNaTerminPoTejRezerwacji</text>
+            <rect height="22" width="84" y="68" x="265" class="er attributeBoxOdd"></rect>
+            <text transform="translate(270,79)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktZarezerowanieTerminuEgzaminu-9cd4358d-a6e9-5cb5-9770-682d4f6ff7f3-attr-3-comment"
+                class="er entityLabel"></text>
+        </g>
+        <g transform="translate(469,20 )"
+            id="entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1">
+            <rect height="134" width="383" y="0" x="0" class="er entityBox"></rect>
+            <text transform="translate(191.5,12)"
+                style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1"
+                class="er entityLabel">Fakt_OdbycieSieEgzaminu</text>
+            <rect height="22" width="53" y="24" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-1-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="186" y="24" x="53" class="er attributeBoxOdd"></rect>
+            <text transform="translate(58,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-1-name"
+                class="er entityLabel">ID_TerminuEgzaminuKandydata</text>
+            <rect height="22" width="144" y="24" x="239" class="er attributeBoxOdd"></rect>
+            <text transform="translate(244,35)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-1-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="53" y="46" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-2-type"
+                class="er entityLabel">Dim</text>
+            <rect height="22" width="186" y="46" x="53" class="er attributeBoxEven"></rect>
+            <text transform="translate(58,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-2-name"
+                class="er entityLabel">WynikEgzaminu</text>
+            <rect height="22" width="144" y="46" x="239" class="er attributeBoxEven"></rect>
+            <text transform="translate(244,57)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-2-comment"
+                class="er entityLabel">Nie stawił sie, Nie zdał, Zdał</text>
+            <rect height="22" width="53" y="68" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-3-type"
+                class="er entityLabel">Measure</text>
+            <rect height="22" width="186" y="68" x="53" class="er attributeBoxOdd"></rect>
+            <text transform="translate(58,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-3-name"
+                class="er entityLabel">CzasOczekiwaniaNaEgzamin</text>
+            <rect height="22" width="144" y="68" x="239" class="er attributeBoxOdd"></rect>
+            <text transform="translate(244,79)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-3-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="53" y="90" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,101)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-4-type"
+                class="er entityLabel">Measure</text>
+            <rect height="22" width="186" y="90" x="53" class="er attributeBoxEven"></rect>
+            <text transform="translate(58,101)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-4-name"
+                class="er entityLabel">LiczbaZdobytychPunktow</text>
+            <rect height="22" width="144" y="90" x="239" class="er attributeBoxEven"></rect>
+            <text transform="translate(244,101)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-4-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="53" y="112" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,123)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-5-type"
+                class="er entityLabel">Measure</text>
+            <rect height="22" width="186" y="112" x="53" class="er attributeBoxOdd"></rect>
+            <text transform="translate(58,123)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-5-name"
+                class="er entityLabel">MaksymalnaLiczbaPunktowDoZdobycia</text>
+            <rect height="22" width="144" y="112" x="239" class="er attributeBoxOdd"></rect>
+            <text transform="translate(244,123)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktOdbycieSieEgzaminu-ada54b6a-afea-5328-a692-26ee48083ac1-attr-5-comment"
+                class="er entityLabel"></text>
+        </g>
+        <g transform="translate(1551.5,42 )"
+            id="entity-FaktZlozenieSkargiNaPrzebiegEgzaminu-4131c8ef-1937-5e1c-9783-686760d913ad">
+            <rect height="90" width="277" y="0" x="0" class="er entityBox"></rect>
+            <text transform="translate(138.5,12)"
+                style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0"
+                id="text-entity-FaktZlozenieSkargiNaPrzebiegEgzaminu-4131c8ef-1937-5e1c-9783-686760d913ad"
+                class="er entityLabel">Fakt_ZlozenieSkargiNaPrzebiegEgzaminu</text>
+            <rect height="22" width="53" y="24" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktZlozenieSkargiNaPrzebiegEgzaminu-4131c8ef-1937-5e1c-9783-686760d913ad-attr-1-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="224" y="24" x="53" class="er attributeBoxOdd"></rect>
+            <text transform="translate(58,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktZlozenieSkargiNaPrzebiegEgzaminu-4131c8ef-1937-5e1c-9783-686760d913ad-attr-1-name"
+                class="er entityLabel">ID_TerminuEgzaminuKandydata</text>
+            <rect height="22" width="53" y="46" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktZlozenieSkargiNaPrzebiegEgzaminu-4131c8ef-1937-5e1c-9783-686760d913ad-attr-2-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="224" y="46" x="53" class="er attributeBoxEven"></rect>
+            <text transform="translate(58,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktZlozenieSkargiNaPrzebiegEgzaminu-4131c8ef-1937-5e1c-9783-686760d913ad-attr-2-name"
+                class="er entityLabel">ID_Junk</text>
+            <rect height="22" width="53" y="68" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktZlozenieSkargiNaPrzebiegEgzaminu-4131c8ef-1937-5e1c-9783-686760d913ad-attr-3-type"
+                class="er entityLabel">Measure</text>
+            <rect height="22" width="224" y="68" x="53" class="er attributeBoxOdd"></rect>
+            <text transform="translate(58,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktZlozenieSkargiNaPrzebiegEgzaminu-4131c8ef-1937-5e1c-9783-686760d913ad-attr-3-name"
+                class="er entityLabel">LiczbaIncydentowZgloszonychPodczasEgzaminu</text>
+        </g>
+        <g transform="translate(952,42 )"
+            id="entity-FaktOdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga-9f204f2a-1454-5550-bc88-f3b13bd462ca">
+            <rect height="90" width="437" y="0" x="0" class="er entityBox"></rect>
+            <text transform="translate(218.5,12)"
+                style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0"
+                id="text-entity-FaktOdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga-9f204f2a-1454-5550-bc88-f3b13bd462ca"
+                class="er entityLabel">Fakt_OdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga</text>
+            <rect height="22" width="33" y="24" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga-9f204f2a-1454-5550-bc88-f3b13bd462ca-attr-1-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="154" y="24" x="33" class="er attributeBoxOdd"></rect>
+            <text transform="translate(38,35)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga-9f204f2a-1454-5550-bc88-f3b13bd462ca-attr-1-name"
+                class="er entityLabel">ID_TerminuEgzaminuKandydata</text>
+            <rect height="22" width="250" y="24" x="187" class="er attributeBoxOdd"></rect>
+            <text transform="translate(192,35)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktOdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga-9f204f2a-1454-5550-bc88-f3b13bd462ca-attr-1-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="33" y="46" x="0" class="er attributeBoxEven"></rect>
+            <text transform="translate(5,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga-9f204f2a-1454-5550-bc88-f3b13bd462ca-attr-2-type"
+                class="er entityLabel">X</text>
+            <rect height="22" width="154" y="46" x="33" class="er attributeBoxEven"></rect>
+            <text transform="translate(38,57)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga-9f204f2a-1454-5550-bc88-f3b13bd462ca-attr-2-name"
+                class="er entityLabel">ID_Pytania</text>
+            <rect height="22" width="250" y="46" x="187" class="er attributeBoxEven"></rect>
+            <text transform="translate(192,57)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktOdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga-9f204f2a-1454-5550-bc88-f3b13bd462ca-attr-2-comment"
+                class="er entityLabel"></text>
+            <rect height="22" width="33" y="68" x="0" class="er attributeBoxOdd"></rect>
+            <text transform="translate(5,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga-9f204f2a-1454-5550-bc88-f3b13bd462ca-attr-3-type"
+                class="er entityLabel">Dim</text>
+            <rect height="22" width="154" y="68" x="33" class="er attributeBoxOdd"></rect>
+            <text transform="translate(38,79)" style="dominant-baseline: middle; font-size: 10.2px;"
+                y="0" x="0"
+                id="text-entity-FaktOdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga-9f204f2a-1454-5550-bc88-f3b13bd462ca-attr-3-name"
+                class="er entityLabel">TypSkargi</text>
+            <rect height="22" width="250" y="68" x="187" class="er attributeBoxOdd"></rect>
+            <text transform="translate(192,79)"
+                style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0"
+                id="text-entity-FaktOdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga-9f204f2a-1454-5550-bc88-f3b13bd462ca-attr-3-comment"
+                class="er entityLabel">techniczny przebieg, tresc pytan, egzaminator, inne</text>
+        </g>
+        <rect height="0" width="0" y="439.6562194824219" x="593.2200317382812"
+            class="er relationshipLabelBox"></rect>
+        <text style="text-anchor: middle; dominant-baseline: middle; font-size: 12px;"
+            y="439.6562194824219" x="593.2200317382812" id="rel1" class="er relationshipLabel"></text>
+        <rect height="0" width="0" y="487.4985656738281" x="780.6964111328125"
+            class="er relationshipLabelBox"></rect>
+        <text style="text-anchor: middle; dominant-baseline: middle; font-size: 12px;"
+            y="487.4985656738281" x="780.6964111328125" id="rel2" class="er relationshipLabel"></text>
+        <rect height="0" width="0" y="450.5744934082031" x="975.1873168945312"
+            class="er relationshipLabelBox"></rect>
+        <text style="text-anchor: middle; dominant-baseline: middle; font-size: 12px;"
+            y="450.5744934082031" x="975.1873168945312" id="rel3" class="er relationshipLabel"></text>
+        <rect height="0" width="0" y="249.15354919433594" x="410.2120666503906"
+            class="er relationshipLabelBox"></rect>
+        <text style="text-anchor: middle; dominant-baseline: middle; font-size: 12px;"
+            y="249.15354919433594" x="410.2120666503906" id="rel4" class="er relationshipLabel"></text>
+        <rect height="0" width="0" y="209.4937744140625" x="671.0231323242188"
+            class="er relationshipLabelBox"></rect>
+        <text style="text-anchor: middle; dominant-baseline: middle; font-size: 12px;"
+            y="209.4937744140625" x="671.0231323242188" id="rel5" class="er relationshipLabel"></text>
+        <rect height="0" width="0" y="242.67604064941406" x="1256.317626953125"
+            class="er relationshipLabelBox"></rect>
+        <text style="text-anchor: middle; dominant-baseline: middle; font-size: 12px;"
+            y="242.67604064941406" x="1256.317626953125" id="rel6" class="er relationshipLabel"></text>
+        <rect height="0" width="0" y="201.936767578125" x="1734.4185791015625"
+            class="er relationshipLabelBox"></rect>
+        <text style="text-anchor: middle; dominant-baseline: middle; font-size: 12px;"
+            y="201.936767578125" x="1734.4185791015625" id="rel7" class="er relationshipLabel"></text>
+        <rect height="0" width="0" y="212.6039276123047" x="1010.1197509765625"
+            class="er relationshipLabelBox"></rect>
+        <text style="text-anchor: middle; dominant-baseline: middle; font-size: 12px;"
+            y="212.6039276123047" x="1010.1197509765625" id="rel8" class="er relationshipLabel"></text>
+        <rect height="0" width="0" y="212.8550262451172" x="1216.2684326171875"
+            class="er relationshipLabelBox"></rect>
+        <text style="text-anchor: middle; dominant-baseline: middle; font-size: 12px;"
+            y="212.8550262451172" x="1216.2684326171875" id="rel9" class="er relationshipLabel"></text>
+    </g>
+</svg>
