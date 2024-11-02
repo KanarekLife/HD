@@ -75,7 +75,7 @@ Hurtownia Danych zaprojektowana jest dla procesu przeprowadzania egzaminu teoret
     [_Rok_], [4 znaków], [Rok w formacie "RRRR"],
     [_Miesiac_], [11 znaków], [Nazwa miesiąca ("Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień")],
     [_NumerMiesiaca_], [2 znaki], [Numer miesiąca w formacie "MM"],
-    [_DzienTygodnia_], [9 znaków], [Nazwa dnia tygodnia ("Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela")],
+    [_DzienTygodnia_], [12 znaków], [Nazwa dnia tygodnia ("Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela")],
     [_NumerDniaTygodnia_], [1 znak], [Numer dnia tygodnia (1 - poniedziałek, 7 - niedziela)],
   table.cell(rowspan: 3)[#align(center)[#rotate(90deg, reflow: true)[*Wymiar_Czas*]]],
     table.cell(colspan: 3)[*Jedna krotka opisuje czas.*],
@@ -93,21 +93,68 @@ Hurtownia Danych zaprojektowana jest dla procesu przeprowadzania egzaminu teoret
 
 == Definicje Faktów
 
-1. *Fakt Egzaminu*: Ukończenie podejścia (lub nie przystąpienie) do egzaminu teoretycznego w określonym terminie przez kandydata w sali egzaminacyjnej pod nadzorem egzaminatora.
-
-Tabela: `Fakt_Egzamin`
+1. *Fakt_ZarezerwowanieTerminuEgzaminu*: Fakt zarezerwowania terminu egzaminu przez kandydata. Termin dotyczy egzaminu odbywającego się o konkretnej dacie i godzinie, w konkretnej sali egzaminacyjnej pod okiem konkretnego egzaminatora przez konkretnego kandydata. Fakt rozróżniany jest także przez to, czy termin jest pełny po tej rezerwacji.
 
 Ziarnistość:
-- określona data egzaminu
-- określony czas egzaminu
-- określony egzaminator
-- określony kandydat
-- określona sala egzaminacyjna
-- określony rezultat egzaminu
-- określona "zajętość egzaminu" (jak dużo osób przystąpiło do egzaminu w danym terminie)
+- konkretna data
+- konkretna godzina
+- konkretna sala egzaminacyjna
+- konkretny egzaminator
+- konkretny kandydat
+- konkretna zajętość terminu po tej rezerwacji
 
 Miary i funkcje agregujące:
+- Liczba rezerwacji - `COUNT(*)`
+- Łączna liczba rezerwacji na termin - `MAX(LiczbaRezerwacjiNaTerminPoTejRezerwacji)`
 
+2. *Fakt_OdbycieSieEgzaminu*: Fakt odbycia się (lub nie) egzaminu kandydata. Termin dotyczy egzaminu odbywającego się o konkretnej dacie i godzinie, w konkretnej sali egzaminacyjnej pod okiem konkretnego egzaminatora przez konkretnego kandydata. Fakt rozróżniany jest także przez wynik egzaminu (czy kandydat stawił się, zdał czy nie zdał egzaminu).
+
+Ziarnistość:
+- konkretna data
+- konkretna godzina
+- konkretna sala egzaminacyjna
+- konkretny egzaminator
+- konkretny kandydat
+- konkretny wynik egzaminu
+
+Miary i funkcje agregujące:
+- Liczba egzaminów - `COUNT(*)`
+- Średni czas oczekiwania na egzamin - `SUM(CzasOczekiwaniaNaEgzamin) / COUNT(*)`
+- Maksymalny czas oczekiwania na egzamin - `MAX(CzasOczekiwaniaNaEgzamin)`
+- Minimalny czas oczekiwania na egzamin - `MIN(CzasOczekiwaniaNaEgzamin)`
+- Średnia liczba zdobytych punktów - `SUM(LiczbaZdobytychPunktow) / COUNT(*)`
+- Maksymalna zdobyta liczba punktów - `MAX(LiczbaZdobytychPunktow)`
+- Maksymalna liczba punktów do zdobycia - `MAX(MaksymalnaLiczbaPunktow)`
+
+3. *Fakt_OdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga*: Fakt odpowiedzenia na pytanie przez kandydata podczas egzaminu na który złożył skargę. Termin dotyczy egzaminu odbywającego się o konkretnej dacie i godzinie, w konkretnej sali egzaminacyjnej pod okiem konkretnego egzaminatora przez konkretnego kandydata. Fakt rozróżniany jest także przez typ skargi złożonej przez kandydata oraz pytanie którego dotyczy krotka.
+
+Ziarnistość:
+- konkretna data
+- konkretna godzina
+- konkretna sala egzaminacyjna
+- konkretny egzaminator
+- konkretny kandydat
+- konkretny typ skargi
+- konkretne pytanie
+
+Miary i funkcje agregujące:
+- Liczba odpowiedzi na pytania - `COUNT(*)`
+
+4. *Fakt_ZlozenieSkargiNaPrzebiegEgzaminu*: Fakt złożenia skargi na przebieg egzaminu przez kandydata. Termin dotyczy egzaminu odbywającego się o konkretnej dacie i godzinie, w konkretnej sali egzaminacyjnej pod okiem konkretnego egzaminatora przez konkretnego kandydata. Fakt rozróżniany jest także przez typ skargi, czy podczas egzaminu wystąpiły incydenty, które zostały zgłoszone przez egzaminatorów oraz czy kandydat odpowiedział na wszystkie pytania.
+
+Ziarnistość:
+- konkretna data
+- konkretna godzina
+- konkretna sala egzaminacyjna
+- konkretny egzaminator
+- konkretny kandydat
+- konkretny typ skargi
+- czy podczas egzaminu wystąpiły incydenty
+- czy kandydat odpowiedział na wszystkie pytania
+
+Miary i funkcje agregujące:
+- Liczba zgłoszonych incydentów - `SUM(LiczbaIncydentowZgloszonychPodczasEgzaminu)`
+- Liczba skarg - `COUNT(*)`
 
 == Definicje Wymiarów
 
