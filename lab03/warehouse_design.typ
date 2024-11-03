@@ -292,9 +292,15 @@ Miary i funkcje agregujące:
 
 == Sprawdzenie Możliwości Implementacji Zapytań Analitycznych Na Modelu Wymiarowym
 
-=== Porównaj średni czas oczekiwania na egzamin teoretyczny w tym i poprzednim miesiącu.
+=== Porównaj średni czas oczekiwania na egzamin teoretyczny w tym i poprzednim miesiącu. (KPI 1)
 
 Miara: _Średni czas oczekiwania na egzamin_
+
+Wymiar: _Data Egzaminu_ (atrybuty: Miesiąc Egzaminu)
+
+=== Porównaj liczbę skarg w tym i poprzednim miesiącu. (KPI 2)
+
+Miara: _Liczba skarg_
 
 Wymiar: _Data Egzaminu_ (atrybuty: Miesiąc Egzaminu)
 
