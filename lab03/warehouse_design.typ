@@ -87,7 +87,7 @@ Hurtownia Danych zaprojektowana jest dla procesu przeprowadzania egzaminu teoret
     title("TerminEgzaminu", 6),
       subtitle("Krotka opisuje termin egzaminu."),
       [_ID_TerminuEgzaminu_], [Liczbowa], [PK],
-      [_ID_DataEgzaminu_], [Liczbowa], [FK Data, Data egzaminu],
+      [_ID_Data Egzaminu_], [Liczbowa], [FK Data, Data egzaminu],
       [_ID_CzasEgzaminu_], [Liczbowa], [FK Czas, Czas egzaminu],
       [_ID_Egzaminatora_], [Liczbowa], [FK Egzaminator, Egzaminator],
       [_NumerSaliEgzaminacyjnej_], [3 znaki], [Numer sali egzaminacyjnej (liczba całkowita w zakresie 000 - 999 w postaci tekstowej)],
@@ -202,9 +202,9 @@ Miary i funkcje agregujące:
   #text(size: 10pt, table(
     columns: (auto, auto, auto),
     table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
-    [*TerminEgzaminu*], [`TerminEgzaminu`], [Wymiar],
+    [*Termin Egzaminu*], [`TerminEgzaminu`], [Wymiar],
     [*Numer Sali Egzaminacyjnej*], [`TerminEgzaminu.NumerSaliEgzaminacyjnej`], [Atrybut Wymiaru],
-    [*DataEgzaminu*], [`Data`], [Wymiar],
+    [*Data Egzaminu*], [`Data`], [Wymiar],
     [*Dzień Egzaminu*], [`Data.Data`], [Atrybut Wymiaru],
     [*Rok Egzaminu*], [`Data.Rok`], [Atrybut Wymiaru],
     [*Miesiąc Egzaminu*], [`Data.Miesiac`], [Atrybut Wymiaru],
@@ -224,9 +224,9 @@ Miary i funkcje agregujące:
   #text(size: 10pt, table(
     columns: (auto, auto, auto),
     table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
-    [*TerminEgzaminu*], [`TerminEgzaminu`], [Wymiar],
+    [*Termin Egzaminu*], [`TerminEgzaminu`], [Wymiar],
     [*Numer Sali Egzaminacyjnej*], [`TerminEgzaminu.NumerSaliEgzaminacyjnej`], [Atrybut Wymiaru],
-    [*DataEgzaminu*], [`Data`], [Wymiar],
+    [*Data Egzaminu*], [`Data`], [Wymiar],
     [*Dzień Egzaminu*], [`Data.Data`], [Atrybut Wymiaru],
     [*Rok Egzaminu*], [`Data.Rok`], [Atrybut Wymiaru],
     [*Miesiąc Egzaminu*], [`Data.Miesiac`], [Atrybut Wymiaru],
@@ -246,9 +246,9 @@ Miary i funkcje agregujące:
     #text(size: 10pt, table(
     columns: (auto, auto, auto),
     table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
-    [*TerminEgzaminu*], [`TerminEgzaminu`], [Wymiar],
+    [*Termin Egzaminu*], [`TerminEgzaminu`], [Wymiar],
     [*Numer Sali Egzaminacyjnej*], [`TerminEgzaminu.NumerSaliEgzaminacyjnej`], [Atrybut Wymiaru],
-    [*DataEgzaminu*], [`Data`], [Wymiar],
+    [*Data Egzaminu*], [`Data`], [Wymiar],
     [*Dzień Egzaminu*], [`Data.Data`], [Atrybut Wymiaru],
     [*Rok Egzaminu*], [`Data.Rok`], [Atrybut Wymiaru],
     [*Miesiąc Egzaminu*], [`Data.Miesiac`], [Atrybut Wymiaru],
@@ -275,9 +275,9 @@ Miary i funkcje agregujące:
       #text(size: 10pt, table(
     columns: (auto, auto, auto),
     table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
-    [*TerminEgzaminu*], [`TerminEgzaminu`], [Wymiar],
+    [*Termin Egzaminu*], [`TerminEgzaminu`], [Wymiar],
     [*Numer Sali Egzaminacyjnej*], [`TerminEgzaminu.NumerSaliEgzaminacyjnej`], [Atrybut Wymiaru],
-    [*DataEgzaminu*], [`Data`], [Wymiar],
+    [*Data Egzaminu*], [`Data`], [Wymiar],
     [*Dzień Egzaminu*], [`Data.Data`], [Atrybut Wymiaru],
     [*Rok Egzaminu*], [`Data.Rok`], [Atrybut Wymiaru],
     [*Miesiąc Egzaminu*], [`Data.Miesiac`], [Atrybut Wymiaru],
@@ -318,63 +318,59 @@ Wymiar: _Data Egzaminu_ (atrybuty: Miesiąc Egzaminu)
 
 === Porównaj średnią liczbę zarezerwowanych terminów egzaminów teoretycznych na przestrzeni dni tygodnia.
 
-Miara: _Średnia liczba rezerwacji na termin_
+Miara: _Średnia liczba rezerwacji_
 
 Wymiar: _Data Egzaminu_ (atrybuty: Dzień Tygodnia Egzaminu)
 
 === Podaj jak dużo kandydatów nie pojawiło się na egzaminie w tym i poprzednim miesiącu.
 
-Miara: _Liczba egzaminów_
-
-Wymiar: _Wynik Egzaminu_
+Miara: _Liczba kandydatów nieobecnych_
 
 Wymiar: _Data Egzaminu_ (atrybuty: Miesiąc Egzaminu)
 
 === Jaka jest średnia liczba podejść do egzaminu na jednego kandydata w tym i poprzednim miesiącu?
 
-Miara: _Średnia liczba podejść do egzaminu_
-
-Wymiar: _Wymiar_TerminEgzaminuKandydata_ (atrybuty: PKK_Kandydata)
+Miara: _Średnia liczba rezerwacji na kandydata_
 
 Wymiar: _Data Egzaminu_ (atrybuty: Miesiąc Egzaminu)
 
 === Jak dużo terminów egzaminów zostało w pełni zarezerwowanych w tym i poprzednim miesiącu?
 
-Miara: _Liczba rezerwacji_
+Miara: _Liczba egzaminów_
 
-Wymiar: _CzyTerminJestPelnyPoTejRezerwacji_
+Wymiar: _Data Egzaminu_ (atrybuty: Miesiąc Egzaminu)
+
+Wymiar: _Zajętość Terminu_ (atrybuty: Poziom Zajętości Terminu)
 
 === Porównaj liczbę skarg technicznych w relacji do sal w których odbywają się egzaminy.
 
 Miara: _Liczba skarg_
 
-Wymiar: _Wymiar_Junk_ (atrybuty: Typ Skargi)
-
-Wymiar: _Wymiar_TerminEgzaminuKandydata_ (atrybuty: NumerSaliEgzaminacyjnej)
+Wymiar: _Termin Egzaminu_ (atrybuty: Numer Sali Egzaminacyjnej)
 
 === Jakie pytania pojawiały się najczęściej w egzaminach do których złożono skargi związane z treścią pytań?
 
-Miara: _Liczba odpowiedzi na pytania_
+Miara: _Liczba pytań_
 
-Wymiar: _TypSkargi_
+Wymiar: _Skarga_ (atrybuty: Typ Skargi)
 
 === Jacy egzaminatorzy byli najczęściej związani ze złożeniem skargi?
 
-Miara: _Liczba skarg_
+Miara: _Liczba pytań_
 
-Wymiar: _Wymiar_Egzaminator_ (atrybuty: Pesel)
+Wymiar: _Egzaminator_ (atrybuty: Pesel Egzaminatora)
 
 === Podaj liczbę skarg złożonych w egzaminach w których nie wystąpiły żadne incydenty zgłoszone przez egzaminatorów.
 
 Miara: _Liczba skarg_
 
-Wymiar: _Wymiar_Junk_ (atrybuty: IncydentyPodczasEgzaminu)
+Wymiar: _Skarga_ (atrybuty: Czy Istnieją Powiązane Incydenty)
 
 === Jak dużo kandydatów nie zdołało odpowiedzieć na wszystkie pytania w egzaminie i złożyło skargę z kategorii “związana z treścią pytań” lub “inne”?
 
-Miara: _Liczba skarg_
+Miara: _Liczba kandydatów którzy złożyli skargi_
 
-Wymiar: _Wymiar_Junk_ (atrybuty: KandydatOdpowiedzialNaWszystkiePytania, TypSkargi)
+Wymiar: _Skarga_ (atrybuty: Typ Skargi, Czy Kandydat Odpowiedział Na Wszystkie Pytania)
 
 == Sprawdzenie Możliwości Zasilienia Hurtowni Danych Za Pomocą Danych Źródłowych
 
