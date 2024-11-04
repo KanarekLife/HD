@@ -190,132 +190,116 @@ Miary i funkcje agregujące:
 
 == Definicje Wymiarów
 
-#let hierarchy(item1, item2, item3) = [
-  • #item1 \
-  •• #item2 \
-  ••• #item3
-]
+#context [
+  #let hierarchy(item1, item2, item3) = [
+    • #item1 \
+    •• #item2 \
+    ••• #item3
+  ]
 
-1. *Fakt_ZarezerwowanieTerminuEgzaminu*
+  1. *ZarezerwowanieTerminuPrzezKandydata*
 
-#text(size: 10pt)[
-  #table(
+  #text(size: 10pt, table(
     columns: (auto, auto, auto),
     table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
-    [*CzyTerminJestPelnyPoTejRezerwacji*], [Fakt_ZarezerwowanieTerminuEgzaminu.
-    CzyTerminJestPelnyPoTejRezerwacji], [Wymiar Zdegenerowany],
-    [*Wymiar_TerminEgzaminuKandydata*], [Wymiar_TerminEgzaminuKandydata], [Wymiar],
-    [*PKK_Kandydata*], [Wymiar_TerminEgzaminuKandydata.
-    PKK_Kandydata], [Atrybut Wymiaru],
-    [*NumerSaliEgzaminacyjnej*], [Wymiar_TerminEgzaminuKandydata.
-    NumerSaliEgzaminacyjnej], [Atrybut Wymiaru],
-    [*Data Egzaminu*], [Wymiar_Data], [Wymiar],
-    [*Rok Egzaminu*], [Wymiar_Data.Rok], [Atrybut Wymiaru],
-    [*Miesiąc Egzaminu*], [Wymiar_Data.Miesiac], [Atrybut Wymiaru],
-    [*Dzień Egzaminu*], [Wymiar_Data.Data], [Atrybut Wymiaru],
-    [*Dzień Tygodnia Egzaminu*], [Wymiar_Data.DzienTygodnia], [Atrybut Wymiaru],
-    [*Hierarchia Daty Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.Data")], [Wymiar Hierachi],
-    [*Hierarchia Dnia Tygodnia Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.DzienTygodnia")], [Wymiar Hierachi],
-    [*Hierarchia Terminu Egzaminu*], [#hierarchy("Wymiar_TerminEgzaminuKandydata.
-    NumerSaliEgzaminacyjnej", "Wymiar_Egzaminator.ImieINazwisko", "Wymiar_Data.Data")], [Wymiar Hierarchi],
-    [*Czas Egzaminu*], [Wymiar_Czas], [Wymiar],
-    [*Godzina Egzaminu*], [Wymiar_Czas.Godzina], [Atrybut Wymiaru],
-    [*Egzaminator*], [Wymiar_Egzaminator], [Wymiar],
-    [*Pesel Egzaminatora*], [Wymiar_Egzaminator.Pesel], [Atrybut Wymiaru],
-    [*Imię i Nazwisko Egzaminatora*], [Wymiar_Egzaminator.ImieINazwisko], [Atrybut Wymiaru]
-  )
-]
+    [*TerminEgzaminu*], [`TerminEgzaminu`], [Wymiar],
+    [*Numer Sali Egzaminacyjnej*], [`TerminEgzaminu.NumerSaliEgzaminacyjnej`], [Atrybut Wymiaru],
+    [*DataEgzaminu*], [`Data`], [Wymiar],
+    [*Dzień Egzaminu*], [`Data.Data`], [Atrybut Wymiaru],
+    [*Rok Egzaminu*], [`Data.Rok`], [Atrybut Wymiaru],
+    [*Miesiąc Egzaminu*], [`Data.Miesiac`], [Atrybut Wymiaru],
+    [*Dzień Tygodnia Egzaminu*], [`Data.DzienTygodnia`], [Atrybut Wymiaru],
+    [*Hierarchia Daty Egzaminu*], [#hierarchy("Data.Rok", "Data.Miesiac", "Data.Data")], [Wymiar Hierachi],
+    [*Czas Egzaminu*], [`Czas`], [Wymiar],
+    [*Godzina Egzaminu*], [`Czas.Godzina`], [Atrybut Wymiaru],
+    [*Egzaminator*], [`Egzaminator`], [Wymiar],
+    [*Pesel Egzaminatora*], [`Egzaminator.Pesel`], [Atrybut Wymiaru],
+    [*Imię i Nazwisko Egzaminatora*], [`Egzaminator.ImieINazwisko`], [Atrybut Wymiaru],
+    [*Kandydat*], [`Kandydat`], [Wymiar],
+    [*PKK Kandydata*], [`Kandydat.PKK_Kandydata`], [Atrybut Wymiaru]
+  ))
 
-2. *Fakt_OdbycieSieEgzaminu*
+  2. *OdbycieSieEgzaminu*
 
-#text(size: 10pt)[
-  #table(
+  #text(size: 10pt, table(
     columns: (auto, auto, auto),
     table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
-    [*WynikEgzaminu*], [Fakt_OdbycieSieEgzaminu.WynikEgzaminu], [Wymiar Zdegenerowany],
-    [*Wymiar_TerminEgzaminuKandydata*], [Wymiar_TerminEgzaminuKandydata], [Wymiar],
-    [*PKK_Kandydata*], [Wymiar_TerminEgzaminuKandydata.
-    PKK_Kandydata], [Atrybut Wymiaru],
-    [*NumerSaliEgzaminacyjnej*], [Wymiar_TerminEgzaminuKandydata.
-    NumerSaliEgzaminacyjnej], [Atrybut Wymiaru],
-    [*Data Egzaminu*], [Wymiar_Data], [Wymiar],
-    [*Rok Egzaminu*], [Wymiar_Data.Rok], [Atrybut Wymiaru],
-    [*Miesiąc Egzaminu*], [Wymiar_Data.Miesiac], [Atrybut Wymiaru],
-    [*Dzień Egzaminu*], [Wymiar_Data.Data], [Atrybut Wymiaru],
-    [*Dzień Tygodnia Egzaminu*], [Wymiar_Data.DzienTygodnia], [Atrybut Wymiaru],
-    [*Hierarchia Daty Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.Data")], [Wymiar Hierachi],
-    [*Hierarchia Dnia Tygodnia Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.DzienTygodnia")], [Wymiar Hierachi],
-    [*Hierarchia Terminu Egzaminu*], [#hierarchy("Wymiar_TerminEgzaminuKandydata.
-    NumerSaliEgzaminacyjnej", "Wymiar_Egzaminator.ImieINazwisko", "Wymiar_Data.Data")], [Wymiar Hierarchi],
-    [*Czas Egzaminu*], [Wymiar_Czas], [Wymiar],
-    [*Godzina Egzaminu*], [Wymiar_Czas.Godzina], [Atrybut Wymiaru],
-    [*Egzaminator*], [Wymiar_Egzaminator], [Wymiar],
-    [*Pesel Egzaminatora*], [Wymiar_Egzaminator.Pesel], [Atrybut Wymiaru],
-    [*Imię i Nazwisko Egzaminatora*], [Wymiar_Egzaminator.ImieINazwisko], [Atrybut Wymiaru]
-  )
-]
+    [*TerminEgzaminu*], [`TerminEgzaminu`], [Wymiar],
+    [*Numer Sali Egzaminacyjnej*], [`TerminEgzaminu.NumerSaliEgzaminacyjnej`], [Atrybut Wymiaru],
+    [*DataEgzaminu*], [`Data`], [Wymiar],
+    [*Dzień Egzaminu*], [`Data.Data`], [Atrybut Wymiaru],
+    [*Rok Egzaminu*], [`Data.Rok`], [Atrybut Wymiaru],
+    [*Miesiąc Egzaminu*], [`Data.Miesiac`], [Atrybut Wymiaru],
+    [*Dzień Tygodnia Egzaminu*], [`Data.DzienTygodnia`], [Atrybut Wymiaru],
+    [*Hierarchia Daty Egzaminu*], [#hierarchy("Data.Rok", "Data.Miesiac", "Data.Data")], [Wymiar Hierachi],
+    [*Czas Egzaminu*], [`Czas`], [Wymiar],
+    [*Godzina Egzaminu*], [`Czas.Godzina`], [Atrybut Wymiaru],
+    [*Egzaminator*], [`Egzaminator`], [Wymiar],
+    [*Pesel Egzaminatora*], [`Egzaminator.Pesel`], [Atrybut Wymiaru],
+    [*Imię i Nazwisko Egzaminatora*], [`Egzaminator.ImieINazwisko`], [Atrybut Wymiaru],
+    [*Zajętość Terminu*], [`ZajetoscTerminuEgzaminu`], [Wymiar],
+    [*Poziom Zajętości Terminu*], [`ZajetoscTerminuEgzaminu.ZajetoscTerminu`], [Atrybut Wymiaru]
+  ))
 
-3. *Fakt_OdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga*
+  3. *ZlozenieSkargi*
 
-#text(size: 10pt)[
-  #table(
+    #text(size: 10pt, table(
     columns: (auto, auto, auto),
     table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
-    [*TypSkargi*], [Fakt_OdpowiedzianoNaPytaniePodczasEgzaminuZeSkarga.TypSkargi], [Wymiar Zdegenerowany],
-    [*Pytanie*], [Wymiar_Pytanie], [Wymiar],
-    [*Treść Pytania*], [Wymiar_Pytanie.Tresc], [Atrybut Wymiaru],
-    [*Termin Kandydata*], [Wymiar_TerminEgzaminuKandydata], [Wymiar],
-    [*PKK_Kandydata*], [Wymiar_TerminEgzaminuKandydata.
-    PKK_Kandydata], [Atrybut Wymiaru],
-    [*NumerSaliEgzaminacyjnej*], [Wymiar_TerminEgzaminuKandydata.
-    NumerSaliEgzaminacyjnej], [Atrybut Wymiaru],
-    [*Data Egzaminu*], [Wymiar_Data], [Wymiar],
-    [*Rok Egzaminu*], [Wymiar_Data.Rok], [Atrybut Wymiaru],
-    [*Miesiąc Egzaminu*], [Wymiar_Data.Miesiac], [Atrybut Wymiaru],
-    [*Dzień Egzaminu*], [Wymiar_Data.Data], [Atrybut Wymiaru],
-    [*Dzień Tygodnia Egzaminu*], [Wymiar_Data.DzienTygodnia], [Atrybut Wymiaru],
-    [*Hierarchia Daty Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.Data")], [Wymiar Hierachi],
-    [*Hierarchia Dnia Tygodnia Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.DzienTygodnia")], [Wymiar Hierachi],
-    [*Hierarchia Terminu Egzaminu*], [#hierarchy("Wymiar_TerminEgzaminuKandydata.
-    NumerSaliEgzaminacyjnej", "Wymiar_Egzaminator.ImieINazwisko", "Wymiar_Data.Data")], [Wymiar Hierarchi],
-    [*Czas Egzaminu*], [Wymiar_Czas], [Wymiar],
-    [*Godzina Egzaminu*], [Wymiar_Czas.Godzina], [Atrybut Wymiaru],
-    [*Egzaminator*], [Wymiar_Egzaminator], [Wymiar],
-    [*Pesel Egzaminatora*], [Wymiar_Egzaminator.Pesel], [Atrybut Wymiaru],
-    [*Imię i Nazwisko Egzaminatora*], [Wymiar_Egzaminator.ImieINazwisko], [Atrybut Wymiaru]
-  )
-]
+    [*TerminEgzaminu*], [`TerminEgzaminu`], [Wymiar],
+    [*Numer Sali Egzaminacyjnej*], [`TerminEgzaminu.NumerSaliEgzaminacyjnej`], [Atrybut Wymiaru],
+    [*DataEgzaminu*], [`Data`], [Wymiar],
+    [*Dzień Egzaminu*], [`Data.Data`], [Atrybut Wymiaru],
+    [*Rok Egzaminu*], [`Data.Rok`], [Atrybut Wymiaru],
+    [*Miesiąc Egzaminu*], [`Data.Miesiac`], [Atrybut Wymiaru],
+    [*Dzień Tygodnia Egzaminu*], [`Data.DzienTygodnia`], [Atrybut Wymiaru],
+    [*Hierarchia Daty Egzaminu*], [#hierarchy("Data.Rok", "Data.Miesiac", "Data.Data")], [Wymiar Hierachi],
+    [*Czas Egzaminu*], [`Czas`], [Wymiar],
+    [*Godzina Egzaminu*], [`Czas.Godzina`], [Atrybut Wymiaru],
+    [*Egzaminator*], [`Egzaminator`], [Wymiar],
+    [*Pesel Egzaminatora*], [`Egzaminator.Pesel`], [Atrybut Wymiaru],
+    [*Imię i Nazwisko Egzaminatora*], [`Egzaminator.ImieINazwisko`], [Atrybut Wymiaru],
+    [*Kandydat*], [`Kandydat`], [Wymiar],
+    [*PKK Kandydata*], [`Kandydat.PKK_Kandydata`], [Atrybut Wymiaru],
+    [*Skarga*], [`Skarga`], [Wymiar],
+    [*Typ Egzaminu*], [`Skarga.TypEgzaminu`], [Atrybut Wymiaru],
+    [*Typ Skargi*], [`Skarga.TypSkargi`], [Atrybut Wymiaru],
+    [*Czy Istnieją Powiązane Incydenty*], [`Skarga.CzyIstniejaPowiazaneIncydenty`], [Atrybut Wymiaru],
+    [*Czy Kandydat Odpowiedział Na Wszystkie Pytania*], [`Skarga
+.CzyKandydatOdpowiedzialNaWszystkiePytania`], [Atrybut Wymiaru],
+    [*Hierarchia Skargi*], [#hierarchy("Typ Egzaminu", "Typ Skargi", "Czy Istnieją Powiązane Incydenty")], [Wymiar Hierachi]
+  ))
 
-4. *Fakt_ZlozenieSkargiNaPrzebiegEgzaminu*
+  4. *OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga*
 
-#text(size: 10pt)[
-  #table(
+      #text(size: 10pt, table(
     columns: (auto, auto, auto),
     table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
-    [*Junk*], [Wymiar_Junk], [Wymiar],
-    [*TypSkargi*], [Wymiar_Junk.TypSkargi], [Atrybut Wymiaru],
-    [*IncydentyPodczasEgzaminu*], [Wymiar_Junk.IncydentyPodczasEgzaminu], [Atrybut Wymiaru],
-    [*KandydatOdpowiedzialNaWszystkiePytania*], [Wymiar_Junk.KandydatOdpowiedzialNaWszystkiePytania], [Atrybut Wymiaru],
-    [*Termin Kandydata*], [Wymiar_TerminEgzaminuKandydata], [Wymiar],
-    [*PKK_Kandydata*], [Wymiar_TerminEgzaminuKandydata.
-    PKK_Kandydata], [Atrybut Wymiaru],
-    [*NumerSaliEgzaminacyjnej*], [Wymiar_TerminEgzaminuKandydata.
-    NumerSaliEgzaminacyjnej], [Atrybut Wymiaru],
-    [*Data Egzaminu*], [Wymiar_Data], [Wymiar],
-    [*Rok Egzaminu*], [Wymiar_Data.Rok], [Atrybut Wymiaru],
-    [*Miesiąc Egzaminu*], [Wymiar_Data.Miesiac], [Atrybut Wymiaru],
-    [*Dzień Egzaminu*], [Wymiar_Data.Data], [Atrybut Wymiaru],
-    [*Dzień Tygodnia Egzaminu*], [Wymiar_Data.DzienTygodnia], [Atrybut Wymiaru],
-    [*Hierarchia Daty Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.Data")], [Wymiar Hierachi],
-    [*Hierarchia Dnia Tygodnia Egzaminu*], [#hierarchy("Wymiar_Data.Rok", "Wymiar_Data.Miesiac", "Wymiar_Data.DzienTygodnia")], [Wymiar Hierachi],
-    [*Hierarchia Terminu Egzaminu*], [#hierarchy("Wymiar_TerminEgzaminuKandydata.
-    NumerSaliEgzaminacyjnej", "Wymiar_Egzaminator.ImieINazwisko", "Wymiar_Data.Data")], [Wymiar Hierarchi],
-    [*Czas Egzaminu*], [Wymiar_Czas], [Wymiar],
-    [*Godzina Egzaminu*], [Wymiar_Czas.Godzina], [Atrybut Wymiaru],
-    [*Egzaminator*], [Wymiar_Egzaminator], [Wymiar],
-    [*Pesel Egzaminatora*], [Wymiar_Egzaminator.Pesel], [Atrybut Wymiaru],
-    [*Imię i Nazwisko Egzaminatora*], [Wymiar_Egzaminator.ImieINazwisko], [Atrybut Wymiaru]
-  )
+    [*TerminEgzaminu*], [`TerminEgzaminu`], [Wymiar],
+    [*Numer Sali Egzaminacyjnej*], [`TerminEgzaminu.NumerSaliEgzaminacyjnej`], [Atrybut Wymiaru],
+    [*DataEgzaminu*], [`Data`], [Wymiar],
+    [*Dzień Egzaminu*], [`Data.Data`], [Atrybut Wymiaru],
+    [*Rok Egzaminu*], [`Data.Rok`], [Atrybut Wymiaru],
+    [*Miesiąc Egzaminu*], [`Data.Miesiac`], [Atrybut Wymiaru],
+    [*Dzień Tygodnia Egzaminu*], [`Data.DzienTygodnia`], [Atrybut Wymiaru],
+    [*Hierarchia Daty Egzaminu*], [#hierarchy("Data.Rok", "Data.Miesiac", "Data.Data")], [Wymiar Hierachi],
+    [*Czas Egzaminu*], [`Czas`], [Wymiar],
+    [*Godzina Egzaminu*], [`Czas.Godzina`], [Atrybut Wymiaru],
+    [*Egzaminator*], [`Egzaminator`], [Wymiar],
+    [*Pesel Egzaminatora*], [`Egzaminator.Pesel`], [Atrybut Wymiaru],
+    [*Imię i Nazwisko Egzaminatora*], [`Egzaminator.ImieINazwisko`], [Atrybut Wymiaru],
+    [*Kandydat*], [`Kandydat`], [Wymiar],
+    [*PKK Kandydata*], [`Kandydat.PKK_Kandydata`], [Atrybut Wymiaru],
+    [*Skarga*], [`Skarga`], [Wymiar],
+    [*Typ Egzaminu*], [`Skarga.TypEgzaminu`], [Atrybut Wymiaru],
+    [*Typ Skargi*], [`Skarga.TypSkargi`], [Atrybut Wymiaru],
+    [*Czy Istnieją Powiązane Incydenty*], [`Skarga.CzyIstniejaPowiazaneIncydenty`], [Atrybut Wymiaru],
+    [*Czy Kandydat Odpowiedział Na Wszystkie Pytania*], [`Skarga
+.CzyKandydatOdpowiedzialNaWszystkiePytania`], [Atrybut Wymiaru],
+    [*Hierarchia Skargi*], [#hierarchy("Typ Egzaminu", "Typ Skargi", "Czy Istnieją Powiązane Incydenty")], [Wymiar Hierachi],
+    [*Pytanie*], [`Pytanie`], [Wymiar],
+    [*Treść Pytania*], [`Pytanie.TrescPytania`], [Atrybut Wymiaru]
+  ))
 ]
 
 == Sprawdzenie Możliwości Implementacji Zapytań Analitycznych Na Modelu Wymiarowym
