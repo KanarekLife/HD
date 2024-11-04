@@ -65,7 +65,7 @@ erDiagram
         X CzyIstniejaPowiazaneIncydenty "(Brak powiązanych incydentów, Istnieją powiązane incydenty)"
         X CzyKandydatOdpowiedzialNaWszystkiePytania "(Kandydat Nie Zdołał Odpowiedzieć Na Wszystkie Pytania, Kandydat Odpowiedział Na Wszystkie Pytania)"
     }
-    Wymiar_Pytanie {
+    Pytanie {
         X ID_Pytania PK
         X Tresc
     }
@@ -83,4 +83,4 @@ erDiagram
     OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga ||--|| TerminEgzaminu : ""
     OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga ||--|| Kandydat : ""
     OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga ||--|| Skarga : ""
-    OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga ||--|| Wymiar_Pytanie : ""
+    OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga ||--|| Pytanie : ""

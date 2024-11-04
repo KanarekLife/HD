@@ -22,7 +22,7 @@ Hurtownia Danych zaprojektowana jest dla procesu przeprowadzania egzaminu teoret
 
 #align(center)[
   #image("diagram.svg")
-  /* https://mermaid.live/edit#pako:eNqtVt1u2kgUfhVrrlrJjSBQGrjblt0VYkOshCorhLQ6sU9hMMxEY1vsOMlN1KrPUPUx9hE2vNeOPWPjP5o0Gy4Az_nOOd_59dwQl3tIBgTFkMJCwGbOLPWZgcAYxZZvgVGcothQFjkixngMzJMehGDdaGjy-dMaDf8yqF8XMSS_1m_jCmCvWhSdIgSRQOtDDMGZG6NPE59wOVRf7lLj7vTPmXclXYoXFHMnP01iBisMeeDSHyEzTn9QN76C8zQV4K7oBLRWHXkKfiA3sGagdT6qSIKQUZ9vD5mtQUyUszWPUWX9wgexoC-V5lRkTB4O1eFbCjEw6S5HzJUesrDC7sy7Vhj0UooTcGSYdIjDPVfVLyM10-ThRclrV49HpYjqP8OmLlWH0poTZzwnRUmCLT6fc7_4eEoxUO1YPJpEGxTmvKQ6jCmyqVxwT7GtaSRtXRaaxCb9X2ObHEYNdH_nXkxZ2YBJKoRc1OwUZNBgzsEA1-r8feV8tKE4mkC8pYHPi4IPsfzFDyPV71jioOv75Ol0xg3VOdwcaTYOi0tBlqVp6i9gTTOMK1cMVyXuWevVWO970qkbdcbj8vSa_VIN9eape6jso2JO1eiVEwWhtFUJHr7tvruUb7mq3-6eqTP9-zoroqF0YBbN2JT9TeV1zkT5miIXGEo3Tq0L8PX_1-U2UUrGWKriLhlNUFbywriiuLCtqcDd94evVjLDu892sVdta8QYViyq_holuxFX-UrCbCEl4_vqveJiJZvo4YteVxY14n__2SqTWvnhyx6DOULWnWUlzrcbhfUELoNYBqGv1ptZPcpx3iUTitbM47t72N3vtyJFFeUErFzVMrr2vr8KTpRqE7hawUu5oSDMBsRaJTN6lVIKDNzKSqzM5-3tmze3t3pRDlR0mdtmWLqhHocV91AR_ZQ7hTGRp-qZ-hViRSsNd4j_o3Ro3EvEyy_0x901KzQnpRFqJr4cws-8t5-SkmfYawzhWZZeKsLKZGl7xCZqs2-AeupmnA7bnIRL3OCcJIDtkoaYeL1TQIhCfiGZSwahiNAmgkeLJRl8gnWgnqJrFS2aq3V-eg2MDG7I32TQPTnqtbq9XqvV6bbf9Xt9m0gy6LRbR8edt--6J8f9dqv9tndnk5hzZaB91On1-sftTqt_3G2ftE-6qbVZKtQE0KNq8k71tT693d_9B-DK3dA */
+  /* https://mermaid.live/edit#pako:eNqtVutu2kgUfhVrfrWSE4VLDOVfW7YVYkOshqoVQqpO7LMwGGYiX8SOk_yJWvUZqj7GPsKG9-rYMza-sUmz4QfgOd855ztXzzVxuItkQNAfUlj4sJkzQ35m4GOM_pZvgVGcor-hLLL9GOMxMFe4EIJxraDJ57MxGn7RqD8WMSS_xrtxBbBXLYrOEILIR-NtDMG5E6NHE5_waSi_nKXC3aqfc_dSOBQvKOZOfpvEDFYY8sCh_4XMOP1JnfgSPqSpAGdFJ6C06sgz8AKxgTUDpfNRRhKEjHp8e8hsDaKjnK15jDLrFx74C_pcaU5F2uThUG2-pRADE85yxBzhIgsr7M7dK4lBN6U4AVuESYfY3HVk_TJSM0UenpW8cvVwVJKo-jNs6lJ5KIw5scdzUpQk2OLzB-4VH88oBrIdi0eTaIO-Pi-pDmOKbCoW3JVsaxpJW5eFOrFJ_9fYJodRA9333I0pKxvQSYWQ-zU7BRk0mLMxwLU8f1M5H20ojiYQb2ng8aLgbSxee2Ek-x1LHFR9Hz2d9rihOoebI83GYXEpyLI0Tf0FrGmGccSK4arEPWu9Gut9T9p1o_Z4XJ5evV-qoV4_dg-VfVTMyRq9sKMgFKYswf2P3U-H8i2X9dvdMXmmfl9mRdSUDsyiHpuyv6m4yplIX1PkPobCiVPrPnjq_8tym0glbSxVcZaMJigjeWFcUlyYxtTH3c_770Yyw7uvZrFXTWPEGFYsyv4aJbsRV_lKwmwhJeP74o3kYiSb6P6bWlcG1eJ__9lKk0r5_tsegzlC1J1lJc63G4X1BD4FsQhCT643vXqk47xLJhSNmct3d7C7229FijLKCRi5qqF1zX1_FZxI1SZwtYJ6y9ZKmPGq1NDHwKnswspg3twcHd3cqA05kGFl_pph6Wp6GFZcQEX0Yy4T2kSeoyfqV4gVrTRcHv6P0qE5LxEvv8kfdtes0JyURqge9XIIv_PCfkxKnmCvMYQnWXquCLORUoaISeQu3wB15V04nbI5CZe4wTlJANslDTFxdyuBEIX8QjCHDEI_QpP4PFosyeAvWAfyKbqSYaK-TOenV8DI4Jr8TQZHLavTO7ZOuu1u_6Rr9XunJhFk0Om0j3ttq2_1rN5pr99qn96aJOZcmmgfW51Oq_vqlXXS6nX7nZaV2pulQkUBXSqH7kxd5dMb_e0vzaTYnA */
 ]
 
 #context [
@@ -374,4 +374,85 @@ Wymiar: _Skarga_ (atrybuty: Typ Skargi, Czy Kandydat Odpowiedział Na Wszystkie 
 
 == Sprawdzenie Możliwości Zasilienia Hurtowni Danych Za Pomocą Danych Źródłowych
 
-TODO
+#context [
+  #set text(size: 10pt)
+  #let title(content, n) = [#table.cell(rowspan: n, align(center)[#rotate(90deg, reflow: true)[* #content *]])]
+  #let subtitle(content) = [#table.cell(colspan: 2, align(center)[* #content *])]
+  
+  #table(
+    columns: (auto, auto, auto),
+    table.header([*Tabela*], [*Kolumna*], [*Source*]),
+
+    title("ZarezerwowanieTerminuPrzezKandydata", 4),
+      subtitle("Krotka opisuje fakt zarezerwowania terminu na egzamin teoretyczny przez kandydata."),
+      [_ID_TerminuEgzaminu_], [Klucz obcy do tabeli `TerminEgzaminu`. Generowany na podstawie wartości (po dacie, czasie, sali egzaminacyjnej oraz egzaminatorze) z tabeli `EgzaminyTeoretyczne` powiązanej z tabelą `PrzebiegiEgzaminowKandydata` na którego podstawie generujemy rezerwacje.],
+      [_ID_Kandydata_], [Klucz obcy do tabeli `Kandydat`. Generowany na podstawie wartości z tabeli `PKKKandydata` z tabeli `PrzebiegiEgzaminowKandydata`.],
+      [_CzasOczekiwaniaWDniach_], [Różnicami między datą rezerwacji a datą egzaminu. Obliczane na podstawie `CzasRezerwacjiTerminu` z `PrzebiegiEgzaminowKandydata` oraz `ZaplanowanyTermin` z `EgzaminyTeoretyczne`.],
+
+    title("OdbycieSieEgzaminu", 6),
+      subtitle("Krotka opisuje fakt odbycia się egzaminu."),
+      [_ID_TerminuEgzaminu_], [Klucz obcy do tabeli `TerminEgzaminu`. Generowany na podstawie wartości (po dacie, czasie, sali egzaminacyjnej oraz egzaminatorze) z tabeli `EgzaminyTeoretyczne` powiązanej z tabelą `PrzebiegiEgzaminowKandydata` na którego podstawie generujemy rezerwacje.],
+      [_ID_ZajetosciTerminuEgzaminu_], [Klucz obcy do tabeli `ZajetoscTerminuEgzaminu`. Generowany na podstawie ilości rezerwacji na termin (liczba `PrzebiegówEgzaminowKandydata` na dany z `EgzaminyTeoretyczne`) oraz maksymalnej liczby uczestników na termin (pojemność sali egzaminacyjnej) z tabeli `SaleEgzaminacyjne`.],
+      [_LiczbaRezerwacjiNaTermin_], [Liczba `PrzebiegówEgzaminowKandydata` przyporządkowanych do danego terminu z `EgzaminyTeoretyczne`.],
+      [_MaksymalnaLiczbaUczestnikow_], [Pojemność sali egzaminacyjnej z tabeli `SaleEgzaminacyjne`],
+      [_LiczbaUczestnikow_], [Liczba `PrzebiegówEgzaminowKandydata` przyporządkowanych do danego terminu z `EgzaminyTeoretyczne` z wartością `CzasRozpoczeciaEgzaminu` będącą różną od NULL.],
+
+    title("ZlozenieSkargi", 5),
+      subtitle("Krotka opisuje fakt złożenia skargi na przebieg egzaminu przez kandydata."),
+      [_ID_TerminuEgzaminu_], [Klucz obcy do tabeli `TerminEgzaminu`. Generowany na podstawie wartości (po dacie, czasie (`Termin egzaminu`) oraz egzaminatorze (`Pesel Egzaminatora`)) z excela dot. skarg (_Arkusz 1_)],
+      [_ID_Kandydata_], [Klucz obcy do tabeli `Kandydat`. Generowany na podstawie wartości z tabeli `PKK Kandydata` z excela dot. skarg (_Arkusz 1_).],
+      [_ID_Skargi_], [Klucz obcy do tabeli `Skarga`. Generowany na podstawie wartości z tabeli `Typ Egzaminu`, `Typ Skargi` z excela dot. skarg (_Arkusz 1_). Z powiązanego ze skargą egzaminu pozyskujemy wartości `Czy Istnieją Powiązane Incydenty` (liczba wierszy z tabeli `Incydenty` powiązanej z egzaminem) oraz `Czy Kandydat Odpowiedział Na Wszystkie Pytania` (powiązanie kandydata po `PKK Kandydata` z excela do `PrzebiegiEgzaminowKandydata` oraz `ZaplanowanePytania` i wyciągnięcie listy pytań z `CzyZostalaUdzielonaPoprawnaOdpowiedz` ustawionym na `0`).],
+      [_LiczbaPowiazanychIncydentow_], [Liczba wierszy z tabeli `Incydenty` powiązanej z egzaminem.],
+
+    title("OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga", 5),
+      subtitle("Krotka opisuje odpowiedzenie na pytanie przez kandydata podczas egzaminu na który złożył skargę."),
+      [_ID_TerminuEgzaminu_], [Klucz obcy do tabeli `TerminEgzamin`. Generowany na podstawie powiązania do `PrzebiegiEgzaminowKandydata` oraz `TerminEgzaminu` z tabelą `ZaplanowanePytania` na podstawie której generujemy fakty.],
+      [_ID_Kandydata_], [Klucz obcy do tabeli `Kandydat`. Generowany na podstawie wartości z tabeli `PKKKandydata` z `PrzebiegówEgzaminowKandydata`.],
+      [_ID_Pytania_], [Klucz obcy do tabeli `Pytania`. Generowany na podstawie `IdPytania` z tabeli `ZaplanowanePytania`],
+      [_ID_Skargi_], [Klucz obcy do tabeli `Skargi`. Generowany na podstawie dołączonego po dacie, czasie, egzaminatorze oraz PKK kandydata Skargi z excela oraz tabeli `PrzebiegEgzaminuKandydata`.],
+
+    title("Data", 1),
+      subtitle("Krotka opisuje datę. Dane generowane są na podstawie dowolnego kalendarza przed procesem ETL."),
+
+    title("Czas", 1),
+      subtitle("Krotka opisuje czas (niezależnie od daty). Dane generowane przed procesem ETL."),
+
+    title("Egzaminator", 5),
+      subtitle("Krotka opisuje egzaminatora."),
+      [_ID_Egzaminatora_], [PK - generowane przez bazę danych],
+      [_PESEL_], [Wartość `Pesel` z tabeli `Egzaminatorzy`],
+      [_ImieINazwisko_], [Wartość `Nazwa` z tabeli `Egzaminatorzy`],
+      [_CzyAktualne_], ["1" jeżeli informacja jest aktualna, "0" jeżeli nieaktualna (implementacja SCD2)],
+
+    title("TerminEgzaminu", 6),
+      subtitle("Krotka opisuje termin egzaminu."),
+      [_ID_TerminuEgzaminu_], [],
+      [_ID_Data Egzaminu_], [],
+      [_ID_CzasEgzaminu_], [],
+      [_ID_Egzaminatora_], [],
+      [_NumerSaliEgzaminacyjnej_], [],
+
+    title("Kandydat", 3),
+      subtitle("Krotka opisuje kandydata."),
+      [_ID_Kandydata_], [],
+      [_PKK_Kandydata_], [],
+
+    title("ZajetoscTerminuEgzaminu", 3),
+      subtitle("Krotka opisuje zajętość terminu egzaminu."),
+      [_ID_ZajetosciTerminuEgzaminu_], [],
+      [_ZajetoscTerminu_], [],
+
+    title("Skarga", 6),
+      subtitle("Krotka opisuje skargę."),
+      [_ID_Skargi_], [],
+      [_TypEgzaminu_], [],
+      [_TypSkargi_], [],
+      [_CzyIstniejaPowiazaneIncydenty_], [],
+      [_CzyKandydatOdpowiedzialNaWszystkiePytania_], [],
+
+    title("Pytanie", 3),
+      subtitle("Krotka opisuje pytanie."),
+      [_ID_Pytania_], [],
+      [_TrescPytania_], []
+  )
+]
