@@ -358,7 +358,7 @@ Wymiar: _Skarga_ (atrybuty: Typ Skargi)
 
 Miara: _Liczba pytań_
 
-Wymiar: _Egzaminator_ (atrybuty: Pesel Egzaminatora)
+Wymiar: _Egzaminator_ (atrybuty: Pesel Egzaminatora, ImieINazwisko Egzaminatora)
 
 === Podaj liczbę skarg złożonych w egzaminach w których nie wystąpiły żadne incydenty zgłoszone przez egzaminatorów.
 
@@ -385,31 +385,31 @@ Wymiar: _Skarga_ (atrybuty: Typ Skargi, Czy Kandydat Odpowiedział Na Wszystkie 
 
     title("ZarezerwowanieTerminuPrzezKandydata", 4),
       subtitle("Krotka opisuje fakt zarezerwowania terminu na egzamin teoretyczny przez kandydata."),
-      [_ID_TerminuEgzaminu_], [Klucz obcy do tabeli `TerminEgzaminu`. Generowany na podstawie wartości (po dacie, czasie, sali egzaminacyjnej oraz egzaminatorze) z tabeli `EgzaminyTeoretyczne` powiązanej z tabelą `PrzebiegiEgzaminowKandydata` na którego podstawie generujemy rezerwacje.],
-      [_ID_Kandydata_], [Klucz obcy do tabeli `Kandydat`. Generowany na podstawie wartości z tabeli `PKKKandydata` z tabeli `PrzebiegiEgzaminowKandydata`.],
-      [_CzasOczekiwaniaWDniach_], [Różnicami między datą rezerwacji a datą egzaminu. Obliczane na podstawie `CzasRezerwacjiTerminu` z `PrzebiegiEgzaminowKandydata` oraz `ZaplanowanyTermin` z `EgzaminyTeoretyczne`.],
+      [_ID_TerminuEgzaminu_], [Klucz obcy do tabeli `TerminEgzaminu`. Oparty na wartościach (dacie, czasie, sali egzaminacyjnej oraz egzaminatorze) z tabeli `EgzaminyTeoretyczne` powiązanej z tabelą `PrzebiegiEgzaminowKandydata`.],
+      [_ID_Kandydata_], [Klucz obcy do tabeli `Kandydat`. Oparty na wartościach z tabeli `PKKKandydata` z tabeli `PrzebiegiEgzaminowKandydata`.],
+      [_CzasOczekiwaniaWDniach_], [Różnica między datą rezerwacji a datą egzaminu. Obliczane na podstawie `CzasRezerwacjiTerminu` z `PrzebiegiEgzaminowKandydata` oraz `ZaplanowanyTermin` z `EgzaminyTeoretyczne`.],
 
     title("OdbycieSieEgzaminu", 6),
       subtitle("Krotka opisuje fakt odbycia się egzaminu."),
-      [_ID_TerminuEgzaminu_], [Klucz obcy do tabeli `TerminEgzaminu`. Generowany na podstawie wartości (po dacie, czasie, sali egzaminacyjnej oraz egzaminatorze) z tabeli `EgzaminyTeoretyczne` powiązanej z tabelą `PrzebiegiEgzaminowKandydata` na którego podstawie generujemy rezerwacje.],
-      [_ID_ZajetosciTerminuEgzaminu_], [Klucz obcy do tabeli `ZajetoscTerminuEgzaminu`. Generowany na podstawie ilości rezerwacji na termin (liczba `PrzebiegówEgzaminowKandydata` na dany z `EgzaminyTeoretyczne`) oraz maksymalnej liczby uczestników na termin (pojemność sali egzaminacyjnej) z tabeli `SaleEgzaminacyjne`.],
+      [_ID_TerminuEgzaminu_], [Klucz obcy do tabeli `TerminEgzaminu`. Oparty na wartościach (dacie, czasie, sali egzaminacyjnej oraz egzaminatorze) z tabeli `EgzaminyTeoretyczne` powiązanej z tabelą `PrzebiegiEgzaminowKandydata`.],
+      [_ID_ZajetosciTerminuEgzaminu_], [Klucz obcy do tabeli `ZajetoscTerminuEgzaminu`. Oparty na ilości rezerwacji na termin (liczba `PrzebiegówEgzaminowKandydata` na dany z `EgzaminyTeoretyczne`) oraz na maksymalnej liczbie uczestników przypadającej na termin (pojemność sali egzaminacyjnej) wynikającą z ilości połączeń danej sali z tabeli `SaleEgzaminacyjne` ze stanowiskami z tabeli `StanowiskaEgzaminacyjne`.],
       [_LiczbaRezerwacjiNaTermin_], [Liczba `PrzebiegówEgzaminowKandydata` przyporządkowanych do danego terminu z `EgzaminyTeoretyczne`.],
-      [_MaksymalnaLiczbaUczestnikow_], [Pojemność sali egzaminacyjnej z tabeli `SaleEgzaminacyjne`],
+      [_MaksymalnaLiczbaUczestnikow_], [Pojemność sali egzaminacyjnej, wynikająca z ilości połączeń danej sali z tabeli `SaleEgzaminacyjne` ze stanowiskami z tabeli `StanowiskaEgzaminacyjne`.],
       [_LiczbaUczestnikow_], [Liczba `PrzebiegówEgzaminowKandydata` przyporządkowanych do danego terminu z `EgzaminyTeoretyczne` z wartością `CzasRozpoczeciaEgzaminu` będącą różną od NULL.],
 
     title("ZlozenieSkargi", 5),
       subtitle("Krotka opisuje fakt złożenia skargi na przebieg egzaminu przez kandydata."),
-      [_ID_TerminuEgzaminu_], [Klucz obcy do tabeli `TerminEgzaminu`. Generowany na podstawie wartości (po dacie, czasie (`Termin egzaminu`) oraz egzaminatorze (`Pesel Egzaminatora`)) z excela dot. skarg (_Arkusz 1_)],
-      [_ID_Kandydata_], [Klucz obcy do tabeli `Kandydat`. Generowany na podstawie wartości z tabeli `PKK Kandydata` z excela dot. skarg (_Arkusz 1_).],
-      [_ID_Skargi_], [Klucz obcy do tabeli `Skarga`. Generowany na podstawie wartości z tabeli `Typ Egzaminu`, `Typ Skargi` z excela dot. skarg (_Arkusz 1_). Z powiązanego ze skargą egzaminu pozyskujemy wartości `Czy Istnieją Powiązane Incydenty` (liczba wierszy z tabeli `Incydenty` powiązanej z egzaminem) oraz `Czy Kandydat Odpowiedział Na Wszystkie Pytania` (powiązanie kandydata po `PKK Kandydata` z excela do `PrzebiegiEgzaminowKandydata` oraz `ZaplanowanePytania` i wyciągnięcie listy pytań z `CzyZostalaUdzielonaPoprawnaOdpowiedz` ustawionym na `0`).],
-      [_LiczbaPowiazanychIncydentow_], [Liczba wierszy z tabeli `Incydenty` powiązanej z egzaminem.],
+      [_ID_TerminuEgzaminu_], [Klucz obcy do tabeli `TerminEgzaminu`. Oparty na wartościach (dacie, czasie (`Termin egzaminu`) oraz egzaminatorze (`Pesel Egzaminatora`)) z excela dot. skarg (_Arkusz 1_)],
+      [_ID_Kandydata_], [Klucz obcy do tabeli `Kandydat`. Oparty na wartości `PKK Kandydata` z excela dot. skarg (_Arkusz 1_).],
+      [_ID_Skargi_], [Klucz obcy do tabeli `Skarga`. Oparty na wartościach z kolumn `Typ Egzaminu`, `Typ Skargi` z excela dot. skarg (_Arkusz 1_). Z powiązanego ze skargą egzaminu pozyskujemy wartości `Czy Istnieją Powiązane Incydenty` (liczba wierszy z tabeli `Incydenty` powiązanej z egzaminem) oraz `Czy Kandydat Odpowiedział Na Wszystkie Pytania` (powiązanie skargi po `PKK Kandydata` i `Terminie Egzaminu` z excela do `PrzebiegiEgzaminowKandydata` oraz `ZaplanowanePytania` i wyciągnięcie listy pytań z `CzyZostalaUdzielonaPoprawnaOdpowiedz` równym NULL).],
+      [_LiczbaPowiazanychIncydentow_], [Liczba wierszy z tabeli `Incydenty` powiązanej z egzaminem z tabeli `EgzaminTeoretyczny`.],
 
     title("OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga", 5),
-      subtitle("Krotka opisuje odpowiedzenie na pytanie przez kandydata podczas egzaminu na który złożył skargę."),
-      [_ID_TerminuEgzaminu_], [Klucz obcy do tabeli `TerminEgzamin`. Generowany na podstawie powiązania do `PrzebiegiEgzaminowKandydata` oraz `TerminEgzaminu` z tabelą `ZaplanowanePytania` na podstawie której generujemy fakty.],
-      [_ID_Kandydata_], [Klucz obcy do tabeli `Kandydat`. Generowany na podstawie wartości z tabeli `PKKKandydata` z `PrzebiegówEgzaminowKandydata`.],
-      [_ID_Pytania_], [Klucz obcy do tabeli `Pytania`. Generowany na podstawie `IdPytania` z tabeli `ZaplanowanePytania`],
-      [_ID_Skargi_], [Klucz obcy do tabeli `Skargi`. Generowany na podstawie dołączonego po dacie, czasie, egzaminatorze oraz PKK kandydata Skargi z excela oraz tabeli `PrzebiegEgzaminuKandydata`.],
+      subtitle("Krotka opisuje odpowiedzenie na pytanie przez kandydata podczas egzaminu, na który złożył skargę."),
+      [_ID_TerminuEgzaminu_], [Klucz obcy do tabeli `TerminEgzaminu`. Oparty na wartościach (dacie, czasie (`Termin egzaminu`) oraz egzaminatorze (`Pesel Egzaminatora`)) z excela dot. skarg (_Arkusz 1_)],
+      [_ID_Kandydata_], [Klucz obcy do tabeli `Kandydat`. Oparty na wartości `PKK Kandydata` z excela dot. skarg (_Arkusz 1_).],
+      [_ID_Pytania_], [Klucz obcy do tabeli `Pytania`. Oparty na wartości `Dane` z tabeli `Pytania`, powiązanej z tabelą `ZaplanowanePytania` (powiązanej na podstawie `PKK Kandydata` i `Terminu Egzaminu` z excela dot. skarg (_Arkusz 1_).)],
+      [_ID_Skargi_], [Klucz obcy do tabeli `Skargi`. Oparty na wartościach z kolumn `Typ Egzaminu`, `Typ Skargi` z excela dot. skarg (_Arkusz 1_).],
 
     title("Data", 1),
       subtitle("Krotka opisuje datę. Dane generowane są na podstawie dowolnego kalendarza przed procesem ETL."),
@@ -426,33 +426,33 @@ Wymiar: _Skarga_ (atrybuty: Typ Skargi, Czy Kandydat Odpowiedział Na Wszystkie 
 
     title("TerminEgzaminu", 6),
       subtitle("Krotka opisuje termin egzaminu."),
-      [_ID_TerminuEgzaminu_], [],
-      [_ID_Data Egzaminu_], [],
-      [_ID_CzasEgzaminu_], [],
-      [_ID_Egzaminatora_], [],
-      [_NumerSaliEgzaminacyjnej_], [],
+      [_ID_TerminuEgzaminu_], [PK - generowane przez bazę danych],
+      [_ID_Data Egzaminu_], [Klucz obcy do tabeli `Data`. Oparty na datach z tabeli `EgzaminyTeoretyczne`],
+      [_ID_CzasEgzaminu_], [Klucz obcy do tabeli `Czas`. Oparty na datach z tabeli `EgzaminyTeoretyczne`],
+      [_ID_Egzaminatora_], [Klucz obcy do tabeli `Egzaminator`. Oparty na powiązaniach wierszy tabeli `EgzaminyTeoretyczne` z tabelą `Egzaminatorzy`],
+      [_NumerSaliEgzaminacyjnej_], [Wartość `NumerSali` z tabeli `SaleEgzaminacyjne`],
 
     title("Kandydat", 3),
       subtitle("Krotka opisuje kandydata."),
-      [_ID_Kandydata_], [],
-      [_PKK_Kandydata_], [],
+      [_ID_Kandydata_], [PK - generowane przez bazę danych],
+      [_PKK_Kandydata_], [Wartość `PKK` z tabeli `Kandydaci`],
 
     title("ZajetoscTerminuEgzaminu", 3),
       subtitle("Krotka opisuje zajętość terminu egzaminu."),
-      [_ID_ZajetosciTerminuEgzaminu_], [],
-      [_ZajetoscTerminu_], [],
+      [_ID_ZajetosciTerminuEgzaminu_], [PK - generowane przez bazę danych],
+      [_ZajetoscTerminu_], [Wartości `Pusty`, `Częściowo Pełny`, `Pełny`],
 
     title("Skarga", 6),
       subtitle("Krotka opisuje skargę."),
-      [_ID_Skargi_], [],
-      [_TypEgzaminu_], [],
-      [_TypSkargi_], [],
-      [_CzyIstniejaPowiazaneIncydenty_], [],
-      [_CzyKandydatOdpowiedzialNaWszystkiePytania_], [],
+      [_ID_Skargi_], [PK - generowane przez bazę danych],
+      [_TypEgzaminu_], [Generowany na podstawie kolumny `Typ Egzaminu` z excela],
+      [_TypSkargi_], [Generowany na podstawie kolumny `Typ Skargi` z excela],
+      [_CzyIstniejaPowiazaneIncydenty_], [Wartości `Brak powiązanych incydentów`, `Istnieją powiązane incydenty`],
+      [_CzyKandydatOdpowiedzialNaWszystkiePytania_], [Wartości `Kandydat Nie Zdołał Odpowiedzieć Na Wszystkie Pytania`, `Kandydat Odpowiedział Na Wszystkie Pytania`],
 
     title("Pytanie", 3),
       subtitle("Krotka opisuje pytanie."),
-      [_ID_Pytania_], [],
-      [_TrescPytania_], []
+      [_ID_Pytania_], [PK - generowane przez bazę danych],
+      [_TrescPytania_], [Generowana na podstawie wartości `Dane` z tabeli `Pytania`]
   )
 ]
