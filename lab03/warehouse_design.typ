@@ -117,6 +117,8 @@ Hurtownia Danych zaprojektowana jest dla procesu przeprowadzania egzaminu teoret
   )
 ]
 
+#pagebreak()
+
 = Model Wymiarowy
 
 == Definicje Faktów
@@ -153,6 +155,8 @@ Miary i funkcje agregujące:
 - Łączna liczba rezerwacji - $"SUM(LiczbaRezerwacjiNaTermin)"$
 - Łączna liczba kandydatów nieobecnych - $"Łączna liczba rezerwacji" - "Łączna liczba uczestników"$
 
+#pagebreak()
+
 3. *ZlozenieSkargi*: Fakt złożenia skargi na przebieg egzaminu przez kandydata. Termin dotyczy egzaminu odbywającego się o konkretnej dacie i godzinie, w konkretnej sali egzaminacyjnej pod okiem konkretnego egzaminatora przez konkretnego kandydata. Fakt rozróżniany jest także przez typ egzaminu, typ skargi złożonej przez kandydata, czy podczas egzaminu wystąpiły incydenty, które zostały zgłoszone przez egzaminatorów oraz czy kandydat odpowiedział na wszystkie pytania.
 
 Ziarnistość:
@@ -187,6 +191,8 @@ Ziarnistość:
 
 Miary i funkcje agregujące:
 - Liczba pytań - $"COUNT(*)"$
+
+#pagebreak()
 
 == Definicje Wymiarów
 
@@ -241,9 +247,11 @@ Miary i funkcje agregujące:
     [*Poziom Zajętości Terminu*], [`ZajetoscTerminuEgzaminu.ZajetoscTerminu`], [Atrybut Wymiaru]
   ))
 
+  #pagebreak()
+
   3. *ZlozenieSkargi*
 
-    #text(size: 10pt, table(
+  #text(size: 10pt, table(
     columns: (auto, auto, auto),
     table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
     [*Termin Egzaminu*], [`TerminEgzaminu`], [Wymiar],
@@ -270,9 +278,11 @@ Miary i funkcje agregujące:
     [*Hierarchia Skargi*], [#hierarchy("Typ Egzaminu", "Typ Skargi", "Czy Istnieją Powiązane Incydenty")], [Wymiar Hierachi]
   ))
 
+  #pagebreak()
+
   4. *OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga*
 
-      #text(size: 10pt, table(
+  #text(size: 10pt, table(
     columns: (auto, auto, auto),
     table.header([*Atrybut*], [*Tabela / Kolumna*], [*Typ*]),
     [*Termin Egzaminu*], [`TerminEgzaminu`], [Wymiar],
@@ -321,6 +331,8 @@ Wymiar: _Data Egzaminu_ (atrybuty: Miesiąc Egzaminu)
 Miara: _Średnia liczba rezerwacji_
 
 Wymiar: _Data Egzaminu_ (atrybuty: Dzień Tygodnia Egzaminu)
+
+#pagebreak()
 
 === Podaj jak dużo kandydatów nie pojawiło się na egzaminie w tym i poprzednim miesiącu.
 
@@ -371,6 +383,8 @@ Wymiar: _Skarga_ (atrybuty: Czy Istnieją Powiązane Incydenty)
 Miara: _Liczba kandydatów którzy złożyli skargi_
 
 Wymiar: _Skarga_ (atrybuty: Typ Skargi, Czy Kandydat Odpowiedział Na Wszystkie Pytania)
+
+#pagebreak()
 
 == Sprawdzenie Możliwości Zasilienia Hurtowni Danych Za Pomocą Danych Źródłowych
 
