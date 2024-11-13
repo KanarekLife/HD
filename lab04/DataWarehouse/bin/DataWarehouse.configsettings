@@ -1,0 +1,84 @@
+﻿<ConfigurationSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Database>
+    <DataSources>
+      <DataSource>
+        <ID>Data Warehouse</ID>
+        <ConnectionString>Data Source=localhost;Initial Catalog=DataWarehouse;Persist Security Info=True;User ID=;Password=;Encrypt=False</ConnectionString>
+        <ManagedProvider>System.Data.SqlClient</ManagedProvider>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
+    </DataSources>
+    <Dimensions>
+      <Dimension>
+        <ID>Termin Egzaminu</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Kandydat</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Pytanie</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Skarga</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Zajetosc Terminu Egzaminu</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Data</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Czas</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Egzaminator</ID>
+      </Dimension>
+    </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>Data Warehouse</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</ID>
+            <Partitions>
+              <Partition>
+                <ID>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Zlozenie Skargi</ID>
+            <Partitions>
+              <Partition>
+                <ID>Zlozenie Skargi</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Odbycie Sie Egzaminu</ID>
+            <Partitions>
+              <Partition>
+                <ID>Odbycie Sie Egzaminu</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Zarezerwowanie Terminu</ID>
+            <Partitions>
+              <Partition>
+                <ID>Zarezerwowanie Terminu</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
+    <DataSourceImpersonationInfo>
+      <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+      <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+    </DataSourceImpersonationInfo>
+  </Database>
+</ConfigurationSettings>

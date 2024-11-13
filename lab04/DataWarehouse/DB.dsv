@@ -1,0 +1,296 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ddb9f02c-ef66-470b-9482-4c9a0998326b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DB</ID>
+  <Name>DB</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>DB</DataSourceID>
+  <Schema>
+    <xs:schema id="DB" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="DB" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="e46a3cfe-4119-4543-837c-c4c272cfafd0">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Egzaminatorzy" msprop:DbTableName="Egzaminatorzy" msprop:FriendlyName="Egzaminatorzy" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="23c51723-1c9c-4b9a-ac35-4ace40781fee">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="0ce111fa-46af-441a-aae7-391786c5b961" type="xs:string" />
+                  <xs:element name="Pesel" msprop:FriendlyName="Pesel" msprop:DbColumnName="Pesel" msprop:design-time-name="5e87f4df-b33d-4cdc-84a2-f6771e8e3cd6">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="11" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Nazwa" msprop:FriendlyName="Nazwa" msprop:DbColumnName="Nazwa" msprop:design-time-name="8f3b900b-7b6f-4e83-b8fd-44a8c957b9ef">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1073741823" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_EgzaminyTeoretyczne" msprop:DbTableName="EgzaminyTeoretyczne" msprop:FriendlyName="EgzaminyTeoretyczne" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="4fc18e82-6f0f-4ae9-891a-99f8e1034898">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="912e5648-3dd5-4911-b159-4311c303906a" type="xs:string" />
+                  <xs:element name="ZaplanowanyTermin" msprop:FriendlyName="ZaplanowanyTermin" msprop:DbColumnName="ZaplanowanyTermin" msprop:design-time-name="e086ece8-eeed-418d-b510-20f803ae5ad4">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="27" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NumerSaliEgzaminacyjnej" msprop:FriendlyName="NumerSaliEgzaminacyjnej" msprop:DbColumnName="NumerSaliEgzaminacyjnej" msprop:design-time-name="364e0c64-4d1e-4477-aea0-4702f6cf081f" type="xs:int" />
+                  <xs:element name="IdEgzaminatora" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="IdEgzaminatora" msprop:DbColumnName="IdEgzaminatora" msprop:design-time-name="5e441d08-f585-488a-9d3e-1d127e2431a3" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Incydenty" msprop:DbTableName="Incydenty" msprop:FriendlyName="Incydenty" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="4bc1d6da-2293-457f-9a24-5fc7bb1e6148">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="7cc30043-c335-43d1-90c0-77d0bf95524c" type="xs:string" />
+                  <xs:element name="IdEgzaminu" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="IdEgzaminu" msprop:DbColumnName="IdEgzaminu" msprop:design-time-name="ce6c62da-5067-4858-bda2-a2cc0a0026ed" type="xs:string" />
+                  <xs:element name="Tresc" msprop:FriendlyName="Tresc" msprop:DbColumnName="Tresc" msprop:design-time-name="7a81c9c5-17d9-4c90-9d0d-9bc53a356549">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1073741823" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Powod" msprop:FriendlyName="Powod" msprop:DbColumnName="Powod" msprop:design-time-name="f7067724-937c-42ff-9c5d-e091c51d6c9f">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1073741823" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Kandydaci" msprop:DbTableName="Kandydaci" msprop:FriendlyName="Kandydaci" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="cc61ccdd-40b0-4fdf-bdba-09f560cbb58c">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PKK" msprop:FriendlyName="PKK" msprop:DbColumnName="PKK" msprop:design-time-name="dbcf0e23-d99f-4167-9dd8-b8ead59c3b6a">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Nazwa" msprop:FriendlyName="Nazwa" msprop:DbColumnName="Nazwa" msprop:design-time-name="65d5b47e-5767-44a8-b798-0d21be631c14">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1073741823" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_PrzebiegiEgzaminowKandydata" msprop:DbTableName="PrzebiegiEgzaminowKandydata" msprop:FriendlyName="PrzebiegiEgzaminowKandydata" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="1b4c826f-1928-4588-84e9-7151b6326e70">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="1660ff05-dbc6-4ade-aae2-c5d5bce70c91" type="xs:string" />
+                  <xs:element name="IdEgzaminuTeoretycznego" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="IdEgzaminuTeoretycznego" msprop:DbColumnName="IdEgzaminuTeoretycznego" msprop:design-time-name="1a916b66-f441-499a-8235-d069a7ae7218" type="xs:string" />
+                  <xs:element name="IdStanowiskaEgzaminacyjnego" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="IdStanowiskaEgzaminacyjnego" msprop:DbColumnName="IdStanowiskaEgzaminacyjnego" msprop:design-time-name="50e398df-74ac-4ec1-ab93-10c98227f971" type="xs:string" />
+                  <xs:element name="PKKKandydata" msprop:FriendlyName="PKKKandydata" msprop:DbColumnName="PKKKandydata" msprop:design-time-name="74f7c035-f31a-4323-9a1b-3fbe4e9d4b96">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CzasRezerwacjiTerminu" msprop:FriendlyName="CzasRezerwacjiTerminu" msprop:DbColumnName="CzasRezerwacjiTerminu" msprop:design-time-name="66ece503-6622-46a7-bdfb-387ad32a9c4c">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="27" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CzasPotwierdzeniaGotowosciPrzezKandydata" msprop:FriendlyName="CzasPotwierdzeniaGotowosciPrzezKandydata" msprop:DbColumnName="CzasPotwierdzeniaGotowosciPrzezKandydata" msprop:design-time-name="2aeb4049-2ad5-42a8-adef-355abb1ac462" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="27" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CzasRozpoczeciaEgzaminu" msprop:FriendlyName="CzasRozpoczeciaEgzaminu" msprop:DbColumnName="CzasRozpoczeciaEgzaminu" msprop:design-time-name="d4f66e35-89a3-40f4-91d0-7aed4c3b5e4d" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="27" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CzasZakonczeniaEgzaminu" msprop:FriendlyName="CzasZakonczeniaEgzaminu" msprop:DbColumnName="CzasZakonczeniaEgzaminu" msprop:design-time-name="02f82988-041f-428e-a163-eeaf8ef3e227" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="27" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Pytania" msprop:DbTableName="Pytania" msprop:FriendlyName="Pytania" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="8bc2e567-7893-48a3-b828-94222cff9f0f">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="1b73ce46-aa4c-40b2-8de0-4c54eaa2e958" type="xs:string" />
+                  <xs:element name="Dane" msprop:FriendlyName="Dane" msprop:DbColumnName="Dane" msprop:design-time-name="cdd8a246-b399-4551-aaeb-36db96860aa1">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1073741823" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_SaleEgzaminacyjne" msprop:DbTableName="SaleEgzaminacyjne" msprop:FriendlyName="SaleEgzaminacyjne" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="15e683e5-bc97-4a42-9b10-8522442eaa27">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="NumerSali" msprop:FriendlyName="NumerSali" msprop:DbColumnName="NumerSali" msprop:design-time-name="fc683527-7361-4240-ae8b-d6a7d56afef6" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_StanowiskaEgzaminacyjne" msprop:DbTableName="StanowiskaEgzaminacyjne" msprop:FriendlyName="StanowiskaEgzaminacyjne" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="0b68c186-a7b5-4f25-bb58-44a4fd667898">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="18d43601-21a0-42b5-9d01-dfbf00afa5ef" type="xs:string" />
+                  <xs:element name="NumerSali" msprop:FriendlyName="NumerSali" msprop:DbColumnName="NumerSali" msprop:design-time-name="999bce1a-2a67-4f15-8a8c-c89e9d5f2c8a" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_ZaplanowanePytania" msprop:DbTableName="ZaplanowanePytania" msprop:FriendlyName="ZaplanowanePytania" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="dcc6e33e-57ad-4b91-b4d3-8e23f536df67">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="b764e1d4-20c5-44c8-82e9-de7bba6a9038" type="xs:string" />
+                  <xs:element name="IdPrzebieguEgzaminu" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="IdPrzebieguEgzaminu" msprop:DbColumnName="IdPrzebieguEgzaminu" msprop:design-time-name="0b7a4052-e824-48b8-89bd-848bbf98a975" type="xs:string" />
+                  <xs:element name="IdPytania" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:FriendlyName="IdPytania" msprop:DbColumnName="IdPytania" msprop:design-time-name="bd2a7109-2959-461e-bd48-b3bf980429e1" type="xs:string" />
+                  <xs:element name="CzyZostalaUdzielonaPoprawnaOdpowiedz" msprop:FriendlyName="CzyZostalaUdzielonaPoprawnaOdpowiedz" msprop:DbColumnName="CzyZostalaUdzielonaPoprawnaOdpowiedz" msprop:design-time-name="cffec479-f9a0-4c40-860f-7652f19eff6f" type="xs:boolean" minOccurs="0" />
+                  <xs:element name="CzasUdzieleniaOdpowiedzi" msprop:FriendlyName="CzasUdzieleniaOdpowiedzi" msprop:DbColumnName="CzasUdzieleniaOdpowiedzi" msprop:design-time-name="9c763ed7-fd32-4f31-9b9b-5bda84a62974" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="27" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PriorytetPytania" msprop:FriendlyName="PriorytetPytania" msprop:DbColumnName="PriorytetPytania" msprop:design-time-name="8707bbc3-6f97-4a00-a473-786f0ef3c528" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Egzaminatorzy" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="dbo_EgzaminyTeoretyczne_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_EgzaminyTeoretyczne" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="dbo_Incydenty_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Incydenty" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="dbo_Kandydaci_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Kandydaci" />
+          <xs:field xpath="PKK" />
+        </xs:unique>
+        <xs:unique name="dbo_PrzebiegiEgzaminowKandydata_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_PrzebiegiEgzaminowKandydata" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="dbo_Pytania_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Pytania" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="dbo_SaleEgzaminacyjne_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_SaleEgzaminacyjne" />
+          <xs:field xpath="NumerSali" />
+        </xs:unique>
+        <xs:unique name="dbo_StanowiskaEgzaminacyjne_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_StanowiskaEgzaminacyjne" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:unique name="dbo_ZaplanowanePytania_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_ZaplanowanePytania" />
+          <xs:field xpath="Id" />
+        </xs:unique>
+        <xs:keyref name="FK_Pytanie" refer="dbo_Pytania_Constraint1">
+          <xs:selector xpath=".//dbo_ZaplanowanePytania" />
+          <xs:field xpath="IdPytania" />
+        </xs:keyref>
+        <xs:keyref name="FK_PrzebiegEgzaminu" refer="dbo_PrzebiegiEgzaminowKandydata_Constraint1">
+          <xs:selector xpath=".//dbo_ZaplanowanePytania" />
+          <xs:field xpath="IdPrzebieguEgzaminu" />
+        </xs:keyref>
+        <xs:keyref name="FK_NumerSali" refer="dbo_SaleEgzaminacyjne_Constraint1">
+          <xs:selector xpath=".//dbo_StanowiskaEgzaminacyjne" />
+          <xs:field xpath="NumerSali" />
+        </xs:keyref>
+        <xs:keyref name="FK_Kandydat" refer="dbo_Kandydaci_Constraint1">
+          <xs:selector xpath=".//dbo_PrzebiegiEgzaminowKandydata" />
+          <xs:field xpath="PKKKandydata" />
+        </xs:keyref>
+        <xs:keyref name="FK_EgzaminTeoretyczny" refer="dbo_EgzaminyTeoretyczne_Constraint1">
+          <xs:selector xpath=".//dbo_PrzebiegiEgzaminowKandydata" />
+          <xs:field xpath="IdEgzaminuTeoretycznego" />
+        </xs:keyref>
+        <xs:keyref name="FK_StanowiskoEgzaminacyjne" refer="dbo_StanowiskaEgzaminacyjne_Constraint1">
+          <xs:selector xpath=".//dbo_PrzebiegiEgzaminowKandydata" />
+          <xs:field xpath="IdStanowiskaEgzaminacyjnego" />
+        </xs:keyref>
+        <xs:keyref name="FK_Egzamin" refer="dbo_EgzaminyTeoretyczne_Constraint1">
+          <xs:selector xpath=".//dbo_Incydenty" />
+          <xs:field xpath="IdEgzaminu" />
+        </xs:keyref>
+        <xs:keyref name="FK_Egzaminator" refer="Constraint1">
+          <xs:selector xpath=".//dbo_EgzaminyTeoretyczne" />
+          <xs:field xpath="IdEgzaminatora" />
+        </xs:keyref>
+        <xs:keyref name="FK_SalaEgzaminacyjna" refer="dbo_SaleEgzaminacyjne_Constraint1">
+          <xs:selector xpath=".//dbo_EgzaminyTeoretyczne" />
+          <xs:field xpath="NumerSaliEgzaminacyjnej" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <DB xmlns="" />
+  </Schema>
+</DataSourceView>
