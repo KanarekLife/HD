@@ -1,23 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.11.35327.3
+VisualStudioVersion = 17.12.35506.116 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "DataWarehouse", "DataWarehouse.dwproj", "{0B24E93D-937A-4798-A104-1F2D8A72C20C}"
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "DataWarehouse", "DataWarehouse.dwproj", "{294BF69D-B4A0-4835-B124-07BA904AB4E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0B24E93D-937A-4798-A104-1F2D8A72C20C}.Development|Default.ActiveCfg = Development
-		{0B24E93D-937A-4798-A104-1F2D8A72C20C}.Development|Default.Build.0 = Development
-		{0B24E93D-937A-4798-A104-1F2D8A72C20C}.Development|Default.Deploy.0 = Development
+		{294BF69D-B4A0-4835-B124-07BA904AB4E3}.Development|Default.ActiveCfg = Development
+		{294BF69D-B4A0-4835-B124-07BA904AB4E3}.Development|Default.Build.0 = Development
+		{294BF69D-B4A0-4835-B124-07BA904AB4E3}.Development|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BB334F86-2283-4B87-B340-023BB2A66C34}
 	EndGlobalSection
 EndGlobal

@@ -24,6 +24,10 @@
       <FullPath>Termin Egzaminu.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Zajetosc Terminu Egzaminu.dim</Name>
+      <FullPath>Zajetosc Terminu Egzaminu.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Kandydat.dim</Name>
       <FullPath>Kandydat.dim</FullPath>
     </ProjectItem>
@@ -36,16 +40,12 @@
       <FullPath>Skarga.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Zajetosc Terminu Egzaminu.dim</Name>
-      <FullPath>Zajetosc Terminu Egzaminu.dim</FullPath>
+      <Name>Czas.dim</Name>
+      <FullPath>Czas.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Data.dim</Name>
       <FullPath>Data.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Czas.dim</Name>
-      <FullPath>Czas.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Egzaminator.dim</Name>
@@ -72,21 +72,14 @@
           <ConfigurationSetting>
             <Id>Data Warehouse</Id>
             <Name>Data Warehouse</Name>
-            <Value xsi:type="xsd:string">Data Source=localhost;Initial Catalog=DataWarehouse;Persist Security Info=True;User ID=;Password=;Encrypt=False</Value>
+            <Value xsi:type="xsd:string">Provider=SQLOLEDB.1;Data Source=LAPTOP;Integrated Security=SSPI;Initial Catalog=DataWarehouse</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
-        <ConnectionProviderMappings>
-          <ConfigurationSetting>
-            <Id>Data Warehouse</Id>
-            <Name>Data Warehouse</Name>
-            <Value xsi:type="xsd:string">System.Data.SqlClient</Value>
-          </ConfigurationSetting>
-        </ConnectionProviderMappings>
         <ConnectionSecurityMappings>
           <ConfigurationSetting>
             <Id>Data Warehouse</Id>
             <Name>Data Warehouse</Name>
-            <Value xsi:type="xsd:int">1</Value>
+            <Value xsi:type="xsd:int">0</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>
       </Options>

@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f25bbc57-2309-4b23-b3d3-b6848cf0c0a6" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4bbc076b-200c-42a0-bc08-0faf777b323e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Pytanie</ID>
   <Name>Pytanie</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,9 +8,9 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7026" scrolltop="-14724" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="17092" y="31327" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4364" scrolltop="-4720" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="11769" y="11028" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
-              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
             </font>
             <mouseicon>
               <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -19,9 +19,9 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Pytanie" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Pytanie" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000057070000" />
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000034060000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
@@ -47,11 +47,11 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>-7026</Value>
+      <Value>-4364</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>-14724</Value>
+      <Value>-4720</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -68,31 +68,31 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="53513143-ac1b-42ee-8bb3-ab908f66863f">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="80093906-e4ab-4286-ad8e-38769dcd59b5">
     <DataSourceViewID>Data Warehouse</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="97a3bbce-6e95-472b-84d7-ffaa271570a7">
+  <ErrorConfiguration dwd:design-time-name="684e923e-cf26-4c4b-92fd-b37219498629">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="08426e76-172a-4595-934e-eaf9bd15e168">
+    <Attribute dwd:design-time-name="034deca7-2d06-419e-b0ed-e311561d56f0">
       <ID>ID Pytania</ID>
       <Name>ID Pytania</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="6f1d8656-3998-4fee-9cee-a2fce06b88a8">
+        <KeyColumn dwd:design-time-name="cc33712b-bcb3-469f-85eb-1c138d4491dd">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="7db88cdb-0cb4-4812-89f9-dcfae054fcb1">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dd5dd979-ea71-4eeb-b30d-4a716d8c8270">
             <TableID>dbo_Pytanie</TableID>
             <ColumnID>ID_Pytania</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="888873e6-f95b-4a3c-a36f-3e89a5383ecb">
+        <AttributeRelationship dwd:design-time-name="a5431124-0396-42d0-aa42-bfb66d72699f">
           <AttributeID>Tresc</AttributeID>
           <Name>Tresc</Name>
         </AttributeRelationship>
@@ -101,14 +101,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="8ea01f60-98e0-482e-ac46-0f2b6b5549ac">
+    <Attribute dwd:design-time-name="67f7f243-955c-46bb-9139-9984e2611f1f">
       <ID>Tresc</ID>
       <Name>Tresc</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="83202fe9-9aa4-408d-aa9d-dae635091dd0">
+        <KeyColumn dwd:design-time-name="8bc71fe9-af8a-4177-ac8c-a4dd8d5ae3ab">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="0be0b92d-5ce2-4502-8eb0-a84b3719a7c8">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f10f4d8b-5be0-4577-a957-581bf6279047">
             <TableID>dbo_Pytanie</TableID>
             <ColumnID>Tresc</ColumnID>
           </Source>

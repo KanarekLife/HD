@@ -3,20 +3,6 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <UserIDs>
-          <ConfigurationSetting>
-            <Id>Data Warehouse</Id>
-            <Name>Data Warehouse</Name>
-            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALX0TVHjpwUKmw56rOHwFuQAAAAAeAAAARABhAHQAYQAgAFcAYQByAGUAaABvAHUAcwBlAAAAEGYAAAABAAAgAAAAGHQib7CuFivznqcGGFhOOqSZqAuHQWF06bJiLGNxoXQAAAAADoAAAAACAAAgAAAAq/TbpduQfUul9Bzh+XrCFfOiY/HuZSx8E9le3fLu25gQAAAAqsXQz8sT8cNz7Xpu8u0X0kAAAAD0vr+WynkixEwlD1U2eTzMt1EEoHlaQAIvS61JcTKcBAdxWodf6wQ3uNQ+UJm1+4LpA1duO8saQOb3GS151a0K</Value>
-          </ConfigurationSetting>
-        </UserIDs>
-        <UserPasswords>
-          <ConfigurationSetting>
-            <Id>Data Warehouse</Id>
-            <Name>Data Warehouse</Name>
-            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALX0TVHjpwUKmw56rOHwFuQAAAAAeAAAARABhAHQAYQAgAFcAYQByAGUAaABvAHUAcwBlAAAAEGYAAAABAAAgAAAAWuZyzDmk+WyufUWmvTO+GSMUnK19TD65QH9b9gTPkPIAAAAADoAAAAACAAAgAAAAjJJUBfxSUyCjuuSC8jq4r/2m607V7BU2OSrWnVuHvGcgAAAALWuTgNMNq5jbZIARAiCvkaVl0kT1+nY3YUYynSwwC5xAAAAA8j+nqwEwfqzqUeNExTQzbkD1Nxd5N4WXbqvIp//uaA7YJcvNRCoTATGkHgi+PJAsEK1mLvWO3mTnQz2YjAf88Q==</Value>
-          </ConfigurationSetting>
-        </UserPasswords>
         <TargetServer>localhost</TargetServer>
         <TargetDatabase>DataWarehouse</TargetDatabase>
         <StartObject>

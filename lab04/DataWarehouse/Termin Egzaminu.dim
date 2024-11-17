@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="3035d1d6-ca28-4fae-a793-9ed1deab92d9" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5c1e316c-0a4a-4e38-a5be-3b8824299561" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Termin Egzaminu</ID>
   <Name>Termin Egzaminu</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,9 +8,9 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="8" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3000" scrolltop="-8950" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="17092" y="31327" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="8" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-571" scrolltop="-2288" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="11557" y="18182" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
-              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
             </font>
             <mouseicon>
               <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -19,9 +19,9 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Egzaminator" left="549" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3360" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Egzaminator" left="602" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3366" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000200d0000a50a0000" />
+              <ddsxmlobjectstreaminitwrapper binary="000e0000260d000003090000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
@@ -30,9 +30,9 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="TerminEgzaminu" left="20" top="5125" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="4419" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="TerminEgzaminu" left="20" top="4707" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="4530" height="2667" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000431100004d0c0000" />
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b21100006b0a0000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
@@ -41,20 +41,9 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Data" left="6839" top="4702" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3784" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Czas" left="6950" top="5067" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="1947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000c80e00009b0f0000" />
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dbo_Data" vartype="8" />
-              </ddsxmlobj>
-            </layoutobject>
-            <shape groupshapeid="0" groupnode="0" />
-          </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Czas" left="729" top="10674" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3000" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000fe080000" />
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00009b070000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
@@ -63,7 +52,18 @@
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="1830" top="2226" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Data" left="369" top="9774" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3831" height="3387" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000f70e00003b0d0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Data" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="1886" top="1808" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -71,17 +71,17 @@
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[TerminEgzaminu-Egzaminator]" vartype="8" />
+                <property name="LogicalObject" value="dataSet.Relations[FK__TerminEgz__ID_Eg__4E88ABD4]" vartype="8" />
                 <property name="Virtual" value="0" vartype="11" />
                 <property name="VisibleAP" value="0" vartype="3" />
               </ddsxmlobj>
             </layoutobject>
             <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="5" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="2229" y="2725" />
-              <point x="2229" y="5125" />
+              <point x="2285" y="2307" />
+              <point x="2285" y="4707" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="4139" top="6300" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="1885" top="7074" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -89,17 +89,19 @@
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[TerminEgzaminu-Data]" vartype="8" />
+                <property name="LogicalObject" value="dataSet.Relations[FK__TerminEgz__ID_Da__4CA06362]" vartype="8" />
                 <property name="Virtual" value="0" vartype="11" />
                 <property name="VisibleAP" value="0" vartype="3" />
               </ddsxmlobj>
             </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="2" sourceattachpoint="20" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="6839" y="6699" />
-              <point x="4439" y="6699" />
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="2" sourceattachpoint="6" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="2284" y="9774" />
+              <point x="2284" y="8574" />
+              <point x="2285" y="8574" />
+              <point x="2285" y="7374" />
             </connector>
           </ddscontrol>
-          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="1830" top="7974" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="4250" top="5641" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobj>
                 <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -107,14 +109,14 @@
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[TerminEgzaminu-Czas]" vartype="8" />
+                <property name="LogicalObject" value="dataSet.Relations[FK__TerminEgz__ID_Cz__4D94879B]" vartype="8" />
                 <property name="Virtual" value="0" vartype="11" />
                 <property name="VisibleAP" value="0" vartype="3" />
               </ddsxmlobj>
             </layoutobject>
-            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="2" sourceattachpoint="4" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-              <point x="2229" y="10674" />
-              <point x="2229" y="8274" />
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="2" sourceattachpoint="12" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="6950" y="6040" />
+              <point x="4550" y="6040" />
             </connector>
           </ddscontrol>
         </dds>
@@ -134,11 +136,11 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>-3000</Value>
+      <Value>-571</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>-8950</Value>
+      <Value>-2288</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -155,43 +157,43 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="fd071341-eb69-46ea-86f3-706ec0aa09bc">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="82416a4c-7a9a-45b2-815b-040f81b023c7">
     <DataSourceViewID>Data Warehouse</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="ad2e17a7-de93-4cbd-8136-4c049fc84965">
+  <ErrorConfiguration dwd:design-time-name="5b835c1e-b80f-4558-b183-f5b073c38493">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="3043f8e4-6995-4c1e-bf44-f00524977485">
+    <Attribute dwd:design-time-name="0342e24d-65b3-4cfe-944c-c38b14917c46">
       <ID>ID Terminu Egzaminu</ID>
       <Name>ID Terminu Egzaminu</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="7f1f6959-c7b0-48e7-8c2d-86a560a181b8">
+        <KeyColumn dwd:design-time-name="c021e9fb-7cd5-4acf-a665-224fcf4bebc8">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="97d5fdd2-c6b7-4a8c-9b0b-ee4bd0e952fc">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7631f791-49f3-4f6b-aec5-9f86fb66d32f">
             <TableID>dbo_TerminEgzaminu</TableID>
             <ColumnID>ID_TerminuEgzaminu</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="8486875d-fb5e-4884-a8dc-ed6b363bf765">
+        <AttributeRelationship dwd:design-time-name="276c24ea-a599-48f3-93f3-77c8f60300a8">
           <AttributeID>ID Daty</AttributeID>
           <Name>ID Daty</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="207beb52-0e2b-4022-b032-34aa98e93ccd">
+        <AttributeRelationship dwd:design-time-name="0f7adbd7-3bcd-4584-be59-24e0467e3677">
           <AttributeID>ID Czasu</AttributeID>
           <Name>ID Czasu</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="fdc4e3f1-5c0f-41c3-a36e-99277595ddb6">
+        <AttributeRelationship dwd:design-time-name="a800c6e5-b0b0-43c0-b8fe-6368bf192d6f">
           <AttributeID>ID Egzaminatora</AttributeID>
           <Name>ID Egzaminatora</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="cb3784a1-1cce-4be1-893f-1a9227874aea">
+        <AttributeRelationship dwd:design-time-name="779310d3-7d58-4b91-9806-899aaa91662f">
           <AttributeID>Numer Sali Egzaminacyjnej</AttributeID>
           <Name>Numer Sali Egzaminacyjnej</Name>
         </AttributeRelationship>
@@ -200,13 +202,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="3f1d6f62-20ad-4d06-9c5a-7e5433644f9f">
+    <Attribute dwd:design-time-name="f714b0a1-a261-4389-b478-6333ee159ece">
       <ID>ID Daty</ID>
       <Name>ID Daty</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="de3f64cc-558b-4e80-bc64-6eac7c5083f4">
+        <KeyColumn dwd:design-time-name="1b9e1d49-e4df-440f-a189-2f86bc52ed54">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a2fcc92f-ec30-4294-a47f-3497512a72d6">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3522e914-e32c-41bb-894f-de2a5e2af26a">
             <TableID>dbo_Data</TableID>
             <ColumnID>ID_Daty</ColumnID>
           </Source>
@@ -216,13 +218,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="c8951a02-61f6-4cce-9a3b-080a8544f9da">
+    <Attribute dwd:design-time-name="cada130b-e8e9-49dc-a716-43f9a8dfc1b3">
       <ID>ID Czasu</ID>
       <Name>ID Czasu</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="e4ec2cd1-1163-4dc7-a1bd-62acb73e0b19">
+        <KeyColumn dwd:design-time-name="793c8cc3-354f-4c4d-b286-1be40104d3f1">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="5ac3d876-9097-4058-b396-04adc3703560">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8d9e5562-89c2-4ea7-9885-818f610a51a4">
             <TableID>dbo_Czas</TableID>
             <ColumnID>ID_Czasu</ColumnID>
           </Source>
@@ -232,13 +234,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="24e1e11b-b802-4bd9-bb74-5887e93ec1a4">
+    <Attribute dwd:design-time-name="6b57f630-c69e-4da3-9f85-4d090f6011b3">
       <ID>ID Egzaminatora</ID>
       <Name>ID Egzaminatora</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="73ef784d-ed5e-4fb3-b2ac-7b05f6f5b864">
+        <KeyColumn dwd:design-time-name="d3ab93e3-62b1-46ea-9921-c2e8d137f765">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="2d3a8c3b-4cac-4592-9fc3-ace3c010f706">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="91511f5b-cd33-4d64-98f8-ac194c241169">
             <TableID>dbo_Egzaminator</TableID>
             <ColumnID>ID_Egzaminatora</ColumnID>
           </Source>
@@ -248,14 +250,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="f5ac0e12-0652-433f-9190-2c257102d410">
+    <Attribute dwd:design-time-name="8a56b857-c2c3-4033-86e3-412267f518a0">
       <ID>Numer Sali Egzaminacyjnej</ID>
       <Name>Numer Sali Egzaminacyjnej</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="8cdea3ea-6ca3-4a1f-95bb-c306fd42fe24">
+        <KeyColumn dwd:design-time-name="9e834178-210a-4eca-80a4-a72eae1b6155">
           <DataType>WChar</DataType>
           <DataSize>3</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="16142c64-01b3-4da2-a642-d8355f464801">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="31bab2a9-8730-4ea1-b8d8-100265e63d3d">
             <TableID>dbo_TerminEgzaminu</TableID>
             <ColumnID>NumerSaliEgzaminacyjnej</ColumnID>
           </Source>

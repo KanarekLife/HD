@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="cd065f5d-120e-41f5-a0aa-0dc8bee3478e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="23ee1310-d518-49a3-a2cc-d057076b99b1" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Kandydat</ID>
   <Name>Kandydat</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,9 +8,9 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-7018" scrolltop="-14724" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="17092" y="31327" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4364" scrolltop="-4720" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="11769" y="11028" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
-              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
             </font>
             <mouseicon>
               <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -19,9 +19,9 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Kandydat" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3016" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Kandydat" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000c80b000057070000" />
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000034060000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
@@ -47,11 +47,11 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>-7018</Value>
+      <Value>-4364</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>-14724</Value>
+      <Value>-4720</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -68,31 +68,31 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="a1980cda-3748-4e5b-b41f-0dee53c7c5c2">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="da6f309e-0378-4654-972e-5ffbd6f97dbe">
     <DataSourceViewID>Data Warehouse</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="e6fda6ee-9898-40dd-83a6-8d12b93bc843">
+  <ErrorConfiguration dwd:design-time-name="06cf65f4-8cea-40fb-8c86-5cb4fbb31425">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="72298eb1-9bb6-4299-b7f9-fa42995d6541">
+    <Attribute dwd:design-time-name="a942efdc-512e-4501-8002-53c9869e990b">
       <ID>ID Kandydata</ID>
       <Name>ID Kandydata</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="f2ecf2f9-e1ce-4589-95d8-1cbd939549cd">
+        <KeyColumn dwd:design-time-name="ca6cb648-c2e1-4b92-a9a1-4caf054c6f4d">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="1d342d9f-aaf8-403e-ad0c-237d94f9ff47">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5ee84a70-ac2a-4084-bcf2-9819f79533e8">
             <TableID>dbo_Kandydat</TableID>
             <ColumnID>ID_Kandydata</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="81836d7b-851f-4ccc-8dc6-3e9c4efca47f">
+        <AttributeRelationship dwd:design-time-name="349badce-1b11-4661-bd8c-ec0e9f7c2258">
           <AttributeID>PKK</AttributeID>
           <Name>PKK</Name>
         </AttributeRelationship>
@@ -101,14 +101,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="af08805a-01f8-4466-a222-5a8cb69a91ad">
+    <Attribute dwd:design-time-name="1950ea36-92db-4d86-89b7-3b9687460e47">
       <ID>PKK</ID>
       <Name>PKK</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="abf8211b-9ec7-4f0f-bcbd-65ba81262fd1">
+        <KeyColumn dwd:design-time-name="09d015a2-c80d-4bee-b737-d15d9cdb62c1">
           <DataType>WChar</DataType>
           <DataSize>20</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="2fbc0742-4dd2-4c87-bc10-aacfd175ac08">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0e90dce3-91b0-43d4-92f2-ec44b39e6725">
             <TableID>dbo_Kandydat</TableID>
             <ColumnID>PKK</ColumnID>
           </Source>

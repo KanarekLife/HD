@@ -3,17 +3,20 @@
     <DataSources>
       <DataSource>
         <ID>Data Warehouse</ID>
-        <ConnectionString>Data Source=localhost;Initial Catalog=DataWarehouse;Persist Security Info=True;User ID=;Password=;Encrypt=False</ConnectionString>
-        <ManagedProvider>System.Data.SqlClient</ManagedProvider>
+        <ConnectionString>Provider=SQLOLEDB.1;Data Source=LAPTOP;Integrated Security=SSPI;Initial Catalog=DataWarehouse</ConnectionString>
         <ImpersonationInfo>
-          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
-          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">KanarekLife</Account>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
         </ImpersonationInfo>
       </DataSource>
     </DataSources>
     <Dimensions>
       <Dimension>
         <ID>Termin Egzaminu</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Zajetosc Terminu Egzaminu</ID>
       </Dimension>
       <Dimension>
         <ID>Kandydat</ID>
@@ -25,13 +28,10 @@
         <ID>Skarga</ID>
       </Dimension>
       <Dimension>
-        <ID>Zajetosc Terminu Egzaminu</ID>
+        <ID>Czas</ID>
       </Dimension>
       <Dimension>
         <ID>Data</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Czas</ID>
       </Dimension>
       <Dimension>
         <ID>Egzaminator</ID>
@@ -42,18 +42,26 @@
         <ID>Data Warehouse</ID>
         <MeasureGroups>
           <MeasureGroup>
-            <ID>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</ID>
+            <ID>Zarezerwowanie Terminu</ID>
             <Partitions>
               <Partition>
-                <ID>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</ID>
+                <ID>Zarezerwowanie Terminu</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>
           <MeasureGroup>
-            <ID>Zlozenie Skargi</ID>
+            <ID>Zarezerwowanie Terminu 1</ID>
             <Partitions>
               <Partition>
-                <ID>Zlozenie Skargi</ID>
+                <ID>Zarezerwowanie Terminu</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Zarezerwowanie Terminu 2</ID>
+            <Partitions>
+              <Partition>
+                <ID>Zarezerwowanie Terminu</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>
@@ -66,10 +74,26 @@
             </Partitions>
           </MeasureGroup>
           <MeasureGroup>
-            <ID>Zarezerwowanie Terminu</ID>
+            <ID>Zlozenie Skargi</ID>
             <Partitions>
               <Partition>
-                <ID>Zarezerwowanie Terminu</ID>
+                <ID>Zlozenie Skargi</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Zlozenie Skargi 1</ID>
+            <Partitions>
+              <Partition>
+                <ID>Zlozenie Skargi</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</ID>
+            <Partitions>
+              <Partition>
+                <ID>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>
