@@ -46,9 +46,12 @@ STANDS_OCCUPANCY_PERCENTAGE_MAX = 1.0
 RESERVATION_DELTATIME_MIN = 10  # days
 RESERVATION_DELTATIME_MAX = 30  # days
 
+DISAPPEARED_CANDIDATES_COUNT = int(NUMBER_OF_CANDIDATES*0.1)
+
 QUESTIONS_COUNT = 5
 
 QUESTIONS_CSV = 'data/pytania.csv'
+QUESTIONS_TEMPLATE_CSV = 'data/pytania_template.csv'
 
 FIRST_BATCH_RATIO = (pd.to_datetime(INT_DATE) - pd.to_datetime(START_DATE)) / (pd.to_datetime(END_DATE) - pd.to_datetime(START_DATE))
 
@@ -81,8 +84,8 @@ def random_locally_unique_blocks(a: np.ndarray, block_size: int, size: int):
 
 
 def setup_database():
-    conn = sqlite3.connect('lab02.db')
-    # conn = sqlite3.connect(':memory:')
+    # conn = sqlite3.connect('lab02.db')
+    conn = sqlite3.connect(':memory:')
     c = conn.cursor()
 
     with open('schemas/initialize_database_schema.sql') as f:
@@ -413,7 +416,7 @@ def dump_data(conn: sqlite3.Connection, target_dir: Path, whole_dump: bool = Fal
     with open(target_dir / 'zaplanowane_pytania.csv', 'w', encoding='utf-16') as f:
         f.write(content)
     
-    Path(target_dir / 'pytania.csv').write_text(Path(QUESTIONS_CSV).read_text(encoding='utf-16'), encoding='utf-16')
+    Path(target_dir / 'pytania.csv').write_text(Path(QUESTIONS_TEMPLATE_CSV).read_text(encoding='utf-16'), encoding='utf-16')
     replace_guids(target_dir / 'pytania.csv', 'Pytania')
 
 
@@ -473,6 +476,14 @@ def make_some_modifications(c: sqlite3.Cursor, conn: sqlite3.Connection):
         c.execute('UPDATE Egzaminatorzy SET Nazwa = ? WHERE Pesel = ?', (new_f_name, f['Pesel']))
 
 
+def disappear_some_candidate_exams(c: sqlite3.Cursor, conn: sqlite3.Connection, number_to_disappear: int, start_date: str = START_DATE):
+    ids_to_delete = pd.read_sql('SELECT Id FROM PrzebiegiEgzaminowKandydata WHERE CzasRozpoczeciaEgzaminu IS NOT NULL AND CzasRozpoczeciaEgzaminu > ? ORDER BY RANDOM() LIMIT ?', conn, params=(start_date, number_to_disappear,))
+    ids_to_delete = np.array(ids_to_delete)[:, 0]
+    ids_to_delete = list(map(lambda x: (x,), ids_to_delete.tolist()))
+    c.executemany('UPDATE PrzebiegiEgzaminowKandydata SET CzasPotwierdzeniaGotowosciPrzezKandydata = NULL, CzasRozpoczeciaEgzaminu = NULL, CzasZakonczeniaEgzaminu = NULL WHERE Id = ?', ids_to_delete)
+    c.executemany('UPDATE ZaplanowanePytania SET CzasUdzieleniaOdpowiedzi = NULL WHERE IdPrzebieguEgzaminu = ?', ids_to_delete)
+
+
 processes_to_bring_back = None
 lowest_process_id_with_null_start = None
 planned_questions_to_bring_back = None
@@ -505,6 +516,8 @@ def generate_first_dump(start_date: str, interrupt_date: str):
     lowest_process_id_with_null_start = c.execute('SELECT MIN(Id) FROM PrzebiegiEgzaminowKandydata WHERE CzasRozpoczeciaEgzaminu IS NULL').fetchone()[0]
     if lowest_process_id_with_null_start is None:
         raise Exception('No processes with null start time')
+
+    print_process_with_timer('Disappearing some candidate exams', disappear_some_candidate_exams, (c, conn, int(DISAPPEARED_CANDIDATES_COUNT*FIRST_BATCH_RATIO), start_date))
 
     print_process_with_timer('Generating incidents', generate_incidents, (c, conn, int(NUMBER_OF_INCIDENTS*FIRST_BATCH_RATIO)))
     print_process_with_timer('Generating excel', generate_excel, (c, conn, int(NUMBER_OF_COMPLAINTS*FIRST_BATCH_RATIO)))
@@ -552,6 +565,8 @@ def generate_second_dump(interrupt_date: str, end_date: str, c: sqlite3.Cursor, 
     c.execute('DELETE FROM PrzebiegiEgzaminowKandydata WHERE CzasRezerwacjiTerminu > ?', (end_date,))
     c.execute('UPDATE PrzebiegiEgzaminowKandydata SET CzasPotwierdzeniaGotowosciPrzezKandydata = NULL, CzasRozpoczeciaEgzaminu = NULL, CzasZakonczeniaEgzaminu = NULL WHERE CzasRozpoczeciaEgzaminu > ?', (end_date,))
     c.execute('DELETE FROM ZaplanowanePytania WHERE IdPrzebieguEgzaminu NOT IN (SELECT Id FROM PrzebiegiEgzaminowKandydata)')
+
+    print_process_with_timer('Disappearing some candidate exams', disappear_some_candidate_exams, (c, conn, DISAPPEARED_CANDIDATES_COUNT - int(DISAPPEARED_CANDIDATES_COUNT*FIRST_BATCH_RATIO), last_exam_date))
 
     print_process_with_timer('Generating incidents', generate_incidents, (c, conn, NUMBER_OF_INCIDENTS - int(NUMBER_OF_INCIDENTS*FIRST_BATCH_RATIO), interrupt_date))
     print_process_with_timer('Generating excel', generate_excel, (c, conn, NUMBER_OF_COMPLAINTS - int(NUMBER_OF_COMPLAINTS*FIRST_BATCH_RATIO), interrupt_date))
