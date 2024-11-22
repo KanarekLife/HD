@@ -1,4 +1,5 @@
 ﻿-- noinspection SqlWithoutWhereForFile
+USE DB
 
 DELETE FROM ZaplanowanePytania
 DELETE FROM PrzebiegiEgzaminowKandydata
@@ -38,6 +39,12 @@ BULK INSERT ZaplanowanePytania
     FROM 'D:\HD\lab02\data\first_dump\zaplanowane_pytania.csv'
     WITH ( ROWTERMINATOR = '\n', FIELDTERMINATOR = ',', FIRSTROW = 2 )
 
+EXEC xp_cmdshell 'copy D:\HD\lab02\data\first_dump\skargi.xlsx D:\HD\lab05\data\'
+
+-- Second dump
+
+USE DB
+
 DELETE FROM ZaplanowanePytania
 DELETE FROM PrzebiegiEgzaminowKandydata
 DELETE FROM Pytania
@@ -75,3 +82,5 @@ BULK INSERT PrzebiegiEgzaminowKandydata
 BULK INSERT ZaplanowanePytania
     FROM 'D:\HD\lab02\data\second_dump\zaplanowane_pytania.csv'
     WITH ( ROWTERMINATOR = '\n', FIELDTERMINATOR = ',', FIRSTROW = 2 )
+
+EXEC xp_cmdshell 'copy D:\HD\lab02\data\second_dump\skargi.xlsx D:\HD\lab05\data\'

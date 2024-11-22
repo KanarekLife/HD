@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>DataWarehouseETL</Name>
-    <LastWriteTime>2024-11-22T18:03:46.135091Z</LastWriteTime>
+    <LastWriteTime>2024-11-22T20:50:45.6107693Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,7 +13,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadLatestData.dtsx</Name>
-      <LastWriteTime>2024-11-22T18:03:46.0956933Z</LastWriteTime>
+      <LastWriteTime>2024-11-22T20:50:45.5221868Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

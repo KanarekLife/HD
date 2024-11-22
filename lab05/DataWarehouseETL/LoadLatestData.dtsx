@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="LoadLatestData"
   DTS:PackageType="5"
-  DTS:VersionBuild="146"
-  DTS:VersionGUID="{89B00496-C78B-4A43-AB6A-E00448F558CD}">
+  DTS:VersionBuild="148"
+  DTS:VersionGUID="{3A4054A3-92B3-4F08-B42A-EF53B3D751D4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DataWarehouse;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-LoadLatestData-{F66DE8EC-2086-4C1F-A776-0FB1D31253B8}localhost.DataWarehouse;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DataWarehouse;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-LoadLatestData-{F66DE8EC-2086-4C1F-A776-0FB1D31253B8}localhost.DataWarehouse;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -49,7 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DB;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-LoadLatestData-{5DF7138D-69A3-40B6-AC9F-5F1F568B4CB1}localhost.DB;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DB;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-LoadLatestData-{5DF7138D-69A3-40B6-AC9F-5F1F568B4CB1}localhost.DB;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -15552,7 +15552,9 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15586,7 +15588,9 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15620,7 +15624,9 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15642,7 +15648,9 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15664,7 +15672,9 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15854,7 +15864,9 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15876,7 +15888,9 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
