@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="LoadLatestData"
   DTS:PackageType="5"
-  DTS:VersionBuild="144"
-  DTS:VersionGUID="{51DC1B89-D7E8-48A7-9886-16DF1EE849FC}">
+  DTS:VersionBuild="146"
+  DTS:VersionGUID="{89B00496-C78B-4A43-AB6A-E00448F558CD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -13891,7 +13891,9 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15584,9 +15586,7 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-68.1380954000315,119.262295300099,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15620,9 +15620,7 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="36.6523810519753,39.1594546986521,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
