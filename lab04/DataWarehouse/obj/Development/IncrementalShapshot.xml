@@ -89,7 +89,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>LteGtIQwma5JafmB8nbtVVe3teU=17/11/2024 16:05:3717/11/2024 14:36:055UuxwL7xMdZokh6MneDgSar2PZE=17/11/2024 15:29:0717/11/2024 14:36:05</TimeStamp>
+        <TimeStamp>HXov8wpjGskdUikQHPWHkl9U74Y=22/11/2024 18:05:0017/11/2024 14:36:052vxgjhoiySvwi8pwzYNxGY4sJwM=22/11/2024 18:04:3617/11/2024 14:36:05</TimeStamp>
         <ID>
           <String>Data Warehouse</String>
         </ID>
@@ -106,5 +106,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2024-11-17T15:10:20.506667Z</LastDeployed>
+  <LastDeployed>2024-11-22T17:05:05.603333Z</LastDeployed>
 </DeploymentSnapshot>

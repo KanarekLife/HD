@@ -1,17 +1,17 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c7a6cffa-51d4-4e43-a815-8e196a94fc95" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="fa7b9a7c-7ccb-4802-9e64-9f23eab2862d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Data Warehouse</ID>
   <MeasureGroups>
     <MeasureGroup>
       <ID>Zarezerwowanie Terminu</ID>
       <Partitions>
-        <Partition dwd:design-time-name="e9ed16c6-82f9-44d0-b4b6-42b07c5ab7f4">
+        <Partition dwd:design-time-name="05e1e439-3ccc-45d7-9aa3-0e1b355b6de3">
           <ID>Zarezerwowanie Terminu</ID>
           <Name>Zarezerwowanie Terminu</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="18043a95-fb4c-43af-b2a4-5120f6ccd529">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a2daf3d6-c80f-4ed7-a9b3-12cb1bc50f67">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_ZarezerwowanieTerminu</TableID>
           </Source>
@@ -24,14 +24,14 @@
     <MeasureGroup>
       <ID>Zarezerwowanie Terminu 1</ID>
       <Partitions>
-        <Partition dwd:design-time-name="51a5a221-44c6-4928-a816-d3b3fa90acc2">
+        <Partition dwd:design-time-name="21af7921-8f49-42f7-bbea-cffe1e4149d9">
           <ID>Zarezerwowanie Terminu</ID>
           <Name>Zarezerwowanie Terminu</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="e028b05e-59fb-4be0-9ff8-e97165b1f9e4">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="181bf223-a59a-4de5-ba3e-4cb4fa2fcd21">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_ZarezerwowanieTerminu</TableID>
           </Source>
@@ -44,14 +44,14 @@
     <MeasureGroup>
       <ID>Zarezerwowanie Terminu 2</ID>
       <Partitions>
-        <Partition dwd:design-time-name="5122a25f-8ebc-49ae-9e37-b8d1d78867f8">
+        <Partition dwd:design-time-name="28764e25-9470-40f3-b330-c649e78de1e3">
           <ID>Zarezerwowanie Terminu</ID>
           <Name>Zarezerwowanie Terminu</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="fa8c8dbf-c789-4495-b74e-5cb3e094f811">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="988a1365-d3dc-47e9-b233-9c48ccd500e2">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_ZarezerwowanieTerminu</TableID>
           </Source>
@@ -64,14 +64,14 @@
     <MeasureGroup>
       <ID>Odbycie Sie Egzaminu</ID>
       <Partitions>
-        <Partition dwd:design-time-name="b078bc46-00f9-4b54-b847-3b1f29fb0273">
+        <Partition dwd:design-time-name="1e6d931f-4303-4abe-bd2d-22e902fad7a5">
           <ID>Odbycie Sie Egzaminu</ID>
           <Name>Odbycie Sie Egzaminu</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="d06151c2-2028-48d8-9303-a14c6dad235e">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="f8c32fc1-cf77-4715-ae0b-39a0e8fda9a3">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_OdbycieSieEgzaminu</TableID>
           </Source>
@@ -84,14 +84,14 @@
     <MeasureGroup>
       <ID>Zlozenie Skargi</ID>
       <Partitions>
-        <Partition dwd:design-time-name="53665c81-c91e-4858-9ac9-64d2c2d7032f">
+        <Partition dwd:design-time-name="26725c41-e811-48f4-aba2-43d9301e189e">
           <ID>Zlozenie Skargi</ID>
           <Name>Zlozenie Skargi</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="b7d2c7a1-68c8-4f90-b878-314ebfcd8d5e">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="8bc1c460-3e28-4234-8816-70cfcec2792b">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_ZlozenieSkargi</TableID>
           </Source>
@@ -104,14 +104,14 @@
     <MeasureGroup>
       <ID>Zlozenie Skargi 1</ID>
       <Partitions>
-        <Partition dwd:design-time-name="264409be-87d2-414c-bf6c-0967a51d3ee2">
+        <Partition dwd:design-time-name="396ddd56-c934-483c-bd2d-f52c7d0d04e6">
           <ID>Zlozenie Skargi</ID>
           <Name>Zlozenie Skargi</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="b4ffb6fb-f571-4a33-84e8-5d7c983930d0">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="d091c945-ec3c-4e46-b2e7-0694871dd582">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_ZlozenieSkargi</TableID>
           </Source>
@@ -124,14 +124,14 @@
     <MeasureGroup>
       <ID>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</ID>
       <Partitions>
-        <Partition dwd:design-time-name="6268cc57-6460-4785-a67d-ac1bba0f400b">
+        <Partition dwd:design-time-name="b4160954-752f-400f-a59a-6ec00fd6b38e">
           <ID>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</ID>
           <Name>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="66893d8b-386e-4fa1-97a9-a1b519bb2531">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="974b590c-4fcf-43dc-bdac-6bb3fed4cdf3">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga</TableID>
           </Source>

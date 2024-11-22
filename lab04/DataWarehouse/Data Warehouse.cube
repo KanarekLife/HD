@@ -1,4 +1,4 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="913092f6-860e-4091-929c-80dbd0674a00" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="710a7872-e525-42ca-9175-d7c297445591" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Data Warehouse</ID>
   <Name>Data Warehouse</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="54" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="8658" scrolltop="3059" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="13145" y="18182" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="54" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="8658" scrolltop="3059" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="25718" y="18182" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
             </font>
@@ -458,164 +458,164 @@
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="9a4683e9-dff5-43c9-a88c-4e2d28d41d09">
+    <Dimension dwd:design-time-name="3008efd9-b145-4811-ba39-685915f1ff61">
       <ID>Termin Egzaminu</ID>
       <Name>Termin Egzaminu</Name>
       <DimensionID>Termin Egzaminu</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="70760a1b-36f9-46c8-ac99-1909d082e8a4">
+        <Attribute dwd:design-time-name="9701c221-1f38-403e-9334-1debd319b05a">
           <AttributeID>ID Terminu Egzaminu</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="598e986e-99ee-4f63-850d-d1a9a0bb3d1c">
+        <Attribute dwd:design-time-name="a557f93e-e300-4de4-960d-25b94c7a254a">
           <AttributeID>ID Daty</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="82430a5e-9327-49b9-99a4-e694824164a2">
+        <Attribute dwd:design-time-name="5cc452d7-3c13-4f23-b27c-92b073e50b23">
           <AttributeID>ID Czasu</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="2966f91e-85fb-4cfd-8129-2892bc881409">
+        <Attribute dwd:design-time-name="dfd1405e-49f7-4ccb-b27b-7830c07bf223">
           <AttributeID>ID Egzaminatora</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="37884938-8ac2-4dc2-b9bc-ef905a3e9d94">
+        <Attribute dwd:design-time-name="6df615e6-0248-4e93-b509-a3d9bfa69d12">
           <AttributeID>Numer Sali Egzaminacyjnej</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="bb73e16d-815a-4679-ba17-5b25cbe9fa7d">
+    <Dimension dwd:design-time-name="fbefb95f-7884-4c9a-a638-2ad7359198c8">
       <ID>Zajetosc Terminu Egzaminu</ID>
       <Name>Zajetosc Terminu Egzaminu</Name>
       <DimensionID>Zajetosc Terminu Egzaminu</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="4f353685-c817-4630-8e17-8cd60c308c2d">
+        <Attribute dwd:design-time-name="74098f6b-9fc4-4fd9-a450-30b375c9e33d">
           <AttributeID>ID Zajetosci Terminu Egzaminu</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="10e7347f-03f6-4f69-98c8-54a6e9e74316">
+        <Attribute dwd:design-time-name="21103f5c-eed7-4155-8831-3efe09b44827">
           <AttributeID>Zajetosc Terminu</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="06090c81-25c8-4826-bc26-9340a7b4f73e">
+    <Dimension dwd:design-time-name="ae63e212-2b09-4caa-8563-0979541477e7">
       <ID>Kandydat</ID>
       <Name>Kandydat</Name>
       <DimensionID>Kandydat</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="0b60c1bf-a727-4090-a794-2bcd1fd42592">
+        <Attribute dwd:design-time-name="d5cf94ac-18cb-415c-89a6-e1f0b6b9ba8b">
           <AttributeID>ID Kandydata</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="ec6ff4f9-2c3c-4f8d-bf10-e835fbcf30f0">
+        <Attribute dwd:design-time-name="8b4e120c-8b79-4d5d-88c2-69a3e8a01636">
           <AttributeID>PKK</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="8a1509bd-ab3b-4a95-9a48-1dac98e0ca2d">
+    <Dimension dwd:design-time-name="ce060c3d-364d-4857-ab4a-0d6a2c818405">
       <ID>Pytanie</ID>
       <Name>Pytanie</Name>
       <DimensionID>Pytanie</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="ddd6c012-d79f-4f20-8a4b-e2d57f9c8fd7">
+        <Attribute dwd:design-time-name="c759efa5-c7c1-4dc0-b9d0-d5c08d11f93e">
           <AttributeID>ID Pytania</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="2d24118f-6c74-434b-afff-6e04357af1e4">
+        <Attribute dwd:design-time-name="ef9699a7-e161-415d-b5e6-6cba1a935192">
           <AttributeID>Tresc</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="f6860bdf-73c1-4711-97e2-04026e39ddad">
+    <Dimension dwd:design-time-name="fb9e4000-1c13-4892-a335-9de02ed40aac">
       <ID>Skarga</ID>
       <Name>Skarga</Name>
       <DimensionID>Skarga</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="73a64086-a88d-4f68-b60e-1d306c4080ae">
+        <Attribute dwd:design-time-name="3460ce59-9432-4ffa-95a7-98c68ea028e1">
           <AttributeID>ID Skargi</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="803131b8-06af-48ef-8e91-55609e6aed57">
+        <Attribute dwd:design-time-name="64673f59-5f39-4fcd-9b63-552c6346a60b">
           <AttributeID>Typ Egzaminu</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="d1eac848-b3c6-4145-829e-3bcdaf1b002e">
+        <Attribute dwd:design-time-name="675963c6-2790-495f-9ebd-468be78c8125">
           <AttributeID>Typ Skargi</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="06d4050c-95f7-4063-8b3a-39fe497fbb1d">
+        <Attribute dwd:design-time-name="c77a8185-cd28-459a-96ba-26e8a473c265">
           <AttributeID>Czy Istnieja Powiazane Incydenty</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="58ccfca4-e9f3-45d1-9c69-888b8f47e676">
+        <Attribute dwd:design-time-name="4975ddb0-d502-412a-a807-4ebbf44cbf77">
           <AttributeID>Czy Kandydat Odpowiedzial Na Wszystkie Pytania</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="fbe57c2d-3557-443d-ae22-e5959fe1103d">
+        <Hierarchy dwd:design-time-name="7b0723d0-b43f-4a57-9a05-6d1d6af8b344">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="f20b0d16-7967-41d3-b215-6bfe7816f574">
+    <Dimension dwd:design-time-name="49d8650d-886d-49da-8176-f7e4ba0c7371">
       <ID>Czas</ID>
       <Name>Czas</Name>
       <DimensionID>Czas</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="f17f1cf9-8478-423b-9816-6bc90ae5fa81">
+        <Attribute dwd:design-time-name="c72f4c3f-b835-4ecc-be75-68be2714dcb5">
           <AttributeID>ID Czasu</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="06cf401d-3586-4d98-bfeb-011a50eff70e">
+        <Attribute dwd:design-time-name="9004e1f3-c2fd-46c6-bf0e-0784d1be0cd7">
           <AttributeID>Godzina</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="5496fd44-3d46-4680-9302-a1dc97e5da60">
+        <Attribute dwd:design-time-name="796ce42e-ec24-4f63-9b4a-faded6be89ac">
           <AttributeID>Minuty</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="fee51233-6e2f-4d82-83c1-605536921ca0">
+    <Dimension dwd:design-time-name="2c4c75b2-4e58-4943-baed-be746d9edf5f">
       <ID>Data</ID>
       <Name>Data</Name>
       <DimensionID>Data</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="c430f971-9a6e-4610-a047-ad4ad8fca69a">
+        <Attribute dwd:design-time-name="bb3af0a5-4e64-41ec-8d5c-b3235e8e7c9e">
           <AttributeID>ID Daty</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="173be45a-dd44-4692-93b1-773ecf2fe605">
+        <Attribute dwd:design-time-name="b615fe05-d0b6-4878-ba89-464d8e47b588">
           <AttributeID>Data</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="ffcc19d6-0991-4b67-be84-2932f95634e8">
+        <Attribute dwd:design-time-name="3617c9c9-38b3-4f52-9ed5-9dac59b5b9b7">
           <AttributeID>Rok</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="d0617ae0-1773-4912-947d-4e00f309424d">
+        <Attribute dwd:design-time-name="a4bc1495-238f-48c9-aad4-7881f6858c64">
           <AttributeID>Miesiac</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="7c887602-37c5-4431-ba78-a270cc3905fc">
+        <Attribute dwd:design-time-name="eabf9752-9173-4878-8706-5bb1ccf49889">
           <AttributeID>Numer Miesiaca</AttributeID>
           <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
         </Attribute>
-        <Attribute dwd:design-time-name="1979c882-d83f-4631-ac6c-6b9e00d20c44">
+        <Attribute dwd:design-time-name="304b34e7-0d2a-4d7e-9aa0-60c16f76bd57">
           <AttributeID>Dzien Tygodnia</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="fddff3aa-9f1c-45b8-b5ea-fc8c5d6ef216">
+        <Attribute dwd:design-time-name="83155c5f-2f22-4dc3-a771-a7306ca0079d">
           <AttributeID>Numer Dnia Tygodnia</AttributeID>
           <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="00db7bfd-f44b-4a26-8896-f9602241cee5">
+        <Hierarchy dwd:design-time-name="bbf1fe8e-ee50-4f45-9869-c212dc4dbc91">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="2d50a55f-08f8-4821-89f0-e9afa0bc1664">
+    <Dimension dwd:design-time-name="379552a5-6766-4c50-9fa6-f223e7f873f6">
       <ID>Egzaminator</ID>
       <Name>Egzaminator</Name>
       <DimensionID>Egzaminator</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="36d5c331-cbdb-4dda-9fcf-4d6eff1ccf74">
+        <Attribute dwd:design-time-name="6d33d805-b7fd-4d21-b54e-5f73cb9ddee1">
           <AttributeID>ID Egzaminatora</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="99862bdf-bd6e-4bf8-8484-493fb679d30d">
+        <Attribute dwd:design-time-name="dbdd7021-addc-4d40-af0c-a8c6885abe7b">
           <AttributeID>Pesel</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="798ee94b-417f-4a0e-86ac-9133b56ae1a2">
+        <Attribute dwd:design-time-name="4d896165-a1d3-4f7e-a882-05fbea20af7c">
           <AttributeID>Imie I Nazwisko</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="cb77af3f-4d1b-4bff-abe4-42678bb5e6e2">
+    <MeasureGroup dwd:design-time-name="38fcb05c-8ffe-41ef-aa69-1c3ea096fe48">
       <ID>Zarezerwowanie Terminu</ID>
       <Name>Zarezerwowanie Terminu</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -623,26 +623,38 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="850a7eff-f873-46d4-a22e-d965a17cb06b">
+        <Measure dwd:design-time-name="5beab488-a9ed-480a-b6c2-bd45edd225df">
           <ID>Zarezerwowanie Terminu Count</ID>
           <Name>Liczba rezerwacji na termin</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="1ed47463-73bc-413d-ad82-e90faa9b6c01">
+          <Source dwd:design-time-name="cdecc982-5bc7-4290-8f1f-dbf001a63edf">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="b6c54cad-34bb-4ca7-8352-a41267cbb345">
+            <Source xsi:type="RowBinding" dwd:design-time-name="b38380fc-34eb-4c48-8a57-e66418a41692">
               <TableID>dbo_ZarezerwowanieTerminu</TableID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="2ee546a8-d0fe-4f0d-899e-71b52bb7ac3e">
+        <Measure dwd:design-time-name="d14389a0-365f-4c58-8639-6b4e0d291f04">
           <ID>Czas Oczekiwania W Dniach</ID>
           <Name>Łączny czas oczekiwania na egzamin</Name>
-          <Source dwd:design-time-name="f21059d6-7008-48f2-8138-5b191e093d18">
+          <Source dwd:design-time-name="58548e58-6d02-4fd0-bc38-2e77f149ec5a">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="8de95567-56cd-4846-8b77-fea1e638b56a">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7016f253-7529-493e-a515-f0c4a7cc62dd">
               <TableID>dbo_ZarezerwowanieTerminu</TableID>
               <ColumnID>CzasOczekiwaniaWDniach</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="0d055167-464e-4c12-84fc-eb7ab335b8ea">
+          <ID>Zarezerwowanie Terminu Count 1</ID>
+          <Name>Liczba rezerwacji</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="5368e6b2-9c76-475a-a629-1c72f2ca2352">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="635d5ab4-ab03-4772-8f28-e3fbd3386ddc">
+              <TableID>dbo_ZarezerwowanieTerminu</TableID>
             </Source>
           </Source>
         </Measure>
@@ -650,15 +662,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c9b616d8-087b-4559-a87d-09ed3ee38dec">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0ebddef0-0548-4452-9cad-0fcf367470c7">
           <CubeDimensionID>Kandydat</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="0ccbbe67-3774-456b-b832-133622b4a146">
+            <Attribute dwd:design-time-name="a0347487-7a65-4e06-81c8-b84c83f2950d">
               <AttributeID>ID Kandydata</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="0ba7bccc-3055-4c80-a507-144426ee5fd4">
+                <KeyColumn dwd:design-time-name="1726b5a4-1b4c-45c9-815b-acc5b9294c8a">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fc447024-eade-4390-ad37-51a391c51384">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0ae8e054-d328-4d3d-9878-4d32c1488301">
                     <TableID>dbo_ZarezerwowanieTerminu</TableID>
                     <ColumnID>ID_Kandydata</ColumnID>
                   </Source>
@@ -668,15 +680,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7231f967-8914-4d60-8b17-e25e6dffc395">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a2f704a1-878f-41ce-bf46-6acfaa225a55">
           <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="d29aed34-8c73-438e-ba85-4b2813da0476">
+            <Attribute dwd:design-time-name="a4d085f4-0c75-41dd-a0c0-bbcfb345ccb4">
               <AttributeID>ID Terminu Egzaminu</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="681a3ae2-e6a7-48ee-9fe6-514468487243">
+                <KeyColumn dwd:design-time-name="a40c4b8f-70be-42f1-85de-a540c23c06ba">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9d03d224-e4af-4466-bc8a-2515251e1b74">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d3898afd-277f-4e61-97f0-5eec6e822d5d">
                     <TableID>dbo_ZarezerwowanieTerminu</TableID>
                     <ColumnID>ID_TerminuEgzaminu</ColumnID>
                   </Source>
@@ -686,10 +698,10 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="613b803e-4e39-4763-ad84-f3115ced00e6">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="ac8602a1-e849-41e1-8836-730961a087d1">
           <CubeDimensionID>Czas</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="2f9889cb-ae22-474e-9757-bb0098ddf116">
+            <Attribute dwd:design-time-name="6f59fe8d-8dc2-4552-bdd5-0d3b3506eca0">
               <AttributeID>ID Czasu</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -699,10 +711,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="307a2680-af16-4207-bb2c-25d7d8e9828e">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="6475b0a8-6c3c-4419-b44a-c5d0465ab903">
           <CubeDimensionID>Data</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="74942329-6727-4c44-949a-bad6fc92983c">
+            <Attribute dwd:design-time-name="41aa1106-e9a7-4327-b23d-efea85f0a38f">
               <AttributeID>ID Daty</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -712,10 +724,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="4cde6fa3-1a89-4d37-b4e4-ccb238b623ab">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="dbd6b11e-fe2b-40bd-8564-be0c0d7d8a71">
           <CubeDimensionID>Egzaminator</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="c2bc3e87-7167-4553-abcf-26a3e332dfea">
+            <Attribute dwd:design-time-name="4b44365a-91d7-4a89-8404-dd334bb856c8">
               <AttributeID>ID Egzaminatora</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -728,7 +740,7 @@
       </Dimensions>
       <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="bf013239-1cef-43ae-972c-d837997952a0">
+    <MeasureGroup dwd:design-time-name="5c1b372c-50c7-49e1-a1ad-1434988bde65">
       <ID>Zarezerwowanie Terminu 1</ID>
       <Name>Zarezerwowanie Terminu 1</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -736,14 +748,14 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="7284702b-c2e2-429f-943f-424533893986">
+        <Measure dwd:design-time-name="26a148d4-f930-45f0-9b5e-801d11d79c15">
           <ID>ID Terminu Egzaminu Distinct Count</ID>
           <Name>Liczba różnych dni wśród terminów rezerwacji</Name>
           <AggregateFunction>DistinctCount</AggregateFunction>
           <DataType>Integer</DataType>
-          <Source dwd:design-time-name="d897b94e-caf6-4dc3-8e92-9c87b30dba8a">
+          <Source dwd:design-time-name="ad989ea5-0259-4121-b8c1-3618e0ff65d4">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="5a612fe1-d9df-4615-8208-86b9216df0af">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a52242b7-d37b-4e80-bdf1-be172c729850">
               <TableID>dbo_ZarezerwowanieTerminu</TableID>
               <ColumnID>ID_TerminuEgzaminu</ColumnID>
             </Source>
@@ -753,15 +765,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="69f91697-449d-4a71-8787-0160e509fc43">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6c3bedf8-9811-4b02-a57d-1ecc7301fd14">
           <CubeDimensionID>Kandydat</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="4dd05e79-bfc6-49b1-961b-dec5cfc97503">
+            <Attribute dwd:design-time-name="5306d4f8-b24e-4f76-9406-0ebfc69db454">
               <AttributeID>ID Kandydata</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="61bf445b-6b21-4080-bcf0-91bcc656de15">
+                <KeyColumn dwd:design-time-name="a4010d4b-b36b-4964-b198-8a0fd584357c">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="521dfd18-cd8a-4c90-a8ac-2a93c362035e">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0009cb59-b273-4cdf-8411-dc86773053f3">
                     <TableID>dbo_ZarezerwowanieTerminu</TableID>
                     <ColumnID>ID_Kandydata</ColumnID>
                   </Source>
@@ -771,15 +783,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a73ef02a-c789-420a-b636-f1698741f72c">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b2b5e4a2-d31f-46cd-94b9-9d58a2258628">
           <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="66e273f9-fd0c-47bd-b29f-e55a3be79a38">
+            <Attribute dwd:design-time-name="59d783f1-7a9b-4036-9089-715127ebcf33">
               <AttributeID>ID Terminu Egzaminu</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="3f864227-79e8-434e-921f-4553190a9a8a">
+                <KeyColumn dwd:design-time-name="52aae502-6105-405e-86f9-392003a5b33d">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="90bbd2f1-8a85-4d18-b67f-d5e4cc60e553">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="85ae9509-45d5-42f1-875d-e9494f66a3f3">
                     <TableID>dbo_ZarezerwowanieTerminu</TableID>
                     <ColumnID>ID_TerminuEgzaminu</ColumnID>
                   </Source>
@@ -789,10 +801,10 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="1ee77927-e727-4b5f-86c6-18ead40f8db6">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="a3c91d85-3b09-45af-a616-09ecd071ee1c">
           <CubeDimensionID>Czas</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="a45d41b0-7254-42c4-b245-80e3f0b9a5e1">
+            <Attribute dwd:design-time-name="39a4e697-3045-437b-8124-d69cb89f71e8">
               <AttributeID>ID Czasu</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -802,10 +814,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="162eec6d-f175-49cf-908c-dadacdc00bd4">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="74bc9bf8-2309-4a72-9c61-a56c82cb4ef3">
           <CubeDimensionID>Data</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ff91ce9f-dcd9-4b2f-be97-2a98f08b8483">
+            <Attribute dwd:design-time-name="0c5b2dde-b076-46f9-af8e-a45cd94396ad">
               <AttributeID>ID Daty</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -815,10 +827,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="cfc81cc8-ec4f-4b38-af31-62ffd6bba232">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="84b2beff-b5a7-4ecd-93ae-86dca2d3d10d">
           <CubeDimensionID>Egzaminator</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="cba1b640-d034-48bf-a5e9-bdf0332601a4">
+            <Attribute dwd:design-time-name="12376322-cc02-4ed9-9295-f0bf29998ad9">
               <AttributeID>ID Egzaminatora</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -831,7 +843,7 @@
       </Dimensions>
       <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="dbb820b4-dd6e-4d09-895f-6d940482c883">
+    <MeasureGroup dwd:design-time-name="b4898c00-9356-4fee-942c-079d8792ee9a">
       <ID>Zarezerwowanie Terminu 2</ID>
       <Name>Zarezerwowanie Terminu 2</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -839,16 +851,16 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="847d9ef1-1db4-4fd4-adce-7bd506ad28c6">
+        <Measure dwd:design-time-name="3c173d56-00a9-44a3-b52d-5b6df9c9eb35">
           <ID>ID Kandydata Distinct Count</ID>
           <Name>Liczba różnych kandydatów wśród terminów rezerwacji</Name>
           <AggregateFunction>DistinctCount</AggregateFunction>
           <DataType>Integer</DataType>
-          <Source dwd:design-time-name="37a8cbc7-2ec9-469e-8be9-e11ea6a5243b">
+          <Source dwd:design-time-name="4c4ead16-1277-4fee-8555-523e423b2cc8">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="7e49d253-e518-4b0e-9418-c73bcf7788b3">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ab5516f8-6d46-49b4-b4eb-6da47b71cfd4">
               <TableID>dbo_ZarezerwowanieTerminu</TableID>
-              <ColumnID>ID_Kandydata</ColumnID>
+              <ColumnID>ID_TerminuEgzaminu</ColumnID>
             </Source>
           </Source>
         </Measure>
@@ -856,15 +868,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5c8d51d6-a0f1-44be-a045-8992e2c92f2a">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="50a59fe9-a575-46bb-aa66-a8fa6d1d2fb8">
           <CubeDimensionID>Kandydat</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="e2a33edd-254c-4819-9f4e-12597e51f04e">
+            <Attribute dwd:design-time-name="776b7fd0-9a0e-4075-9f9a-c4fb223738e1">
               <AttributeID>ID Kandydata</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="1fc8ea6c-49dd-4912-990f-46e0d37d4171">
+                <KeyColumn dwd:design-time-name="8c49394f-d744-47d1-8ad5-fdea066266a5">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e6064a5a-689b-4c82-b692-3df1afb86391">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="70ae1773-2634-4f65-8628-4f4eb935680f">
                     <TableID>dbo_ZarezerwowanieTerminu</TableID>
                     <ColumnID>ID_Kandydata</ColumnID>
                   </Source>
@@ -874,15 +886,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5c4be1e9-3409-4277-b53b-b2970e96a8c5">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="48170c92-d595-4616-9c80-e157f3610e0d">
           <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="931d3360-5388-4779-8cf9-379dca2dfbfc">
+            <Attribute dwd:design-time-name="df44b154-bd45-4d8e-8b4f-a342c02d6d39">
               <AttributeID>ID Terminu Egzaminu</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="f199d22f-226d-40ee-9ebd-0acc6c30636b">
+                <KeyColumn dwd:design-time-name="fdd92080-0b56-4fc2-ac18-66e59c0345be">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e377f3a2-e0d5-46f8-a8fa-166fdf313d8a">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cdd4280e-1e04-447d-811d-ef189eee4fa8">
                     <TableID>dbo_ZarezerwowanieTerminu</TableID>
                     <ColumnID>ID_TerminuEgzaminu</ColumnID>
                   </Source>
@@ -892,10 +904,10 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="63ba6634-c02f-4a21-b4ce-408074fe1ea7">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="f22f5d20-722f-482d-811c-38f55dea7731">
           <CubeDimensionID>Czas</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="9f3d85b5-f4e4-413b-9ef3-d1e61f05d899">
+            <Attribute dwd:design-time-name="f3fd30b2-4e02-4281-9794-6e67122ec4c3">
               <AttributeID>ID Czasu</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -905,10 +917,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="58d35566-2460-4b00-ad68-fa8d55c07cd5">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="e7f99c7b-6177-4f57-b7fe-b806162983d7">
           <CubeDimensionID>Data</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ba6f8929-a1fc-4113-9e68-e6c23a079956">
+            <Attribute dwd:design-time-name="12f897b5-a168-4a53-8de2-62dfa227ab75">
               <AttributeID>ID Daty</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -918,10 +930,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="bcea1132-7c31-49c6-9888-8594cb1cae4e">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="e45835c1-4b24-4ba4-960a-f08cf2c72145">
           <CubeDimensionID>Egzaminator</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="800e33a8-41df-4e29-b0c1-0ed6a223e641">
+            <Attribute dwd:design-time-name="ad3ffad5-c03e-4fc0-a985-3952712cd821">
               <AttributeID>ID Egzaminatora</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -934,7 +946,7 @@
       </Dimensions>
       <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="4ecb654e-ba5f-4037-a34e-1d3f389468b8">
+    <MeasureGroup dwd:design-time-name="bf5fefe8-6154-4926-a2ac-f733ed395c00">
       <ID>Odbycie Sie Egzaminu</ID>
       <Name>Odbycie Sie Egzaminu</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -942,35 +954,35 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="e360b553-f034-48b6-b266-ab4f2e5089d0">
+        <Measure dwd:design-time-name="95319d36-7049-4bc6-b567-fa7676c00309">
           <ID>Odbycie Sie Egzaminu Count</ID>
           <Name>Liczba egzaminów</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="b6e8f181-8553-4bd3-a8c6-09d7aaaa9dc9">
+          <Source dwd:design-time-name="02ad0e84-8bf8-41af-8c0a-19401d3a2a94">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="0985627b-5c0f-4b89-89d9-70f8bceb3659">
+            <Source xsi:type="RowBinding" dwd:design-time-name="44ae6426-7313-4441-9188-2b2edf5be013">
               <TableID>dbo_OdbycieSieEgzaminu</TableID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="74b53a5c-cee5-442b-88cb-1e7038ad7a3b">
+        <Measure dwd:design-time-name="6531036b-af9d-4ec2-862e-2825d8e339dd">
           <ID>Liczba Uczestnikow</ID>
           <Name>Łączna liczba uczestników</Name>
-          <Source dwd:design-time-name="5b985394-982a-479b-b826-703cc4e5dff6">
+          <Source dwd:design-time-name="9d6e4a06-ad4b-4bf6-ae14-c1227e3296c8">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="5bf63f79-dce9-4b96-a693-2c3b4227f540">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a74badf5-eadf-4765-9ba0-05a403ef39a9">
               <TableID>dbo_OdbycieSieEgzaminu</TableID>
               <ColumnID>LiczbaUczestnikow</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="48d9fcf4-7baa-45e3-9695-7b3ca6f7e42d">
+        <Measure dwd:design-time-name="3c014155-1274-46c2-820d-16e19fe0a3c7">
           <ID>Liczba Rezerwacji Na Termin - Odbycie Sie Egzaminu</ID>
           <Name>Łączna liczba rezerwacji</Name>
-          <Source dwd:design-time-name="6bebf544-150e-49d5-89f4-ceebe2eafcfb">
+          <Source dwd:design-time-name="c5be8ff0-dd2c-430b-b2bd-1ae1958c2285">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="4a3bb7bd-0c5c-458d-a8cf-0ef8419851d0">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7ce218d4-2708-40ac-b3d0-2f93ade9a3ae">
               <TableID>dbo_OdbycieSieEgzaminu</TableID>
               <ColumnID>LiczbaRezerwacjiNaTermin</ColumnID>
             </Source>
@@ -980,15 +992,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c30e70f8-269b-4a5c-9ff5-8e5e24a88646">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c7ffa1b7-c73e-48da-8872-1f16a922db68">
           <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ef751334-7799-4dbf-8048-9528a3ac6987">
+            <Attribute dwd:design-time-name="3f993728-9ebb-4197-9156-9d880e5074ed">
               <AttributeID>ID Terminu Egzaminu</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="3bdd59cb-de9f-4929-86c3-ab5759c5858f">
+                <KeyColumn dwd:design-time-name="1ba644f3-1c9e-402f-b925-5208c2da78e0">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fac416d6-7b3f-4899-846f-0cc298802c40">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c767e2a2-8617-4905-9129-e04db119b6dc">
                     <TableID>dbo_OdbycieSieEgzaminu</TableID>
                     <ColumnID>ID_TerminuEgzaminu</ColumnID>
                   </Source>
@@ -998,15 +1010,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8470bb02-b590-4c34-8b11-dc089429167c">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="99523be9-bc8d-402f-8cb1-6b1a55dfb641">
           <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="db60c012-9c95-48f5-b4ad-89e79703d509">
+            <Attribute dwd:design-time-name="697a7316-bef6-44ec-833c-a5ad8198092e">
               <AttributeID>ID Zajetosci Terminu Egzaminu</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="1ef4d937-88b6-4cc1-b4ac-5077e425295c">
+                <KeyColumn dwd:design-time-name="ebfe4642-0a65-4439-b440-f669faf81ded">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="786c1807-5469-4725-95d0-1ed43910886e">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3e886684-e0ab-4ee7-99d6-49eab0272a33">
                     <TableID>dbo_OdbycieSieEgzaminu</TableID>
                     <ColumnID>ID_ZajetosciTerminuEgzaminu</ColumnID>
                   </Source>
@@ -1016,14 +1028,14 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="57a71763-1aa0-43d2-b17d-ed69da09e373">
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="243df905-ca5a-4886-83c9-e30b2b808c86">
           <CubeDimensionID>Kandydat</CubeDimensionID>
           <MeasureGroupID>Zarezerwowanie Terminu</MeasureGroupID>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="54058168-3063-4737-bd9e-cf2cf8e8bdc1">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="f741b989-2cd8-48ec-a934-007cf3501b16">
           <CubeDimensionID>Czas</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ba2e102e-b0a0-4439-b960-05d3956f93ad">
+            <Attribute dwd:design-time-name="2a519447-9fbd-45c4-9f01-7a94b753e3c3">
               <AttributeID>ID Czasu</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1033,10 +1045,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="edced6b2-b144-4835-a26c-20c9d6fbef30">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="9f039545-2d95-4067-9dd1-47a8f3da9034">
           <CubeDimensionID>Data</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="00539e81-cb26-43e3-8ccf-df00b7bfadc2">
+            <Attribute dwd:design-time-name="19f7216b-1fe9-4a0d-a3a6-f242095e4f5d">
               <AttributeID>ID Daty</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1046,10 +1058,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="0426deee-1ac3-4fde-b80b-6a707b15196a">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="4b714972-4f19-4423-8889-a7d66a34e935">
           <CubeDimensionID>Egzaminator</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="c47b3727-05d9-4949-9249-7c46daf217ff">
+            <Attribute dwd:design-time-name="b7fcfafd-7d0d-4023-af0b-808d4546f1f1">
               <AttributeID>ID Egzaminatora</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1062,7 +1074,7 @@
       </Dimensions>
       <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="1bce3d5b-f4a9-4147-b4c4-d45345ee557e">
+    <MeasureGroup dwd:design-time-name="37891583-7eab-4607-a65c-47f5eb56d207">
       <ID>Zlozenie Skargi</ID>
       <Name>Zlozenie Skargi</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -1070,24 +1082,24 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="240dc411-8687-424d-a9fb-617a61699dae">
+        <Measure dwd:design-time-name="2b3e228b-bad4-4047-b2a6-b6f80178398a">
           <ID>Zlozenie Skargi Count</ID>
           <Name>Liczba skarg</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="0baad7f2-96ae-4cdd-af6f-e2880a369521">
+          <Source dwd:design-time-name="92097e8b-b515-49dc-97a5-37154a19a91b">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="627b52bc-4cd0-40cb-b1eb-16b1ff51aed4">
+            <Source xsi:type="RowBinding" dwd:design-time-name="f15d0e30-b31b-43bb-be06-9cfb033df5ca">
               <TableID>dbo_ZlozenieSkargi</TableID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="8d8e7d98-ac00-4215-9188-0003e0e448e1">
+        <Measure dwd:design-time-name="0662bdb3-d9af-48e9-b309-217785cbf00d">
           <ID>Liczba Powiazanych Incydentow</ID>
           <Name>Liczba powiązanych incydentów</Name>
-          <Source dwd:design-time-name="0c03d9e3-6778-4373-a0ab-71f89f2bcbab">
+          <Source dwd:design-time-name="7638428d-dbed-4fbf-b9f6-65d2a7fc6631">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="ffd50c57-0289-4f42-b20c-3cf1af53afd1">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1a5a0ff1-ab9e-4a5e-822b-0580925568e2">
               <TableID>dbo_ZlozenieSkargi</TableID>
               <ColumnID>LiczbaPowiazanychIncydentow</ColumnID>
             </Source>
@@ -1097,15 +1109,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ce8c9a8e-2ec2-4c8f-9fe8-ec16ac4b2fbf">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="75ec5f78-2d9a-4204-8e8b-be1fa8b73c1e">
           <CubeDimensionID>Kandydat</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="59bb0514-23cf-4b64-9d22-412da0f62c64">
+            <Attribute dwd:design-time-name="164d34d9-f701-4fc9-84ef-a11bb9171649">
               <AttributeID>ID Kandydata</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="f3ad6cae-ce96-44ec-a23f-fcc9273f0bc6">
+                <KeyColumn dwd:design-time-name="946e07a2-f6d3-46d9-8d2b-29154bc701a8">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f916cf82-f4b3-4ea8-80d2-93c076ab10fc">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cedefdb3-84d1-4abf-ad01-855d1d77191b">
                     <TableID>dbo_ZlozenieSkargi</TableID>
                     <ColumnID>ID_Kandydata</ColumnID>
                   </Source>
@@ -1115,15 +1127,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1158782d-beca-4394-a6dc-4cfac11bf7bd">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b373b6cd-db7f-4208-ae62-b2ce3f09eddf">
           <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="3943fa4f-23a0-4b45-8a8b-9b9cfc092533">
+            <Attribute dwd:design-time-name="e569378d-2c81-40fe-89f9-538729c55e99">
               <AttributeID>ID Terminu Egzaminu</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="dea2f318-03f8-4bd8-93bf-de7221dce96c">
+                <KeyColumn dwd:design-time-name="6ca87da3-fe82-411c-9290-08a403406389">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="95f9d628-4cb3-45d4-9daf-c0bedcf0c86f">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="defd8b4c-c97f-458f-b183-59f933416ba0">
                     <TableID>dbo_ZlozenieSkargi</TableID>
                     <ColumnID>ID_TerminuEgzaminu</ColumnID>
                   </Source>
@@ -1133,15 +1145,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3ce166c1-dd7a-44f1-b5cb-b501c814b4b1">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="ddce0581-44f4-4397-b183-b816d1372b2a">
           <CubeDimensionID>Skarga</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="8df02134-699f-44ca-8298-28db8eac9e88">
+            <Attribute dwd:design-time-name="1d1cab48-6c63-4315-8f8a-073be5866372">
               <AttributeID>ID Skargi</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="9326b70d-c668-481c-ad01-eb9a28637352">
+                <KeyColumn dwd:design-time-name="995450e1-390e-40a7-88f5-cf43eadc6cd7">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e72a9565-9f23-4194-a774-d16e1e5dd6a6">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="43f02c66-8199-4a7d-8c42-b69c5ff5806a">
                     <TableID>dbo_ZlozenieSkargi</TableID>
                     <ColumnID>ID_Skargi</ColumnID>
                   </Source>
@@ -1151,10 +1163,10 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="2aa907fb-d1f7-4b12-b841-6d44ca905fbd">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="59834a52-c994-4ba2-931a-bbba463dc225">
           <CubeDimensionID>Czas</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="66099a57-ea37-40ef-bea6-92aae09e8fe9">
+            <Attribute dwd:design-time-name="8c89bde3-e2ab-4ee0-8840-14606960e730">
               <AttributeID>ID Czasu</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1164,10 +1176,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="9afe004e-a669-4de3-afcc-022e0732d490">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="7a22f914-f59e-4eb4-961f-a66a7b4f2ae2">
           <CubeDimensionID>Data</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ffd0107a-47ed-475f-9dfc-59a5273816df">
+            <Attribute dwd:design-time-name="60b85490-c5a9-42be-baf1-c09488e6bb85">
               <AttributeID>ID Daty</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1177,10 +1189,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="4eed18ff-8260-4a61-b380-b669d3dd57d6">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="443264c1-67f6-4b86-89eb-885036304588">
           <CubeDimensionID>Egzaminator</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="b5c2ca7c-2d5a-4bdf-94f5-a295ea703a79">
+            <Attribute dwd:design-time-name="831a5569-9772-4b23-a41c-5d963bcd20f6">
               <AttributeID>ID Egzaminatora</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1193,7 +1205,7 @@
       </Dimensions>
       <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="be58d023-45c5-4617-8772-7b86858fd38e">
+    <MeasureGroup dwd:design-time-name="f42bedb8-d8d5-4b73-9463-9b662159e16a">
       <ID>Zlozenie Skargi 1</ID>
       <Name>Zlozenie Skargi 1</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -1201,14 +1213,14 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="3ef75ef0-56f4-4bc3-91ed-ff52421990a6">
+        <Measure dwd:design-time-name="4a5f3ec6-a1cc-49c5-a7cc-977b50b11aa7">
           <ID>ID Kandydata Distinct Count 1</ID>
           <Name>Liczba kandydatów którzy złożyli skargi</Name>
           <AggregateFunction>DistinctCount</AggregateFunction>
           <DataType>Integer</DataType>
-          <Source dwd:design-time-name="ae634ab4-d468-45ed-8d23-d053d3b09fc7">
+          <Source dwd:design-time-name="d1b71a2a-67f3-4085-8b7a-d74fad1d1310">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="80545275-988c-4dd6-b343-ec228d1d335f">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2de843a0-a3b1-4ad1-afcb-c4dd6ea11aee">
               <TableID>dbo_ZlozenieSkargi</TableID>
               <ColumnID>ID_Kandydata</ColumnID>
             </Source>
@@ -1218,15 +1230,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9de4b4a4-8b5a-4d44-a251-538bd34c4171">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="fa852990-e6ab-4b80-9eae-5fc7eca067de">
           <CubeDimensionID>Kandydat</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="439347d7-8c5a-4e79-ab04-e9429ab92300">
+            <Attribute dwd:design-time-name="f26d47e4-3501-4a05-b454-2ed16e64a7f7">
               <AttributeID>ID Kandydata</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="5e6d1bf5-148b-40bb-a37d-60a9884ad05e">
+                <KeyColumn dwd:design-time-name="4662d97c-7511-4a6c-998c-9a4967928fc9">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5d548f90-b338-41a3-8440-7e1a149eb4e1">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="40241640-b094-43e4-ba6b-cb3c42860d38">
                     <TableID>dbo_ZlozenieSkargi</TableID>
                     <ColumnID>ID_Kandydata</ColumnID>
                   </Source>
@@ -1236,15 +1248,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="895d455d-0916-4c53-a753-cfb64064d63f">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="77539cf7-7965-4152-bcc3-bc7d414db973">
           <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ea51bd14-b8ad-4692-91ad-f0d2a5f50578">
+            <Attribute dwd:design-time-name="c0522484-9049-4415-bf38-63155975a661">
               <AttributeID>ID Terminu Egzaminu</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="12685ec4-d6da-4bcd-abcb-c37da0fdb017">
+                <KeyColumn dwd:design-time-name="255260b9-27fc-4e17-97dd-c870f979347a">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="babf4e49-87f6-428d-8fb9-f28cc3475786">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="55331b20-e40d-4cf1-9453-b4e442a10759">
                     <TableID>dbo_ZlozenieSkargi</TableID>
                     <ColumnID>ID_TerminuEgzaminu</ColumnID>
                   </Source>
@@ -1254,15 +1266,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0826c515-1baf-43d4-9d6d-94befe002c68">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="84776591-ef9b-4838-aa41-a68f9c8daa38">
           <CubeDimensionID>Skarga</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ec17bccf-3913-4b43-a2e8-7b379848ac9a">
+            <Attribute dwd:design-time-name="cbfdd1c4-0e25-4865-8ff9-aa20e786dedf">
               <AttributeID>ID Skargi</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="adab3d25-c9e8-4090-8911-09884f3abc86">
+                <KeyColumn dwd:design-time-name="868b8320-f73b-4914-b369-3c641cefa270">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="68ac3a15-7e8a-4fdb-ba17-718295ad9d5a">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f0a85f7b-6038-4536-acc7-487bd898cd59">
                     <TableID>dbo_ZlozenieSkargi</TableID>
                     <ColumnID>ID_Skargi</ColumnID>
                   </Source>
@@ -1272,10 +1284,10 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="20e064a2-c9e6-491a-812b-c3f7a48e16f7">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="6afc4c43-38f3-4653-b5dc-c0109e939c9a">
           <CubeDimensionID>Czas</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="7c830221-55cb-40e3-8423-df6086c62a66">
+            <Attribute dwd:design-time-name="873b3597-127b-457f-b1ba-09b633e5d3fc">
               <AttributeID>ID Czasu</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1285,10 +1297,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="1590dbd9-f599-49c9-9d29-5fbe16343ded">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="2ab07c0e-23a5-4ff4-97ff-223d6b89a144">
           <CubeDimensionID>Data</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="7bddf568-1ebf-40dc-8343-3b04c86f609c">
+            <Attribute dwd:design-time-name="663a0a11-2f94-4dad-8aac-0f77cdd84e41">
               <AttributeID>ID Daty</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1298,10 +1310,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="21ec436c-7151-447d-a666-2240b01bf3fa">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="ef3dc58f-5695-4e94-887d-063c290a727f">
           <CubeDimensionID>Egzaminator</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="ded1c412-5b70-4514-964a-058b52b835ac">
+            <Attribute dwd:design-time-name="d6098e5c-3f41-465d-b883-99f9f85b15bf">
               <AttributeID>ID Egzaminatora</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1314,7 +1326,7 @@
       </Dimensions>
       <Partitions />
     </MeasureGroup>
-    <MeasureGroup dwd:design-time-name="d98fdcad-d9f5-44c0-9c7b-033b3100c4c9">
+    <MeasureGroup dwd:design-time-name="71b10666-ef41-432e-ba66-7381808ba978">
       <ID>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</ID>
       <Name>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -1322,14 +1334,14 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="b518d92b-ee0a-46ae-a405-ca0dc6449c6b">
+        <Measure dwd:design-time-name="8c4bcbc1-fc84-4185-b054-899dd69fb01a">
           <ID>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga Count</ID>
           <Name>Liczba pytań</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="910a9865-f047-4216-ab88-cb8ded964aea">
+          <Source dwd:design-time-name="628a50f9-e4af-40a8-a93e-53d841adf1fe">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="f83d9ae8-eed7-4342-b73f-b63992ba204c">
+            <Source xsi:type="RowBinding" dwd:design-time-name="b67520fd-857d-4082-ad8c-ef7a405b1f5f">
               <TableID>dbo_OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga</TableID>
             </Source>
           </Source>
@@ -1338,15 +1350,15 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="89d10ced-c0b1-4ad0-8ca6-d0a2d069286f">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="fdb75a93-1b4d-488b-a9ad-28691d229890">
           <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="2287d35f-3075-4242-a398-ea890557332c">
+            <Attribute dwd:design-time-name="a3075581-20cd-4f4d-ae45-7f1413e2949e">
               <AttributeID>ID Terminu Egzaminu</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="25a0da41-9641-4f75-8c7c-d1820b908bb6">
+                <KeyColumn dwd:design-time-name="1200a3ec-76b1-4df0-b386-3f70b2de821a">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="68203beb-18b8-4e0e-92a5-7b3a1a02b051">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0fc161c7-6ab2-4300-9865-b25a2f797a8b">
                     <TableID>dbo_OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga</TableID>
                     <ColumnID>ID_TerminuEgzaminu</ColumnID>
                   </Source>
@@ -1356,15 +1368,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="e8f8a882-809c-4675-8be5-3e43144a725f">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="cfa21778-f90f-4217-ae7b-65afde027815">
           <CubeDimensionID>Kandydat</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="6e0590f9-2f20-48dc-a624-1b7efa480c55">
+            <Attribute dwd:design-time-name="52707a60-9f25-49e2-bd6e-9d7f62dbad45">
               <AttributeID>ID Kandydata</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="19327c00-0a8e-4a85-85ed-573ae2691e73">
+                <KeyColumn dwd:design-time-name="3e481e8e-de4a-476c-863d-8cfefd0d01e6">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="fafcb31a-82e4-4708-b01f-18c90ed1831b">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a6656a44-9f91-4421-8ff0-d00c752a72af">
                     <TableID>dbo_OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga</TableID>
                     <ColumnID>ID_Kandydata</ColumnID>
                   </Source>
@@ -1374,15 +1386,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="28071760-599e-4025-92bd-d89ca414c20a">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0e11ac1e-a47e-4f0f-af8a-19902e11c5ae">
           <CubeDimensionID>Pytanie</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="b7e83721-1435-4502-a0f2-482c97ebf1ff">
+            <Attribute dwd:design-time-name="aca86cfe-63dd-4c99-844e-43d18403a5de">
               <AttributeID>ID Pytania</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="ab20f3ff-1f4b-4032-b4f7-0aebd532efa0">
+                <KeyColumn dwd:design-time-name="de752904-7bbe-4603-8815-fe32d297fd61">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5cba8743-ef29-4a6a-8f54-fa0d972dd62c">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="bf71ea9c-2edc-4c69-bae5-6ae16d26e325">
                     <TableID>dbo_OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga</TableID>
                     <ColumnID>ID_Pytania</ColumnID>
                   </Source>
@@ -1392,15 +1404,15 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="59cbfe9b-fc26-41f1-9b56-a7b84b804f24">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="35abd913-1f95-4f2d-b252-486e58f1eed0">
           <CubeDimensionID>Skarga</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="a41e03b8-4829-4b62-bc86-752ed87e256d">
+            <Attribute dwd:design-time-name="920a3c51-37e3-469c-8375-c6f129280bb9">
               <AttributeID>ID Skargi</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="76161d14-27b7-4e81-b311-77c7c0cfa09c">
+                <KeyColumn dwd:design-time-name="efb551f6-2ed8-4bb3-9641-6fa7739b4eb7">
                   <DataType>Integer</DataType>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b2d4ab88-aed1-41f2-aa00-86744f8c717d">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6037d60a-3265-4e3b-b78a-cdf6dc6b7ed2">
                     <TableID>dbo_OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga</TableID>
                     <ColumnID>ID_Skargi</ColumnID>
                   </Source>
@@ -1410,10 +1422,10 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="23d64771-7d9b-4ab4-a7c0-365b0316ddf1">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="988b4e44-b57d-4aae-a7fc-fe4ccfce64a9">
           <CubeDimensionID>Czas</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="5ce2627c-9293-471d-903e-8a07b85a2b2b">
+            <Attribute dwd:design-time-name="3d380fc1-8de0-4a80-beb7-6e5b1f356d39">
               <AttributeID>ID Czasu</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1423,10 +1435,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="6e6bffaa-9542-4bf7-91fb-b55bb3e06c5f">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="4390b6c1-edb3-4fa2-9f13-653e00b3b38f">
           <CubeDimensionID>Data</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="98c40435-ee15-4287-a329-8bbf95cb768d">
+            <Attribute dwd:design-time-name="b0c37860-ae95-42d0-810e-4c753f62d8a6">
               <AttributeID>ID Daty</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1436,10 +1448,10 @@
           <Materialization>Regular</Materialization>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
         </Dimension>
-        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="d3331b59-4922-4906-809d-4cad11caafa5">
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="94828302-6de5-4ba7-84e9-1fac371a02b0">
           <CubeDimensionID>Egzaminator</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="975b3000-2f73-497c-812a-bf68bf63da0b">
+            <Attribute dwd:design-time-name="2295b41d-6425-4b76-908c-71e63acbef99">
               <AttributeID>ID Egzaminatora</AttributeID>
               <Type>Granularity</Type>
             </Attribute>
@@ -1453,11 +1465,11 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="5affcaf9-7aad-43c8-8544-432697bddb03">
+  <Source dwd:design-time-name="ffa312c7-ccd8-4192-86e0-ac8d7d43c494">
     <DataSourceViewID>Data Warehouse</DataSourceViewID>
   </Source>
   <MdxScripts>
-    <MdxScript dwd:design-time-name="26132088-fe0d-4c91-ba70-d0960c27ae23">
+    <MdxScript dwd:design-time-name="4c88c941-c2fb-4b5c-ad30-b0c6a6acb980">
       <ID>MdxScript</ID>
       <Name>MdxScript</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -1469,24 +1481,24 @@ The CALCULATE command controls the aggregation of leaf cells in the cube.
 If the CALCULATE command is deleted or modified, the data within the cube is affected.
 You should edit this command only if you manually specify how the cube is aggregated.
 */
-CALCULATE; 
+CALCULATE;  
 CREATE MEMBER CURRENTCUBE.[Measures].[Średnia liczba rezerwacji]
  AS [Measures].[Liczba rezerwacji na termin] / [Measures].[Liczba różnych dni wśród terminów rezerwacji], 
 FORMAT_STRING = "Standard", 
 NON_EMPTY_BEHAVIOR = { [Liczba rezerwacji na termin], [Liczba różnych dni wśród terminów rezerwacji] }, 
-VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Zarezerwowanie Terminu'  ; 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Zarezerwowanie Terminu';  
 CREATE MEMBER CURRENTCUBE.[Measures].[Średni czas oczekiwania na egzamin]
- AS [Measures].[Łączny czas oczekiwania na egzamin] / [Measures].[Liczba różnych dni wśród terminów rezerwacji], 
+ AS [Measures].[Łączny czas oczekiwania na egzamin] / [Measures].[Liczba rezerwacji], 
 NON_EMPTY_BEHAVIOR = { [Łączny czas oczekiwania na egzamin], [Liczba różnych dni wśród terminów rezerwacji] }, 
-VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Zarezerwowanie Terminu'  ; 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Zarezerwowanie Terminu'  ;  
 CREATE MEMBER CURRENTCUBE.[Measures].[Średnia liczba rezerwacji na kandydata]
  AS [Measures].[Liczba rezerwacji na termin] / [Measures].[Liczba różnych kandydatów wśród terminów rezerwacji], 
 NON_EMPTY_BEHAVIOR = { [Liczba rezerwacji na termin], [Liczba różnych kandydatów wśród terminów rezerwacji] }, 
-VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Zarezerwowanie Terminu'  ; 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Zarezerwowanie Terminu';  
 CREATE MEMBER CURRENTCUBE.[Measures].[Łączna liczba kandydatów nieobecnych]
  AS [Measures].[Łączna liczba rezerwacji] - [Measures].[Łączna liczba uczestników], 
 NON_EMPTY_BEHAVIOR = { [Łączna liczba uczestników], [Łączna liczba rezerwacji] }, 
-VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Odbycie Sie Egzaminu'  ; </Text>
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Odbycie Sie Egzaminu'; </Text>
         </Command>
       </Commands>
     </MdxScript>

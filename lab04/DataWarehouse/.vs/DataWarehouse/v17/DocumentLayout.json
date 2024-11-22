@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{294BF69D-B4A0-4835-B124-07BA904AB4E3}|DataWarehouse.dwproj|D:\\HD\\lab04\\DataWarehouse\\Data Warehouse.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
       "RelativeMoniker": "D:0:0:{294BF69D-B4A0-4835-B124-07BA904AB4E3}|DataWarehouse.dwproj|solutionrelative:Data Warehouse.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{294BF69D-B4A0-4835-B124-07BA904AB4E3}|DataWarehouse.dwproj|D:\\HD\\lab04\\DataWarehouse\\Termin Egzaminu.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
-      "RelativeMoniker": "D:0:0:{294BF69D-B4A0-4835-B124-07BA904AB4E3}|DataWarehouse.dwproj|solutionrelative:Termin Egzaminu.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,24 +30,12 @@
               "EditorCaption": " [Design]"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Termin Egzaminu.dim [Design]",
-              "DocumentMoniker": "D:\\HD\\lab04\\DataWarehouse\\Termin Egzaminu.dim",
-              "RelativeDocumentMoniker": "Termin Egzaminu.dim",
-              "ToolTip": "D:\\HD\\lab04\\DataWarehouse\\Termin Egzaminu.dim [Design]",
-              "RelativeToolTip": "Termin Egzaminu.dim [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-17T15:05:31.827Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{7cc9e714-2774-4fc6-8631-a07eee703286}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{7cc9e714-2774-4fc6-8631-a07eee703286}"
             }
           ]
         }

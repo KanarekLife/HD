@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="LoadLatestData"
   DTS:PackageType="5"
-  DTS:VersionBuild="141"
-  DTS:VersionGUID="{8EA15EF4-A1C0-436E-886F-94FC4AC60E5D}">
+  DTS:VersionBuild="144"
+  DTS:VersionGUID="{51DC1B89-D7E8-48A7-9886-16DF1EE849FC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4003,12 +4003,12 @@ SELECT [Data],
 	PKKKandydata,
 	CTE_EgzaminyTeoretyczne.NumerSaliEgzaminacyjnej,
 	IIF(LiczbaPytanNaKtoreUdzielonoOdpowiedzi = LiczbaPytan, N'Kandydat Nie Zdołał Odpowiedzieć Na Wszystkie Pytania', N'Kandydat Odpowiedział Na Wszystkie Pytania') AS CzyKandydatOdpowiedzialNaWszystkiePytania,
-	CzyIstniejaPowiazaneIncydenty,
-	LiczbaPowiazanychIncydentow,
+	ISNULL(CzyIstniejaPowiazaneIncydenty, N'Brak powiązanych incydentów') AS CzyIstniejaPowiazaneIncydenty,
+	ISNULL(LiczbaPowiazanychIncydentow, 0) AS LiczbaPowiazanychIncydentow,
 	JSON_VALUE(Pytania.Dane, '$.pytanie') AS Pytanie
 FROM CTE_EgzaminyTeoretyczne
 INNER JOIN CTE_StatystykiPrzebieguKandydata ON CTE_EgzaminyTeoretyczne.Id = CTE_StatystykiPrzebieguKandydata.IdEgzaminuTeoretycznego
-INNER JOIN CTE_LiczbaIncydentow ON CTE_EgzaminyTeoretyczne.Id = CTE_LiczbaIncydentow.IdEgzaminu
+LEFT JOIN CTE_LiczbaIncydentow ON CTE_EgzaminyTeoretyczne.Id = CTE_LiczbaIncydentow.IdEgzaminu
 INNER JOIN ZaplanowanePytania ON ZaplanowanePytania.IdPrzebieguEgzaminu = CTE_StatystykiPrzebieguKandydata.IdPrzebieguKandydata
 INNER JOIN Pytania ON ZaplanowanePytania.IdPytania = Pytania.Id
 ORDER BY [Data] ASC</property>
@@ -7420,7 +7420,7 @@ where [refTable].[Godzina] = ? and [refTable].[Minuty] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating TerminyEgzaminow Table\544:invalid};#{Package\Populating TerminyEgzaminow Table\545:invalid};</property>
+                  name="ParameterMap">#{Package\Populating TerminyEgzaminow Table\552:invalid};#{Package\Populating TerminyEgzaminow Table\553:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7596,7 +7596,7 @@ where [refTable].[Data] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating TerminyEgzaminow Table\546:invalid};</property>
+                  name="ParameterMap">#{Package\Populating TerminyEgzaminow Table\554:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7755,7 +7755,7 @@ where [refTable].[Pesel] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating TerminyEgzaminow Table\547:invalid};</property>
+                  name="ParameterMap">#{Package\Populating TerminyEgzaminow Table\555:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10267,7 +10267,7 @@ CTE_LiczbaIncydentow(IdEgzaminu, CzyIstniejaPowiazaneIncydenty, LiczbaPowiazanyc
 AS
 (
 	SELECT IdEgzaminu,
-		IIF(COUNT(*) = 0, N'Brak powiązanych incydentów,', N'Istnieją powiązane incydenty') AS CzyIstniejaPowiazaneIncydenty,
+		IIF(COUNT(*) = 0, N'Brak powiązanych incydentów', N'Istnieją powiązane incydenty') AS CzyIstniejaPowiazaneIncydenty,
 		COUNT(*) AS LiczbaPowiazanychIncydentow
 	FROM EgzaminyTeoretyczne
 	INNER JOIN Incydenty ON Incydenty.IdEgzaminu = EgzaminyTeoretyczne.Id
@@ -10280,11 +10280,11 @@ SELECT [Data],
 	PKKKandydata,
 	CTE_EgzaminyTeoretyczne.NumerSaliEgzaminacyjnej,
 	IIF(LiczbaPytanNaKtoreUdzielonoOdpowiedzi = LiczbaPytan, N'Kandydat Nie Zdołał Odpowiedzieć Na Wszystkie Pytania', N'Kandydat Odpowiedział Na Wszystkie Pytania') AS CzyKandydatOdpowiedzialNaWszystkiePytania,
-	CzyIstniejaPowiazaneIncydenty,
-	LiczbaPowiazanychIncydentow
+	ISNULL(CzyIstniejaPowiazaneIncydenty, N'Brak powiązanych incydentów') AS CzyIstniejaPowiazaneIncydenty,
+	ISNULL(LiczbaPowiazanychIncydentow, 0) AS LiczbaPowiazanychIncydentow
 FROM CTE_EgzaminyTeoretyczne
 INNER JOIN CTE_StatystykiPrzebieguKandydata ON CTE_EgzaminyTeoretyczne.Id = CTE_StatystykiPrzebieguKandydata.IdEgzaminuTeoretycznego
-INNER JOIN CTE_LiczbaIncydentow ON CTE_EgzaminyTeoretyczne.Id = CTE_LiczbaIncydentow.IdEgzaminu
+LEFT JOIN CTE_LiczbaIncydentow ON CTE_EgzaminyTeoretyczne.Id = CTE_LiczbaIncydentow.IdEgzaminu
 ORDER BY [Data] ASC</property>
                 <property
                   dataType="System.String"
@@ -12879,6 +12879,10 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="236,41.6"
+          Id="Package\Analysis Services Processing Task"
+          TopLeft="582.742858286294,544.470587758045" />
+        <NodeLayout
           Size="228.8,41.6"
           Id="Package\Populating Egzaminatorzy Table"
           TopLeft="683.35714423626,157.852941069223" />
@@ -12890,6 +12894,10 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
           Size="277.6,41.6"
           Id="Package\Populating OdbycieSieEgzaminuKandydata"
           TopLeft="645.714287088842,418.294117280408" />
+        <NodeLayout
+          Size="376.8,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga"
+          TopLeft="977.142859222938,415.99999963536" />
         <NodeLayout
           Size="194.4,41.6"
           Id="Package\Populating Pytania Table"
@@ -12966,6 +12974,108 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
                     Point3="133.338095501146,131.28164926379" />
                   <mssgle:LineSegment
                     End="133.338095501146,205.694117428543" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="415.185714816378,457.747058463581">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="323.557143469916,86.7235292944636"
+              Start="0,0"
+              End="323.557143469916,79.2235292944636">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.6837194785187" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.6837194785187"
+                    Point2="0,51.6837194785187"
+                    Point3="4,51.6837194785187" />
+                  <mssgle:LineSegment
+                    End="319.557143469916,51.6837194785187" />
+                  <mssgle:CubicBezierSegment
+                    Point1="319.557143469916,51.6837194785187"
+                    Point2="323.557143469916,51.6837194785187"
+                    Point3="323.557143469916,55.6837194785187" />
+                  <mssgle:LineSegment
+                    End="323.557143469916,79.2235292944636" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="784.514287088842,459.894117280408">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.7714288025486,84.5764704776366"
+              Start="0,0"
+              End="-26.7714288025486,77.0764704776366">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.7543213204532" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.7543213204532"
+                    Point2="0,55.7543213204532"
+                    Point3="-4,55.7543213204532" />
+                  <mssgle:LineSegment
+                    End="-22.7714288025486,55.7543213204532" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.7714288025486,55.7543213204532"
+                    Point2="-26.7714288025486,55.7543213204532"
+                    Point3="-26.7714288025486,59.7543213204532" />
+                  <mssgle:LineSegment
+                    End="-26.7714288025486,77.0764704776366" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="1165.54285922294,457.59999963536">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-396.400000936644,86.8705881226848"
+              Start="0,0"
+              End="-396.400000936644,79.3705881226848">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.1618699193127" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,57.1618699193127"
+                    Point2="0,61.1618699193127"
+                    Point3="-4,61.1618699193127" />
+                  <mssgle:LineSegment
+                    End="-392.400000936644,61.1618699193127" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-392.400000936644,61.1618699193127"
+                    Point2="-396.400000936644,61.1618699193127"
+                    Point3="-396.400000936644,65.1618699193127" />
+                  <mssgle:LineSegment
+                    End="-396.400000936644,79.3705881226848" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13110,10 +13220,6 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="376.8,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga"
-          TopLeft="977.142859222938,415.99999963536" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="279.714285981899,202.952941035038">
@@ -13216,10 +13322,6 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="236,41.6"
-          Id="Package\Analysis Services Processing Task"
-          TopLeft="582.742858286294,544.470587758045" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
           TopLeft="122.771428621606,454.541176108629">
@@ -13254,111 +13356,13 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="415.185714816378,457.747058463581">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="323.557143469916,86.7235292944636"
-              Start="0,0"
-              End="323.557143469916,79.2235292944636">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.6837194785187" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,47.6837194785187"
-                    Point2="0,51.6837194785187"
-                    Point3="4,51.6837194785187" />
-                  <mssgle:LineSegment
-                    End="319.557143469916,51.6837194785187" />
-                  <mssgle:CubicBezierSegment
-                    Point1="319.557143469916,51.6837194785187"
-                    Point2="323.557143469916,51.6837194785187"
-                    Point3="323.557143469916,55.6837194785187" />
-                  <mssgle:LineSegment
-                    End="323.557143469916,79.2235292944636" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="784.514287088842,459.894117280408">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-26.7714288025486,84.5764704776366"
-              Start="0,0"
-              End="-26.7714288025486,77.0764704776366">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.7543213204532" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,51.7543213204532"
-                    Point2="0,55.7543213204532"
-                    Point3="-4,55.7543213204532" />
-                  <mssgle:LineSegment
-                    End="-22.7714288025486,55.7543213204532" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-22.7714288025486,55.7543213204532"
-                    Point2="-26.7714288025486,55.7543213204532"
-                    Point3="-26.7714288025486,59.7543213204532" />
-                  <mssgle:LineSegment
-                    End="-26.7714288025486,77.0764704776366" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="1165.54285922294,457.59999963536">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-396.400000936644,86.8705881226848"
-              Start="0,0"
-              End="-396.400000936644,79.3705881226848">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.1618699193127" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,57.1618699193127"
-                    Point2="0,61.1618699193127"
-                    Point3="-4,61.1618699193127" />
-                  <mssgle:LineSegment
-                    End="-392.400000936644,61.1618699193127" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-392.400000936644,61.1618699193127"
-                    Point2="-396.400000936644,61.1618699193127"
-                    Point3="-396.400000936644,65.1618699193127" />
-                  <mssgle:LineSegment
-                    End="-396.400000936644,79.3705881226848" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[localhost]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
   <TaskHost
     design-time-name="Package\Populating Egzaminatorzy Table">
     <LayoutInfo>
@@ -14197,6 +14201,528 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Merge Join"
+          TopLeft="747.857144449134,422.117646688821" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Find new elements"
+          TopLeft="745.999988883734,1071.3999896735" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Skargi (Skargi Excel)"
+          TopLeft="614.999990835786,87.9999986886978" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Skargi"
+          TopLeft="740.714287291072,908.211764345264" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\OLE DB Source"
+          TopLeft="885.384601169564,86.1583697461394" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Sort"
+          TopLeft="654.285715678517,322.882352752824" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Czasu"
+          TopLeft="734.285715848816,588.682352467948" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Remove old columns"
+          TopLeft="617.769221563752,246.692304016306" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Pytania"
+          TopLeft="743.999988913536,984.199989792705" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Daty"
+          TopLeft="733.57143013301,508.52941131896" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Sort 1"
+          TopLeft="900.000001915864,187.729411820341" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Kandydata"
+          TopLeft="730.714287269785,830.011764242709" />
+        <NodeLayout
+          Size="409.6,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga (DataWarehouse)"
+          TopLeft="616.999990805984,1148.79999082088" />
+        <NodeLayout
+          Size="221.6,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_TerminuEgzaminu"
+          TopLeft="710.000001511403,752.035293662517" />
+        <NodeLayout
+          Size="221.6,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Convert data to correct format"
+          TopLeft="593.538452694049,165.461535995969" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Egzaminatora"
+          TopLeft="715.714287237854,671.305881944732" />
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Union All Output 1]"
+          TopLeft="704.427468621134,288.292304016306">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.5900487365178"
+              Start="0,0"
+              End="0,27.0900487365178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.0900487365178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Sort Output1]"
+          TopLeft="953.200001915864,229.329411820341">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-120.276190800063,192.788234868481"
+              Start="0,0"
+              End="-120.276190800063,185.288234868481">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,110.262295300099" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,110.262295300099"
+                    Point2="0,114.262295300099"
+                    Point3="-4,114.262295300099" />
+                  <mssgle:LineSegment
+                    End="-116.276190800063,114.262295300099" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-116.276190800063,114.262295300099"
+                    Point2="-120.276190800063,114.262295300099"
+                    Point3="-120.276190800063,118.262295300099" />
+                  <mssgle:LineSegment
+                    End="-120.276190800063,185.288234868481" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Sort Output]"
+          TopLeft="703.085715678517,364.482352752824">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.3047621039507,57.6352939359974"
+              Start="0,0"
+              End="89.3047621039507,50.1352939359974">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.1594546986521" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.1594546986521"
+                    Point2="0,34.1594546986521"
+                    Point3="4,34.1594546986521" />
+                  <mssgle:LineSegment
+                    End="85.3047621039507,34.1594546986521" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.3047621039507,34.1594546986521"
+                    Point2="89.3047621039507,34.1594546986521"
+                    Point3="89.3047621039507,38.1594546986521" />
+                  <mssgle:LineSegment
+                    End="89.3047621039507,50.1352939359974" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[OLE DB Source Output]"
+          TopLeft="956.692301542713,127.758369746139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9710420742012"
+              Start="0,0"
+              End="0,52.4710420742012">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4710420742012" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Merge Join Output]"
+          TopLeft="812.914287291072,463.717646688821">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.811764630139"
+              Start="0,0"
+              End="0,37.311764630139">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.311764630139" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup No Match Output]"
+          TopLeft="825.699989844859,1112.9999896735">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.8000011473894"
+              Start="0,0"
+              End="0,28.3000011473894">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.3000011473894" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,8.3453130736947,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output6]"
+          TopLeft="829.799988898635,1025.7999897927">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5999998807908"
+              Start="0,0"
+              End="0,38.0999998807908">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0999998807908" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,13.2453124403954,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output5]"
+          TopLeft="826.957138102304,949.811764345264">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.3882254474406"
+              Start="0,0"
+              End="0,26.8882254474406">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8882254474406" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,7.6394252237203,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output4]"
+          TopLeft="824.114287280428,871.611764242709">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.6000001025549"
+              Start="0,0"
+              End="0,29.1000001025549">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.1000001025549" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,8.74531255127745,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output3]"
+          TopLeft="822.557144390594,793.635293662517">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.3764705801919"
+              Start="0,0"
+              End="0,28.8764705801919">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8764705801919" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,8.63354779009595,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output2]"
+          TopLeft="818.657144374628,712.905881944732">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.1294117177856"
+              Start="0,0"
+              End="0,31.6294117177856">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.6294117177856" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,10.0100183588928,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output1]"
+          TopLeft="816.600001543335,630.282352467948">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.0235294767831"
+              Start="0,0"
+              End="0,33.5235294767831">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5235294767831" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,10.9570772383915,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output]"
+          TopLeft="814.928572990913,550.12941131896">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.5529411489883"
+              Start="0,0"
+              End="0,31.0529411489883">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.0529411489883" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,9.72178307449415,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Excel Source Output]"
+          TopLeft="703.469221764918,129.599998688698">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.8615373072716"
+              Start="0,0"
+              End="0,28.3615373072716">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.3615373072716" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Derived Column Output]"
+          TopLeft="705.053837128901,207.061535995969">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6307680203364"
+              Start="0,0"
+              End="0,32.1307680203364">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1307680203364" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Find new elements">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Skargi (Skargi Excel)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Pytania">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Pytanie]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga (DataWarehouse)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Populating Pytania Table">
     <LayoutInfo>
       <GraphLayout
@@ -14946,13 +15472,41 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="176,41.6"
-          Id="Package\Populating ZlozenieSkargi\Remove old columns"
-          TopLeft="617.769221563752,246.692304016306" />
+          Size="167.2,41.6"
+          Id="Package\Populating ZlozenieSkargi\Find new elements"
+          TopLeft="742.857144438491,987.152940704584" />
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Populating ZlozenieSkargi\OLE DB Source"
           TopLeft="885.384601169564,86.1583697461394" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\Populating ZlozenieSkargi\ZlozenieSkargi (DataWarehouse)"
+          TopLeft="712.142858658823,1066.15294076156" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Populating ZlozenieSkargi\Retrieve ID_Kandydata"
+          TopLeft="730.714287269785,830.011764242709" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Populating ZlozenieSkargi\Merge Join"
+          TopLeft="747.857144449134,422.117646688821" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Populating ZlozenieSkargi\Retrieve ID_Czasu"
+          TopLeft="734.285715848816,588.682352467948" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Populating ZlozenieSkargi\Retrieve ID_Skargi"
+          TopLeft="740.714287291072,908.211764345264" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Populating ZlozenieSkargi\Retrieve ID_Daty"
+          TopLeft="733.57143013301,508.52941131896" />
+        <NodeLayout
+          Size="221.6,41.6"
+          Id="Package\Populating ZlozenieSkargi\Retrieve ID_TerminuEgzaminu"
+          TopLeft="710.000001511403,752.035293662517" />
         <NodeLayout
           Size="106.4,41.6"
           Id="Package\Populating ZlozenieSkargi\Sort 1"
@@ -14962,9 +15516,115 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
           Id="Package\Populating ZlozenieSkargi\Skargi (Skargi Excel)"
           TopLeft="614.999990835786,87.9999986886978" />
         <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\Populating ZlozenieSkargi\Retrieve ID_Egzaminatora"
+          TopLeft="715.714287237854,671.305881944732" />
+        <NodeLayout
           Size="221.6,41.6"
           Id="Package\Populating ZlozenieSkargi\Convert data to correct format"
           TopLeft="593.538452694049,165.461535995969" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Populating ZlozenieSkargi\Sort"
+          TopLeft="654.285715678517,322.882352752824" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Populating ZlozenieSkargi\Remove old columns"
+          TopLeft="617.769221563752,246.692304016306" />
+        <EdgeLayout
+          Id="Package\Populating ZlozenieSkargi.Paths[Union All Output 1]"
+          TopLeft="704.427468621134,288.292304016306">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.5900487365178"
+              Start="0,0"
+              End="0,27.0900487365178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.0900487365178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating ZlozenieSkargi.Paths[Sort Output1]"
+          TopLeft="953.200001915864,229.329411820341">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-120.276190800063,192.788234868481"
+              Start="0,0"
+              End="-120.276190800063,185.288234868481">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,110.262295300099" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,110.262295300099"
+                    Point2="0,114.262295300099"
+                    Point3="-4,114.262295300099" />
+                  <mssgle:LineSegment
+                    End="-116.276190800063,114.262295300099" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-116.276190800063,114.262295300099"
+                    Point2="-120.276190800063,114.262295300099"
+                    Point3="-120.276190800063,118.262295300099" />
+                  <mssgle:LineSegment
+                    End="-120.276190800063,185.288234868481" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-68.1380954000315,119.262295300099,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating ZlozenieSkargi.Paths[Sort Output]"
+          TopLeft="703.085715678517,364.482352752824">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.3047621039507,57.6352939359974"
+              Start="0,0"
+              End="89.3047621039507,50.1352939359974">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.1594546986521" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.1594546986521"
+                    Point2="0,34.1594546986521"
+                    Point3="4,34.1594546986521" />
+                  <mssgle:LineSegment
+                    End="85.3047621039507,34.1594546986521" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.3047621039507,34.1594546986521"
+                    Point2="89.3047621039507,34.1594546986521"
+                    Point3="89.3047621039507,38.1594546986521" />
+                  <mssgle:LineSegment
+                    End="89.3047621039507,50.1352939359974" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="36.6523810519753,39.1594546986521,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Populating ZlozenieSkargi.Paths[OLE DB Source Output]"
           TopLeft="956.692301542713,127.758369746139">
@@ -14985,6 +15645,196 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating ZlozenieSkargi.Paths[Merge Join Output]"
+          TopLeft="812.914287291072,463.717646688821">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.811764630139"
+              Start="0,0"
+              End="0,37.311764630139">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.311764630139" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating ZlozenieSkargi.Paths[Lookup No Match Output]"
+          TopLeft="827.300001548657,1028.75294070458">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.4000000569747"
+              Start="0,0"
+              End="0,29.9000000569747">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.9000000569747" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,9.14531252848735,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating ZlozenieSkargi.Paths[Lookup Match Output5]"
+          TopLeft="825.185715864781,949.811764345264">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.3411763593194"
+              Start="0,0"
+              End="0,29.8411763593194">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.8411763593194" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,9.1159006796597,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating ZlozenieSkargi.Paths[Lookup Match Output4]"
+          TopLeft="824.114287280428,871.611764242709">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.6000001025549"
+              Start="0,0"
+              End="0,29.1000001025549">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.1000001025549" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,8.74531255127745,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating ZlozenieSkargi.Paths[Lookup Match Output3]"
+          TopLeft="822.557144390594,793.635293662517">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.3764705801919"
+              Start="0,0"
+              End="0,28.8764705801919">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8764705801919" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,8.63354779009595,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating ZlozenieSkargi.Paths[Lookup Match Output2]"
+          TopLeft="818.657144374628,712.905881944732">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.1294117177856"
+              Start="0,0"
+              End="0,31.6294117177856">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.6294117177856" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,10.0100183588928,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating ZlozenieSkargi.Paths[Lookup Match Output1]"
+          TopLeft="816.600001543335,630.282352467948">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.0235294767831"
+              Start="0,0"
+              End="0,33.5235294767831">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5235294767831" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,10.9570772383915,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating ZlozenieSkargi.Paths[Lookup Match Output]"
+          TopLeft="814.928572990913,550.12941131896">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.5529411489883"
+              Start="0,0"
+              End="0,31.0529411489883">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.0529411489883" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,9.72178307449415,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15031,332 +15881,163 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\Populating ZlozenieSkargi\Sort"
-          TopLeft="654.285715678517,322.882352752824" />
-        <EdgeLayout
-          Id="Package\Populating ZlozenieSkargi.Paths[Union All Output 1]"
-          TopLeft="704.427468621134,288.292304016306">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.5900487365178"
-              Start="0,0"
-              End="0,27.0900487365178">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.0900487365178" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Populating ZlozenieSkargi\Merge Join"
-          TopLeft="747.857144449134,422.117646688821" />
-        <EdgeLayout
-          Id="Package\Populating ZlozenieSkargi.Paths[Sort Output]"
-          TopLeft="703.085715678517,364.482352752824">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="89.3047621039507,57.6352939359974"
-              Start="0,0"
-              End="89.3047621039507,50.1352939359974">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.1594546986521" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.1594546986521"
-                    Point2="0,34.1594546986521"
-                    Point3="4,34.1594546986521" />
-                  <mssgle:LineSegment
-                    End="85.3047621039507,34.1594546986521" />
-                  <mssgle:CubicBezierSegment
-                    Point1="85.3047621039507,34.1594546986521"
-                    Point2="89.3047621039507,34.1594546986521"
-                    Point3="89.3047621039507,38.1594546986521" />
-                  <mssgle:LineSegment
-                    End="89.3047621039507,50.1352939359974" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating ZlozenieSkargi.Paths[Sort Output1]"
-          TopLeft="953.200001915864,229.329411820341">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-120.276190800063,192.788234868481"
-              Start="0,0"
-              End="-120.276190800063,185.288234868481">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,110.262295300099" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,110.262295300099"
-                    Point2="0,114.262295300099"
-                    Point3="-4,114.262295300099" />
-                  <mssgle:LineSegment
-                    End="-116.276190800063,114.262295300099" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-116.276190800063,114.262295300099"
-                    Point2="-120.276190800063,114.262295300099"
-                    Point3="-120.276190800063,118.262295300099" />
-                  <mssgle:LineSegment
-                    End="-120.276190800063,185.288234868481" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="159.2,41.6"
-          Id="Package\Populating ZlozenieSkargi\Retrieve ID_Daty"
-          TopLeft="733.57143013301,508.52941131896" />
-        <EdgeLayout
-          Id="Package\Populating ZlozenieSkargi.Paths[Merge Join Output]"
-          TopLeft="812.914287291072,463.717646688821">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.811764630139"
-              Start="0,0"
-              End="0,37.311764630139">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.311764630139" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Populating ZlozenieSkargi\Retrieve ID_Czasu"
-          TopLeft="734.285715848816,588.682352467948" />
-        <EdgeLayout
-          Id="Package\Populating ZlozenieSkargi.Paths[Lookup Match Output]"
-          TopLeft="814.928572990913,550.12941131896">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.5529411489883"
-              Start="0,0"
-              End="0,31.0529411489883">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.0529411489883" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.72178307449417,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\Populating ZlozenieSkargi\Retrieve ID_Egzaminatora"
-          TopLeft="715.714287237854,671.305881944732" />
-        <EdgeLayout
-          Id="Package\Populating ZlozenieSkargi.Paths[Lookup Match Output1]"
-          TopLeft="816.600001543335,630.282352467948">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.0235294767831"
-              Start="0,0"
-              End="0,33.5235294767831">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5235294767831" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,10.9570772383915,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="221.6,41.6"
-          Id="Package\Populating ZlozenieSkargi\Retrieve ID_TerminuEgzaminu"
-          TopLeft="710.000001511403,752.035293662517" />
-        <EdgeLayout
-          Id="Package\Populating ZlozenieSkargi.Paths[Lookup Match Output2]"
-          TopLeft="818.657144374628,712.905881944732">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.1294117177856"
-              Start="0,0"
-              End="0,31.6294117177856">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.6294117177856" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,10.0100183588928,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\Populating ZlozenieSkargi\Retrieve ID_Kandydata"
-          TopLeft="730.714287269785,830.011764242709" />
-        <EdgeLayout
-          Id="Package\Populating ZlozenieSkargi.Paths[Lookup Match Output3]"
-          TopLeft="822.557144390594,793.635293662517">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.3764705801919"
-              Start="0,0"
-              End="0,28.8764705801919">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.8764705801919" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.63354779009597,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Populating ZlozenieSkargi\Retrieve ID_Skargi"
-          TopLeft="740.714287291072,908.211764345264" />
-        <EdgeLayout
-          Id="Package\Populating ZlozenieSkargi.Paths[Lookup Match Output4]"
-          TopLeft="824.114287280428,871.611764242709">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.6000001025549"
-              Start="0,0"
-              End="0,29.1000001025549">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.1000001025549" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.74531255127744,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Populating ZlozenieSkargi\Find new elements"
-          TopLeft="742.857144438491,987.152940704584" />
-        <EdgeLayout
-          Id="Package\Populating ZlozenieSkargi.Paths[Lookup Match Output5]"
-          TopLeft="825.185715864781,949.811764345264">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.3411763593194"
-              Start="0,0"
-              End="0,29.8411763593194">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.8411763593194" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.11590067965972,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="232,41.6"
-          Id="Package\Populating ZlozenieSkargi\ZlozenieSkargi (DataWarehouse)"
-          TopLeft="712.142858658823,1066.15294076156" />
-        <EdgeLayout
-          Id="Package\Populating ZlozenieSkargi.Paths[Lookup No Match Output]"
-          TopLeft="827.300001548657,1028.75294070458">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.4000000569747"
-              Start="0,0"
-              End="0,29.9000000569747">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.9000000569747" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,9.14531252848735,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Populating ZlozenieSkargi\Find new elements">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ZlozenieSkargi]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Populating ZlozenieSkargi\OLE DB Source">
     <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating ZlozenieSkargi\ZlozenieSkargi (DataWarehouse)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating ZlozenieSkargi\Retrieve ID_Kandydata">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Kandydat]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating ZlozenieSkargi\Retrieve ID_Czasu">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Czas]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating ZlozenieSkargi\Retrieve ID_Skargi">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Skarga]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating ZlozenieSkargi\Retrieve ID_Daty">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Data]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating ZlozenieSkargi\Retrieve ID_TerminuEgzaminu">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TerminEgzaminu]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -15376,58 +16057,12 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Populating ZlozenieSkargi\Retrieve ID_Daty">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Data]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populating ZlozenieSkargi\Retrieve ID_Czasu">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Czas]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Populating ZlozenieSkargi\Retrieve ID_Egzaminatora">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -15437,643 +16072,12 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populating ZlozenieSkargi\Retrieve ID_TerminuEgzaminu">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[TerminEgzaminu]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populating ZlozenieSkargi\Retrieve ID_Kandydata">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Kandydat]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populating ZlozenieSkargi\Retrieve ID_Skargi">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Skarga]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populating ZlozenieSkargi\Find new elements">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[ZlozenieSkargi]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populating ZlozenieSkargi\ZlozenieSkargi (DataWarehouse)">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Merge Join"
-          TopLeft="747.857144449134,422.117646688821" />
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Sort"
-          TopLeft="654.285715678517,322.882352752824" />
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Remove old columns"
-          TopLeft="617.769221563752,246.692304016306" />
-        <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Skargi"
-          TopLeft="740.714287291072,908.211764345264" />
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\OLE DB Source"
-          TopLeft="885.384601169564,86.1583697461394" />
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Czasu"
-          TopLeft="734.285715848816,588.682352467948" />
-        <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Sort 1"
-          TopLeft="900.000001915864,187.729411820341" />
-        <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Egzaminatora"
-          TopLeft="715.714287237854,671.305881944732" />
-        <NodeLayout
-          Size="221.6,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_TerminuEgzaminu"
-          TopLeft="710.000001511403,752.035293662517" />
-        <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Skargi (Skargi Excel)"
-          TopLeft="614.999990835786,87.9999986886978" />
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Kandydata"
-          TopLeft="730.714287269785,830.011764242709" />
-        <NodeLayout
-          Size="159.2,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Daty"
-          TopLeft="733.57143013301,508.52941131896" />
-        <NodeLayout
-          Size="221.6,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Convert data to correct format"
-          TopLeft="593.538452694049,165.461535995969" />
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output2]"
-          TopLeft="818.657144374628,712.905881944732">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.1294117177856"
-              Start="0,0"
-              End="0,31.6294117177856">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.6294117177856" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,10.0100183588928,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output]"
-          TopLeft="814.928572990913,550.12941131896">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.5529411489883"
-              Start="0,0"
-              End="0,31.0529411489883">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.0529411489883" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.72178307449415,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output3]"
-          TopLeft="822.557144390594,793.635293662517">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.3764705801919"
-              Start="0,0"
-              End="0,28.8764705801919">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.8764705801919" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.63354779009595,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Merge Join Output]"
-          TopLeft="812.914287291072,463.717646688821">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.811764630139"
-              Start="0,0"
-              End="0,37.311764630139">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.311764630139" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output4]"
-          TopLeft="824.114287280428,871.611764242709">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.6000001025549"
-              Start="0,0"
-              End="0,29.1000001025549">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.1000001025549" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.74531255127745,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Sort Output1]"
-          TopLeft="953.200001915864,229.329411820341">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-120.276190800063,192.788234868481"
-              Start="0,0"
-              End="-120.276190800063,185.288234868481">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,110.262295300099" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,110.262295300099"
-                    Point2="0,114.262295300099"
-                    Point3="-4,114.262295300099" />
-                  <mssgle:LineSegment
-                    End="-116.276190800063,114.262295300099" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-116.276190800063,114.262295300099"
-                    Point2="-120.276190800063,114.262295300099"
-                    Point3="-120.276190800063,118.262295300099" />
-                  <mssgle:LineSegment
-                    End="-120.276190800063,185.288234868481" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Union All Output 1]"
-          TopLeft="704.427468621134,288.292304016306">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.5900487365178"
-              Start="0,0"
-              End="0,27.0900487365178">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.0900487365178" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[OLE DB Source Output]"
-          TopLeft="956.692301542713,127.758369746139">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9710420742012"
-              Start="0,0"
-              End="0,52.4710420742012">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4710420742012" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Sort Output]"
-          TopLeft="703.085715678517,364.482352752824">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="89.3047621039507,57.6352939359974"
-              Start="0,0"
-              End="89.3047621039507,50.1352939359974">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.1594546986521" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.1594546986521"
-                    Point2="0,34.1594546986521"
-                    Point3="4,34.1594546986521" />
-                  <mssgle:LineSegment
-                    End="85.3047621039507,34.1594546986521" />
-                  <mssgle:CubicBezierSegment
-                    Point1="85.3047621039507,34.1594546986521"
-                    Point2="89.3047621039507,34.1594546986521"
-                    Point3="89.3047621039507,38.1594546986521" />
-                  <mssgle:LineSegment
-                    End="89.3047621039507,50.1352939359974" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output1]"
-          TopLeft="816.600001543335,630.282352467948">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.0235294767831"
-              Start="0,0"
-              End="0,33.5235294767831">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5235294767831" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,10.9570772383915,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Excel Source Output]"
-          TopLeft="703.469221764918,129.599998688698">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.8615373072716"
-              Start="0,0"
-              End="0,28.3615373072716">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.3615373072716" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Derived Column Output]"
-          TopLeft="705.053837128901,207.061535995969">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.6307680203364"
-              Start="0,0"
-              End="0,32.1307680203364">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.1307680203364" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Pytania"
-          TopLeft="743.999988913536,984.199989792705" />
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output5]"
-          TopLeft="826.957138102304,949.811764345264">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.3882254474406"
-              Start="0,0"
-              End="0,26.8882254474406">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.8882254474406" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,7.63942522372031,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Find new elements"
-          TopLeft="745.999988883734,1071.3999896735" />
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup Match Output6]"
-          TopLeft="829.799988898635,1025.7999897927">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.5999998807908"
-              Start="0,0"
-              End="0,38.0999998807908">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.0999998807908" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,13.2453124403954,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="409.6,41.6"
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga (DataWarehouse)"
-          TopLeft="616.999990805984,1148.79999082088" />
-        <EdgeLayout
-          Id="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga.Paths[Lookup No Match Output]"
-          TopLeft="825.699989844859,1112.9999896735">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.8000011473894"
-              Start="0,0"
-              End="0,28.3000011473894">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.3000011473894" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,8.34531307369468,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Skargi (Skargi Excel)">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Retrieve ID_Pytania">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Pytanie]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\Find new elements">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga (DataWarehouse)">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <ConnectionManager
-    design-time-name="Package.ConnectionManagers[localhost]">
-    <ProjectReferenceName></ProjectReferenceName>
-  </ConnectionManager>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
