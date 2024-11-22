@@ -46,7 +46,7 @@ STANDS_OCCUPANCY_PERCENTAGE_MAX = 1.0
 RESERVATION_DELTATIME_MIN = 10  # days
 RESERVATION_DELTATIME_MAX = 30  # days
 
-QUESTIONS_COUNT = 30
+QUESTIONS_COUNT = 5
 
 QUESTIONS_CSV = 'data/pytania.csv'
 
@@ -81,8 +81,8 @@ def random_locally_unique_blocks(a: np.ndarray, block_size: int, size: int):
 
 
 def setup_database():
-    # conn = sqlite3.connect('lab02.db')
-    conn = sqlite3.connect(':memory:')
+    conn = sqlite3.connect('lab02.db')
+    # conn = sqlite3.connect(':memory:')
     c = conn.cursor()
 
     with open('schemas/initialize_database_schema.sql') as f:
@@ -143,8 +143,9 @@ def generate_exams(c: sqlite3.Cursor, conn: sqlite3.Connection, date_from: str, 
     exam_rooms = random_locally_unique_blocks(all_rooms, NUMBER_OF_CONCURRENT_EXAMS, exam_count)
     exam_egzaminators = random_locally_unique_blocks(all_egzaminators, NUMBER_OF_CONCURRENT_EXAMS, exam_count)
 
+    exam_ids = np.arange(previous_exams_count + 1, previous_exams_count + exam_count+1)
     df = pd.DataFrame({
-        'Id': np.arange(previous_exams_count + 1, previous_exams_count + exam_count+1),
+        'Id': exam_ids,
         'ZaplanowanyTermin': exam_planned_times,
         'NumerSaliEgzaminacyjnej': exam_rooms,
         'IdEgzaminatora': exam_egzaminators
@@ -157,11 +158,11 @@ def generate_exams(c: sqlite3.Cursor, conn: sqlite3.Connection, date_from: str, 
     for i, room in enumerate(all_rooms):
         exam_room_indexes[exam_rooms == room] = i
     
-    exam_stand_counts = all_stand_counts[exam_room_indexes]
+    exam_stand_full_counts = all_stand_counts[exam_room_indexes]
     exam_stand_occupancy = np.random.uniform(STANDS_OCCUPANCY_PERCENTAGE_MIN, STANDS_OCCUPANCY_PERCENTAGE_MAX, exam_count)
-    exam_stand_counts = np.round(exam_stand_counts*exam_stand_occupancy).astype(int)
+    exam_stand_counts = np.round(exam_stand_full_counts*exam_stand_occupancy).astype(int)
 
-    exam_process_exam_ids = np.repeat(np.arange(exam_count) + 1, exam_stand_counts)
+    exam_process_exam_ids = np.repeat(exam_ids, exam_stand_counts)
     exam_process_count = len(exam_process_exam_ids)
     exam_process_confirmed_readyness_times = np.repeat(exam_planned_times, exam_stand_counts)
     exam_process_start_times = exam_process_confirmed_readyness_times + pd.to_timedelta(np.random.randint(0, EXAM_START_MAX_DELAY*60, len(exam_process_confirmed_readyness_times)), unit='s')
@@ -218,7 +219,7 @@ def generate_planned_questions(c: sqlite3.Cursor, conn: sqlite3.Connection):
 
     planned_questions_times = np.zeros((planned_questions_count//QUESTIONS_COUNT, QUESTIONS_COUNT))
     planned_questions_times_i = 0
-    for i in range(QUESTIONS_COUNT-10, QUESTIONS_COUNT):
+    for i in range(QUESTIONS_COUNT-min(10, QUESTIONS_COUNT), QUESTIONS_COUNT):
         probability = 1/(QUESTIONS_COUNT-i) * 0.01
         num_to_generate = np.random.uniform(0, probability, 1)[0] * planned_questions_count
         num_to_generate = int(num_to_generate)
@@ -261,7 +262,7 @@ def generate_incidents(c: sqlite3.Cursor, conn: sqlite3.Connection, number_of_in
     incidents_source = json.load(open('data/incydenty.json'))
     all_reasons = np.array([incident['powod'] for incident in incidents_source])
     all_contents = np.array([incident['tresc'] for incident in incidents_source])
-    exams = pd.read_sql('SELECT Id FROM PrzebiegiEgzaminowKandydata WHERE CzasRozpoczeciaEgzaminu IS NOT NULL AND CzasRozpoczeciaEgzaminu > ? ORDER BY RANDOM() LIMIT ?', conn, params=(start_date, number_of_incidents,))
+    exams = pd.read_sql('SELECT IdEgzaminuTeoretycznego FROM PrzebiegiEgzaminowKandydata WHERE CzasRozpoczeciaEgzaminu IS NOT NULL AND CzasRozpoczeciaEgzaminu > ? ORDER BY RANDOM() LIMIT ?', conn, params=(start_date, number_of_incidents,))
     exams = np.array(exams)[:, 0]
     reason_idxs = np.random.choice(len(all_reasons), number_of_incidents, replace=True)
 
