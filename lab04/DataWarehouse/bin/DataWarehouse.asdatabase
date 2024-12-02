@@ -3051,6 +3051,36 @@ VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Odbycie Sie Egzaminu'; </Text>
           </Commands>
         </MdxScript>
       </MdxScripts>
+      <Kpis>
+        <Kpi>
+          <ID>KPI</ID>
+          <Name>Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu</Name>
+          <AssociatedMeasureGroupID>Zarezerwowanie Terminu</AssociatedMeasureGroupID>
+          <Value>[Measures].[Średni czas oczekiwania na egzamin]</Value>
+          <Goal>(KPIVALUE( "Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu" ), PARALLELPERIOD([Data].[Hierarchy].[Miesiac], 1, [Data].[Hierarchy].CurrentMember)) * 0.97</Goal>
+          <Status>IIF(KPIVALUE("Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu") &lt; KPIGOAL("Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu"), 1, -1)</Status>
+          <Trend>IIF ( KPIValue( "Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu" ) &lt; ( KPIValue( "Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu" ), ParallelPeriod (
+[Data].[Hierarchy].[Miesiac], 1,
+[Data].[Hierarchy].CurrentMember ) ), 1, -1)</Trend>
+          <TrendGraphic>Standard Arrow</TrendGraphic>
+          <StatusGraphic>Gauge - Ascending</StatusGraphic>
+        </Kpi>
+        <Kpi>
+          <ID>KPI 1</ID>
+          <Name>Zmniejszenie Liczby Skarg</Name>
+          <AssociatedMeasureGroupID>Zlozenie Skargi</AssociatedMeasureGroupID>
+          <Value>[Measures].[Liczba skarg]</Value>
+          <Goal>(KPIValue("Zmniejszenie Liczby Skarg"), ParallelPeriod (
+[Data].[Hierarchy].[Miesiac], 1,
+[Data].[Hierarchy].CurrentMember ) ) * 0.926</Goal>
+          <Status>IIF (KPIVALUE("Zmniejszenie Liczby Skarg") &lt; KPIGoal("Zmniejszenie Liczby Skarg"), 1, -1)</Status>
+          <Trend>IIF ( KPIValue("Zmniejszenie Liczby Skarg") &gt; ( KPIValue("Zmniejszenie Liczby Skarg"), ParallelPeriod (
+[Data].[Hierarchy].[Miesiac], 1,
+[Data].[Hierarchy].CurrentMember ) ), 1, -1)</Trend>
+          <TrendGraphic>Standard Arrow</TrendGraphic>
+          <StatusGraphic>Gauge - Ascending</StatusGraphic>
+        </Kpi>
+      </Kpis>
     </Cube>
   </Cubes>
   <DataSources>
