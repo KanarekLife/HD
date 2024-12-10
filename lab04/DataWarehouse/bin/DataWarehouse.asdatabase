@@ -3059,7 +3059,7 @@ VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Odbycie Sie Egzaminu'; </Text>
           <Value>[Measures].[Średni czas oczekiwania na egzamin]</Value>
           <Goal>(KPIVALUE( "Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu" ), PARALLELPERIOD([Data].[Hierarchy].[Miesiac], 1, [Data].[Hierarchy].CurrentMember)) * 0.97</Goal>
           <Status>IIF(KPIVALUE("Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu") &lt; KPIGOAL("Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu"), 1, -1)</Status>
-          <Trend>IIF ( KPIValue( "Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu" ) &lt; ( KPIValue( "Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu" ), ParallelPeriod (
+          <Trend>IIF ( KPIValue( "Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu" ) &gt; ( KPIValue( "Zmniejszenie Średniego Czasu Oczekiwania na Termin Egzaminu" ), ParallelPeriod (
 [Data].[Hierarchy].[Miesiac], 1,
 [Data].[Hierarchy].CurrentMember ) ), 1, -1)</Trend>
           <TrendGraphic>Standard Arrow</TrendGraphic>
