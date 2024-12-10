@@ -1,4 +1,4 @@
-﻿DECLARE @startDate DATE = '2021-01-01'
+﻿DECLARE @startDate DATE = '2001-01-01'
 DECLARE @endDate DATE = '2022-01-01'
 
 CREATE TABLE #TempDates (Data DATE)

@@ -17,15 +17,15 @@ from typing import Literal, TypeAlias
 
 SEED = 2137
 
-START_DATE = '2021-01-01'
-INT_DATE = '2021-03-31'
-END_DATE = '2021-05-30'
-NUMBER_OF_EGZAMINATORS = 10
+START_DATE = '2001-01-01'
+INT_DATE = '2007-03-31'
+END_DATE = '2011-05-30'
+NUMBER_OF_EGZAMINATORS = 20
 NUMBER_OF_ROOMS = 5
-NUMBER_OF_CANDIDATES = 400
+NUMBER_OF_CANDIDATES = 4000
 NUMBER_OF_CONCURRENT_EXAMS = min(NUMBER_OF_ROOMS, NUMBER_OF_EGZAMINATORS)
-NUMBER_OF_INCIDENTS = 100
-NUMBER_OF_COMPLAINTS = 100
+NUMBER_OF_INCIDENTS = 1000
+NUMBER_OF_COMPLAINTS = 1000
 
 ROOM_NUMBER_MIN = 100
 ROOM_NUMBER_MAX = 999
@@ -109,8 +109,12 @@ def generate_egzaminators(c: sqlite3.Cursor, number_of_egzaminators: int):
 
 
 def generate_rooms_and_stands(c: sqlite3.Cursor, number_of_rooms: int):
+    previous_rooms = set()
     for _ in range(number_of_rooms):
         room_number = fake.random_int(ROOM_NUMBER_MIN, ROOM_NUMBER_MAX)
+        while room_number in previous_rooms:
+            room_number = fake.random_int(ROOM_NUMBER_MIN, ROOM_NUMBER_MAX)
+        previous_rooms.add(room_number)
         number_of_stands = fake.random_int(NUMBER_OF_STANDS_PER_ROOM_MIN, NUMBER_OF_STANDS_PER_ROOM_MAX)
         c.execute('INSERT INTO SaleEgzaminacyjne VALUES (?)', (room_number,))
         c.executemany('INSERT INTO StanowiskaEgzaminacyjne (NumerSali) VALUES (?)', [(room_number,)]*number_of_stands)
