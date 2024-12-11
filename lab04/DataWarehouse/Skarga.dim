@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5060f79a-43bb-49a9-a03e-1795a2c53cfe" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d61d4bcc-cceb-4624-8907-5860b9a904da" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Skarga</ID>
   <Name>Skarga</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -68,43 +68,44 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="86955fae-3df3-464f-aae1-5de183bc7883">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="4efba4d3-579c-4b14-a314-6a24b88ac7b6">
     <DataSourceViewID>Data Warehouse</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="b3dd2aaa-753b-4987-990a-5d6a48b2d694">
+  <ErrorConfiguration dwd:design-time-name="bcfc5a12-9990-49b9-9c32-f607ca8a1443">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="289c571b-4b6b-4d19-b6f1-9ac058621400">
+    <Attribute dwd:design-time-name="f3afedc8-7775-4c54-a083-c3afda1cfa34">
       <ID>ID Skargi</ID>
       <Name>ID Skargi</Name>
       <Usage>Key</Usage>
+      <EstimatedCount>32</EstimatedCount>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="87c8fb15-51db-4dde-9f5f-1664f98c523e">
+        <KeyColumn dwd:design-time-name="69729415-0a7b-4df5-be3d-0f7abf80d818">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="f75a5c44-cb88-4b98-a4e2-31b2d1d612b5">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9ca555cf-0067-471a-9827-e80175a823c4">
             <TableID>dbo_Skarga</TableID>
             <ColumnID>ID_Skargi</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="ee3a1bab-df54-4e86-870c-d2acc8a62639">
+        <AttributeRelationship dwd:design-time-name="a39d4d58-7c4a-4fe9-9ac7-c16cf4ebe66f">
           <AttributeID>Typ Egzaminu</AttributeID>
           <Name>Typ Egzaminu</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="91d600bf-7743-4a50-9f1f-c96866997654">
+        <AttributeRelationship dwd:design-time-name="9eb41ea4-f4fa-4b87-b42e-b3bd598bc688">
           <AttributeID>Typ Skargi</AttributeID>
           <Name>Typ Skargi</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="898e5bbf-3dc6-491c-889a-a1f7c1ba1234">
+        <AttributeRelationship dwd:design-time-name="bd3ce13c-e0f4-447b-b542-beb668e602a6">
           <AttributeID>Czy Istnieja Powiazane Incydenty</AttributeID>
           <Name>Czy Istnieja Powiazane Incydenty</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="af55e8cd-a2d7-4b8c-abd4-125740d5b665">
+        <AttributeRelationship dwd:design-time-name="c901cbbb-7a5b-4dd8-a058-3a9c608eb7ba">
           <AttributeID>Czy Kandydat Odpowiedzial Na Wszystkie Pytania</AttributeID>
           <Name>Czy Kandydat Odpowiedzial Na Wszystkie Pytania</Name>
         </AttributeRelationship>
@@ -113,14 +114,15 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="78b2440a-d266-4fe6-928e-ad8319272cbf">
+    <Attribute dwd:design-time-name="b76ad349-63e6-4086-b81d-b93d5e37ab98">
       <ID>Typ Egzaminu</ID>
       <Name>Typ Egzaminu</Name>
+      <EstimatedCount>2</EstimatedCount>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="4d354a16-a97e-412e-88b6-8bf977c1a9d2">
+        <KeyColumn dwd:design-time-name="78fe79bb-5888-4067-a2b2-8f1ed3b30490">
           <DataType>WChar</DataType>
           <DataSize>11</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="8294eced-f9d0-48bb-a244-0472b4c65e2e">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6ba1695c-dad7-4673-9e9e-6f71accec0e0">
             <TableID>dbo_Skarga</TableID>
             <ColumnID>TypEgzaminu</ColumnID>
           </Source>
@@ -129,14 +131,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="fcc4c19f-bd67-46e5-9f35-64c6fd9de80d">
+    <Attribute dwd:design-time-name="346e4f91-934c-44df-8e5f-92d901626354">
       <ID>Typ Skargi</ID>
       <Name>Typ Skargi</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="b2ce48b5-5dba-4a5f-a64e-d14606b3be1e">
+        <KeyColumn dwd:design-time-name="7b0994b1-38de-492b-87f2-b713ff0bfcf3">
           <DataType>WChar</DataType>
           <DataSize>19</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="60d1cb52-b757-41fe-ab22-437be6bc0b7a">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="520e16aa-9e5b-4436-919a-4ec6665589a8">
             <TableID>dbo_Skarga</TableID>
             <ColumnID>TypSkargi</ColumnID>
           </Source>
@@ -145,14 +147,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="57cff195-b326-4edb-a1c6-09f800d17014">
+    <Attribute dwd:design-time-name="2cdddf40-bcf4-4df8-adc0-e446bf6616ba">
       <ID>Czy Istnieja Powiazane Incydenty</ID>
       <Name>Czy Istnieja Powiazane Incydenty</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="368729e4-2e37-49a1-809e-65a289e25750">
+        <KeyColumn dwd:design-time-name="296927fa-a382-4c20-bc81-059e267ffe5f">
           <DataType>WChar</DataType>
           <DataSize>28</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="bab0cf6e-ded7-4068-9f00-b0042d3ed7e2">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3a94bfd9-021b-45d0-9e7f-e9f56e7064d7">
             <TableID>dbo_Skarga</TableID>
             <ColumnID>CzyIstniejaPowiazaneIncydenty</ColumnID>
           </Source>
@@ -161,14 +163,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="096db742-2fef-4503-b8c6-a672c8cab186">
+    <Attribute dwd:design-time-name="32d145f4-1177-4d60-b12c-acce9837146f">
       <ID>Czy Kandydat Odpowiedzial Na Wszystkie Pytania</ID>
       <Name>Czy Kandydat Odpowiedzial Na Wszystkie Pytania</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="4f2af56c-d64e-4c28-a161-e93453c7e5d2">
+        <KeyColumn dwd:design-time-name="1b8e39ca-0b1b-4839-acab-bcd31a8db297">
           <DataType>WChar</DataType>
           <DataSize>53</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a057723e-9aff-4733-b78f-21781133bdbb">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0ad3cd66-7991-4a12-9318-990e000b7991">
             <TableID>dbo_Skarga</TableID>
             <ColumnID>CzyKandydatOdpowiedzialNaWszystkiePytania</ColumnID>
           </Source>
@@ -179,21 +181,21 @@
     </Attribute>
   </Attributes>
   <Hierarchies>
-    <Hierarchy dwd:design-time-name="3b026ed5-e4bf-466a-b825-35d64603dc81">
+    <Hierarchy dwd:design-time-name="f3821b05-5cbd-4900-a646-908c58bdbecc">
       <ID>Hierarchy</ID>
       <Name>Hierarchy</Name>
       <Levels>
-        <Level dwd:design-time-name="122c8407-ba0b-4238-88a8-c293e4dc46f1">
+        <Level dwd:design-time-name="e1ba4ad4-3be5-43b4-b0cf-18dbb51676ed">
           <ID>Typ Egzaminu</ID>
           <Name>Typ Egzaminu</Name>
           <SourceAttributeID>Typ Egzaminu</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="2672e429-0ab1-4774-9835-fee324c49b93">
+        <Level dwd:design-time-name="4d892bd9-0103-4105-a28f-25e174118eb1">
           <ID>Typ Skargi</ID>
           <Name>Typ Skargi</Name>
           <SourceAttributeID>Typ Skargi</SourceAttributeID>
         </Level>
-        <Level dwd:design-time-name="53837930-5d26-4a01-81a9-3e98068fdd8c">
+        <Level dwd:design-time-name="84f244fb-89de-4eb5-bcb3-a24ac4064b60">
           <ID>Czy Istnieja Powiazane Incydenty</ID>
           <Name>Czy Istnieja Powiazane Incydenty</Name>
           <SourceAttributeID>Czy Istnieja Powiazane Incydenty</SourceAttributeID>

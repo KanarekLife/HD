@@ -1,145 +1,3514 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="fa7b9a7c-7ccb-4802-9e64-9f23eab2862d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b4de1fc0-702f-441c-82c5-90ec8d159eba" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Data Warehouse</ID>
   <MeasureGroups>
     <MeasureGroup>
       <ID>Zarezerwowanie Terminu</ID>
       <Partitions>
-        <Partition dwd:design-time-name="05e1e439-3ccc-45d7-9aa3-0e1b355b6de3">
+        <Partition dwd:design-time-name="6b292498-63b8-4e16-98da-28416a5e40e8">
           <ID>Zarezerwowanie Terminu</ID>
           <Name>Zarezerwowanie Terminu</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a2daf3d6-c80f-4ed7-a9b3-12cb1bc50f67">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c77a124a-c0c7-41cf-91d1-7ce24630b784">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_ZarezerwowanieTerminu</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="dedfaeab-117a-492d-9c65-4338ada3e74b">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <AggregationStorage>MolapOnly</AggregationStorage>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="2cc45fac-8b11-4569-bb83-79a8b0548eec">
+              <NotificationTechnique>Server</NotificationTechnique>
+            </Source>
+          </ProactiveCaching>
+          <EstimatedRows>1342661</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
         </Partition>
       </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2024-12-11T20:14:53.186667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-12-11T20:14:53.186667Z</LastSchemaUpdate>
+          <EstimatedRows>1342661</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Kandydat</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Kandydata</AttributeID>
+                  <EstimatedCount>4000</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>PKK</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Terminu Egzaminu</AttributeID>
+                  <EstimatedCount>82350</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Sali Egzaminacyjnej</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Czas</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                  <EstimatedCount>1440</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Godzina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Minuty</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Data</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                  <EstimatedCount>7671</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Data</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Rok</AttributeID>
+                  <EstimatedCount>22</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Miesiac</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Miesiaca</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Dzien Tygodnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Dnia Tygodnia</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Egzaminator</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                  <EstimatedCount>20</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Pesel</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Imie I Nazwisko</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Kandydata</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Daty</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Kandydata</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Terminu Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Kandydata</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Daty</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Zarezerwowanie Terminu 1</ID>
       <Partitions>
-        <Partition dwd:design-time-name="21af7921-8f49-42f7-bbea-cffe1e4149d9">
+        <Partition dwd:design-time-name="bb0e9ee6-5922-48ab-a29c-01403eb3e6df">
           <ID>Zarezerwowanie Terminu</ID>
           <Name>Zarezerwowanie Terminu</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="181bf223-a59a-4de5-ba3e-4cb4fa2fcd21">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="e32f94cd-508c-4be2-a9c7-2b558b4cfeff">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_ZarezerwowanieTerminu</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="b51a46cb-b9d1-4935-8d2c-31f3b38a2b1f">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <AggregationStorage>MolapOnly</AggregationStorage>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="84554ad1-3b34-44ed-95c4-53d23f309abd">
+              <NotificationTechnique>Server</NotificationTechnique>
+            </Source>
+          </ProactiveCaching>
+          <EstimatedRows>1342661</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
         </Partition>
       </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2024-12-11T20:15:11.66Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-12-11T20:15:11.66Z</LastSchemaUpdate>
+          <EstimatedRows>1342661</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Kandydat</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Kandydata</AttributeID>
+                  <EstimatedCount>4000</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>PKK</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Terminu Egzaminu</AttributeID>
+                  <EstimatedCount>82350</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Sali Egzaminacyjnej</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Czas</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                  <EstimatedCount>1440</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Godzina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Minuty</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Data</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                  <EstimatedCount>7671</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Data</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Rok</AttributeID>
+                  <EstimatedCount>22</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Miesiac</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Miesiaca</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Dzien Tygodnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Dnia Tygodnia</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Egzaminator</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                  <EstimatedCount>20</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Pesel</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Imie I Nazwisko</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Kandydata</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Daty</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Kandydata</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Terminu Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Kandydata</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Daty</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Zarezerwowanie Terminu 2</ID>
       <Partitions>
-        <Partition dwd:design-time-name="28764e25-9470-40f3-b330-c649e78de1e3">
+        <Partition dwd:design-time-name="e818f556-8017-4bcc-af82-7eeebfbaf778">
           <ID>Zarezerwowanie Terminu</ID>
           <Name>Zarezerwowanie Terminu</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="988a1365-d3dc-47e9-b233-9c48ccd500e2">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="5e9fbb24-f9f5-4a41-aa7f-320661572bed">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_ZarezerwowanieTerminu</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="d8bbdbba-7245-4b1c-80aa-8c8c9719c513">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <AggregationStorage>MolapOnly</AggregationStorage>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="dc25c6ec-fd1e-466d-9f22-48a6caea071d">
+              <NotificationTechnique>Server</NotificationTechnique>
+            </Source>
+          </ProactiveCaching>
+          <EstimatedRows>1342661</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
         </Partition>
       </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2024-12-11T20:15:26.933333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-12-11T20:15:26.933333Z</LastSchemaUpdate>
+          <EstimatedRows>1342661</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Kandydat</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Kandydata</AttributeID>
+                  <EstimatedCount>4000</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>PKK</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Terminu Egzaminu</AttributeID>
+                  <EstimatedCount>82350</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Sali Egzaminacyjnej</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Czas</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                  <EstimatedCount>1440</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Godzina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Minuty</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Data</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                  <EstimatedCount>7671</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Data</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Rok</AttributeID>
+                  <EstimatedCount>22</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Miesiac</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Miesiaca</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Dzien Tygodnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Dnia Tygodnia</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Egzaminator</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                  <EstimatedCount>20</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Pesel</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Imie I Nazwisko</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Kandydata</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Daty</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Kandydata</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Terminu Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Kandydata</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Daty</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Odbycie Sie Egzaminu</ID>
       <Partitions>
-        <Partition dwd:design-time-name="1e6d931f-4303-4abe-bd2d-22e902fad7a5">
+        <Partition dwd:design-time-name="ddf75951-1790-4b72-b05b-c45471418955">
           <ID>Odbycie Sie Egzaminu</ID>
           <Name>Odbycie Sie Egzaminu</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="f8c32fc1-cf77-4715-ae0b-39a0e8fda9a3">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="bab56dd8-82b5-4c5b-a0e6-bc32cd9f39d1">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_OdbycieSieEgzaminu</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="fa9c17ac-7a4b-4810-9067-27583c7ead44">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <AggregationStorage>MolapOnly</AggregationStorage>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="6232df43-96af-4f73-94a7-684d151bbe54">
+              <NotificationTechnique>Server</NotificationTechnique>
+            </Source>
+          </ProactiveCaching>
+          <EstimatedRows>410400</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
         </Partition>
       </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2024-12-11T20:15:42.213333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-12-11T20:15:42.213333Z</LastSchemaUpdate>
+          <EstimatedRows>410400</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Terminu Egzaminu</AttributeID>
+                  <EstimatedCount>82350</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Sali Egzaminacyjnej</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Zajetosci Terminu Egzaminu</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Zajetosc Terminu</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Kandydat</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Kandydata</AttributeID>
+                  <EstimatedCount>4000</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>PKK</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Czas</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                  <EstimatedCount>1440</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Godzina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Minuty</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Data</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                  <EstimatedCount>7671</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Data</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Rok</AttributeID>
+                  <EstimatedCount>22</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Miesiac</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Miesiaca</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Dzien Tygodnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Dnia Tygodnia</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Egzaminator</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                  <EstimatedCount>20</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Pesel</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Imie I Nazwisko</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Zajetosci Terminu Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Zajetosci Terminu Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Zajetosci Terminu Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Zajetosci Terminu Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Zajetosci Terminu Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Zajetosci Terminu Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Daty</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Terminu Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Zajetosci Terminu Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Zajetosci Terminu Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation d</ID>
+              <Name>Aggregation d</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation e</ID>
+              <Name>Aggregation e</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Daty</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation f</ID>
+              <Name>Aggregation f</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 10</ID>
+              <Name>Aggregation 10</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Zajetosc Terminu Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Czasu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Zlozenie Skargi</ID>
       <Partitions>
-        <Partition dwd:design-time-name="26725c41-e811-48f4-aba2-43d9301e189e">
+        <Partition dwd:design-time-name="838ae477-4e22-4298-bd13-5108066ecdce">
           <ID>Zlozenie Skargi</ID>
           <Name>Zlozenie Skargi</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="8bc1c460-3e28-4234-8816-70cfcec2792b">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="2e186cc5-5e9a-4f68-a13e-eba781fd7f7a">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_ZlozenieSkargi</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="9e861a9b-a255-47c2-b498-6067816c8835">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <AggregationStorage>MolapOnly</AggregationStorage>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="5e959d74-a63c-47b1-ae18-dd30b1b96640">
+              <NotificationTechnique>Server</NotificationTechnique>
+            </Source>
+          </ProactiveCaching>
+          <EstimatedRows>1095</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
         </Partition>
       </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2024-12-11T20:16:00.89Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-12-11T20:16:00.89Z</LastSchemaUpdate>
+          <EstimatedRows>1095</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Kandydat</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Kandydata</AttributeID>
+                  <EstimatedCount>4000</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>PKK</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Terminu Egzaminu</AttributeID>
+                  <EstimatedCount>82350</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Sali Egzaminacyjnej</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Skarga</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Skargi</AttributeID>
+                  <EstimatedCount>32</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Typ Egzaminu</AttributeID>
+                  <EstimatedCount>2</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Typ Skargi</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Czy Istnieja Powiazane Incydenty</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Czy Kandydat Odpowiedzial Na Wszystkie Pytania</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Czas</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                  <EstimatedCount>1440</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Godzina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Minuty</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Data</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                  <EstimatedCount>7671</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Data</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Rok</AttributeID>
+                  <EstimatedCount>22</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Miesiac</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Miesiaca</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Dzien Tygodnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Dnia Tygodnia</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Egzaminator</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                  <EstimatedCount>20</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Pesel</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Imie I Nazwisko</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Skargi</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Typ Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Typ Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Typ Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Zlozenie Skargi 1</ID>
       <Partitions>
-        <Partition dwd:design-time-name="396ddd56-c934-483c-bd2d-f52c7d0d04e6">
+        <Partition dwd:design-time-name="26a6abb8-abd3-45a9-9276-f843f1adeec6">
           <ID>Zlozenie Skargi</ID>
           <Name>Zlozenie Skargi</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="d091c945-ec3c-4e46-b2e7-0694871dd582">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="81c62671-4d84-4a18-946f-890d1f755bf2">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_ZlozenieSkargi</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="a6fb5f4d-bc81-47b4-95e9-2faebd94e68a">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <AggregationStorage>MolapOnly</AggregationStorage>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="4751c90d-087b-4f0a-9bdb-d7a2032e12bc">
+              <NotificationTechnique>Server</NotificationTechnique>
+            </Source>
+          </ProactiveCaching>
+          <EstimatedRows>1095</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
         </Partition>
       </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2024-12-11T20:16:08.856667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-12-11T20:16:08.856667Z</LastSchemaUpdate>
+          <EstimatedRows>1095</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Kandydat</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Kandydata</AttributeID>
+                  <EstimatedCount>4000</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>PKK</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Terminu Egzaminu</AttributeID>
+                  <EstimatedCount>82350</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Sali Egzaminacyjnej</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Skarga</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Skargi</AttributeID>
+                  <EstimatedCount>32</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Typ Egzaminu</AttributeID>
+                  <EstimatedCount>2</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Typ Skargi</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Czy Istnieja Powiazane Incydenty</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Czy Kandydat Odpowiedzial Na Wszystkie Pytania</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Czas</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                  <EstimatedCount>1440</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Godzina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Minuty</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Data</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                  <EstimatedCount>7671</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Data</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Rok</AttributeID>
+                  <EstimatedCount>22</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Miesiac</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Miesiaca</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Dzien Tygodnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Dnia Tygodnia</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Egzaminator</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                  <EstimatedCount>20</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Pesel</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Imie I Nazwisko</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Skargi</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Typ Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Typ Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Typ Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
     </MeasureGroup>
     <MeasureGroup>
       <ID>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</ID>
       <Partitions>
-        <Partition dwd:design-time-name="b4160954-752f-400f-a59a-6ec00fd6b38e">
+        <Partition dwd:design-time-name="f7dce406-7f67-48e8-8615-9ed6dfe7ed83">
           <ID>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</ID>
           <Name>Odpowiedzenie Na Pytanie Podczas Egzaminu Ze Skarga</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="974b590c-4fcf-43dc-bdac-6bb3fed4cdf3">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="d2e8cc98-e009-4497-bb02-66f4e3bd4d7f">
             <DataSourceViewID>Data Warehouse</DataSourceViewID>
             <TableID>dbo_OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
           <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="7912bb33-c2e0-4191-b8e4-54a0dd7ec3e2">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <AggregationStorage>MolapOnly</AggregationStorage>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="764831fe-4b99-4f8e-8332-65c988763f54">
+              <NotificationTechnique>Server</NotificationTechnique>
+            </Source>
+          </ProactiveCaching>
+          <EstimatedRows>2015</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
         </Partition>
       </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2024-12-11T20:16:17.203333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2024-12-11T20:16:17.203333Z</LastSchemaUpdate>
+          <EstimatedRows>2015</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Terminu Egzaminu</AttributeID>
+                  <EstimatedCount>82350</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Sali Egzaminacyjnej</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Kandydat</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Kandydata</AttributeID>
+                  <EstimatedCount>4000</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>PKK</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Pytanie</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Pytania</AttributeID>
+                  <EstimatedCount>81</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Tresc</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Skarga</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Skargi</AttributeID>
+                  <EstimatedCount>32</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Typ Egzaminu</AttributeID>
+                  <EstimatedCount>2</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Typ Skargi</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Czy Istnieja Powiazane Incydenty</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Czy Kandydat Odpowiedzial Na Wszystkie Pytania</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Czas</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Czasu</AttributeID>
+                  <EstimatedCount>1440</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Godzina</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Minuty</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Data</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Daty</AttributeID>
+                  <EstimatedCount>7671</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Data</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Rok</AttributeID>
+                  <EstimatedCount>22</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Miesiac</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Miesiaca</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Dzien Tygodnia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Numer Dnia Tygodnia</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Egzaminator</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>ID Egzaminatora</AttributeID>
+                  <EstimatedCount>20</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Pesel</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Imie I Nazwisko</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Pytanie</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Skargi</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Pytanie</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Typ Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Pytanie</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Typ Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Pytanie</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Typ Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Pytanie</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Pytania</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Typ Egzaminu</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Pytanie</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Pytanie</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Skargi</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Pytanie</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Skargi</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Pytanie</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Egzaminatora</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Pytanie</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rok</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Pytanie</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Termin Egzaminu</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Kandydat</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Pytanie</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>ID Pytania</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Skarga</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Czas</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Data</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Egzaminator</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
     </MeasureGroup>
   </MeasureGroups>
 </Cube>

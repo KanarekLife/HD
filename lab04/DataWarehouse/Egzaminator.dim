@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="75dc3455-98a2-4a15-88ac-d6d0bc45034b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5027d80b-728e-4982-80df-4ac391323b91" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Egzaminator</ID>
   <Name>Egzaminator</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -68,43 +68,44 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="2d4ad7d3-4397-431b-a55c-80951848265b">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="6971701f-3a39-4582-b2ad-9a88d3286e71">
     <DataSourceViewID>Data Warehouse</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="899e7f70-a32e-4436-ac38-4ed87f99c1a3">
+  <ErrorConfiguration dwd:design-time-name="b46dbf2b-8b26-4ea4-bcff-024c6b421710">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="fee000d5-cf10-4150-a700-5ce91a67e729">
+    <Attribute dwd:design-time-name="84ea3e93-d066-43c0-86da-f64f3db9e5dd">
       <ID>ID Egzaminatora</ID>
       <Name>ID Egzaminatora</Name>
       <Usage>Key</Usage>
+      <EstimatedCount>20</EstimatedCount>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="f85c4e98-4180-4bfb-97ed-2a4388901fb9">
+        <KeyColumn dwd:design-time-name="3e9aad1a-d899-4ddf-9200-77a541573618">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="27de0633-6ab7-48d0-a8e2-d716c0a160b0">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7c980aad-2034-48c2-94ef-92e964bf3207">
             <TableID>dbo_Egzaminator</TableID>
             <ColumnID>ID_Egzaminatora</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="6145f721-e21d-48bb-860f-ae715c4237dd">
+      <NameColumn dwd:design-time-name="f60b6f59-a345-4060-9292-c82ad400286b">
         <DataType>WChar</DataType>
         <DataSize>255</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="958663af-d541-4189-b6fb-ecdf2c4e5eac">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="73a499b9-9422-4b3d-a7b5-1b02d0bfaf3e">
           <TableID>dbo_Egzaminator</TableID>
           <ColumnID>ImieINazwisko</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="4a7d64ac-f0c6-45fa-9d05-8b4a21ca1744">
+        <AttributeRelationship dwd:design-time-name="690ac38b-450f-4001-8b53-33682de9aee6">
           <AttributeID>Pesel</AttributeID>
           <Name>Pesel</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="3df894df-7d4b-4a72-9d62-ef99850f1f6f">
+        <AttributeRelationship dwd:design-time-name="6c4e02a9-e24b-4c78-aae1-69f7df683c14">
           <AttributeID>Imie I Nazwisko</AttributeID>
           <Name>Imie I Nazwisko</Name>
         </AttributeRelationship>
@@ -112,14 +113,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="09f5ae06-e176-4bab-b583-e9ba4eeb722d">
+    <Attribute dwd:design-time-name="b4dac3a4-9b2c-425f-ac67-d89815f65a96">
       <ID>Pesel</ID>
       <Name>Pesel</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="dac78a84-63a3-410c-a607-8f1cd46f842f">
+        <KeyColumn dwd:design-time-name="affec52c-2943-4bd1-a7a5-06fd153d8eff">
           <DataType>WChar</DataType>
           <DataSize>11</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a2832675-1c47-4977-b7ba-bd28623d6406">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b51e1c2b-0793-45db-a406-b731d01477f8">
             <TableID>dbo_Egzaminator</TableID>
             <ColumnID>Pesel</ColumnID>
           </Source>
@@ -129,14 +130,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="a5a73170-ea74-4984-99c3-47632be0db46">
+    <Attribute dwd:design-time-name="c8bfbff0-b742-442f-9409-dc02c64116d7">
       <ID>Imie I Nazwisko</ID>
       <Name>Imie I Nazwisko</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="1e9ba7d8-81c8-4940-acaa-9ce25b2c2c73">
+        <KeyColumn dwd:design-time-name="0dec0474-61bd-4c00-9aad-55f283a9600c">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="202230d4-e55a-43e9-86f3-a8850975a819">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cecb8aec-765a-4bbf-9744-3f9d55a3fbe4">
             <TableID>dbo_Egzaminator</TableID>
             <ColumnID>ImieINazwisko</ColumnID>
           </Source>

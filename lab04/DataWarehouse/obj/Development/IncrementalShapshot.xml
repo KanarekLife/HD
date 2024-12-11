@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <ProcessingOption>Default</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -33,63 +33,63 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>hl4EUSdOj3WAQ8OIb+qoZ/TWX8M=17/11/2024 16:05:3717/11/2024 14:36:05</TimeStamp>
+        <TimeStamp>PWfKqr2WkSRaR1HBe78HSYU1dHk=11/12/2024 20:20:0917/11/2024 14:36:05</TimeStamp>
         <ID>
           <String>Termin Egzaminu</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>h4TyCzc2vuGeZ+2EZmNn55IvLG4=17/11/2024 14:37:5217/11/2024 14:36:05</TimeStamp>
+        <TimeStamp>10r3eMFOGiz69zZhVF1NMSA68Oo=11/12/2024 20:49:1917/11/2024 14:36:05</TimeStamp>
         <ID>
           <String>Zajetosc Terminu Egzaminu</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>I/k4EXtOMf+8VGiEYyHjdVd1w08=17/11/2024 14:37:5817/11/2024 14:36:05</TimeStamp>
+        <TimeStamp>Ooy0zQzVhPyTKnKC5Cog+EddTH0=11/12/2024 20:20:0917/11/2024 14:36:05</TimeStamp>
         <ID>
           <String>Kandydat</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>jzFIZDKUfDTW48fmM4XErDCV3ws=17/11/2024 14:38:0517/11/2024 14:36:05</TimeStamp>
+        <TimeStamp>ndxoUJtkT/QoKkX49VULMJUu+EI=11/12/2024 20:50:4017/11/2024 14:36:05</TimeStamp>
         <ID>
           <String>Pytanie</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>6XWLoaDdL+2ATtp2I+b814+INW0=17/11/2024 14:38:3817/11/2024 14:36:05</TimeStamp>
+        <TimeStamp>C0t52sk5jG18XcX5DkFX5BuCV38=11/12/2024 20:49:4417/11/2024 14:36:05</TimeStamp>
         <ID>
           <String>Skarga</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>VUR9/7IsHiYJm9hxbiAp8oVOJ7w=17/11/2024 14:42:4517/11/2024 14:36:41</TimeStamp>
+        <TimeStamp>/X7s0D4y+9qq7KirEbic4CKliBQ=11/12/2024 20:20:0917/11/2024 14:36:41</TimeStamp>
         <ID>
           <String>Czas</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>avlzvoWVqubu26Dh2Aah9meZSlM=17/11/2024 14:42:0617/11/2024 14:36:52</TimeStamp>
+        <TimeStamp>uyyORWfFL2+7S2GDQpOq2eD7qsM=11/12/2024 20:20:0917/11/2024 14:36:52</TimeStamp>
         <ID>
           <String>Data</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>eQBGj9lwK/2JxGwHb2+SIfOdOxk=17/11/2024 15:50:4417/11/2024 15:45:51</TimeStamp>
+        <TimeStamp>R7rjOuMHth7tdxKdEBtEKUH5/zg=11/12/2024 20:20:0917/11/2024 15:45:51</TimeStamp>
         <ID>
           <String>Egzaminator</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>4kt79+kRtpigfow7dx70Xk97VrI=10/12/2024 18:23:3810/12/2024 18:16:322vxgjhoiySvwi8pwzYNxGY4sJwM=22/11/2024 18:55:5222/11/2024 18:55:52</TimeStamp>
+        <TimeStamp>pJoSKVW/3lcQKjqViP7cSqmzoac=11/12/2024 21:16:2110/12/2024 18:16:321hbk2GGWb0QVpijv19GJNS7ihy4=11/12/2024 21:16:2122/11/2024 18:55:52</TimeStamp>
         <ID>
           <String>Data Warehouse</String>
         </ID>
@@ -106,5 +106,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2024-12-10T17:23:45.126667Z</LastDeployed>
+  <LastDeployed>2024-12-11T20:16:40.5Z</LastDeployed>
 </DeploymentSnapshot>
