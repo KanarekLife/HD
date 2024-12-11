@@ -1,0 +1,180 @@
+ROLAP	Data	Bez Agregacji	172
+ROLAP	Data	Bez Agregacji	95
+ROLAP	Data	Bez Agregacji	96
+ROLAP	Data	Bez Agregacji	96
+ROLAP	Data	Bez Agregacji	95
+ROLAP	Data	Bez Agregacji	94
+ROLAP	Data	Bez Agregacji	98
+ROLAP	Data	Bez Agregacji	95
+ROLAP	Data	Bez Agregacji	97
+ROLAP	Data	Bez Agregacji	94
+ROLAP	Wymiar	Bez Agregacji	215
+ROLAP	Wymiar	Bez Agregacji	120
+ROLAP	Wymiar	Bez Agregacji	122
+ROLAP	Wymiar	Bez Agregacji	119
+ROLAP	Wymiar	Bez Agregacji	124
+ROLAP	Wymiar	Bez Agregacji	130
+ROLAP	Wymiar	Bez Agregacji	120
+ROLAP	Wymiar	Bez Agregacji	122
+ROLAP	Wymiar	Bez Agregacji	120
+ROLAP	Wymiar	Bez Agregacji	123
+ROLAP	Ogólny	Bez Agregacji	52
+ROLAP	Ogólny	Bez Agregacji	39
+ROLAP	Ogólny	Bez Agregacji	38
+ROLAP	Ogólny	Bez Agregacji	39
+ROLAP	Ogólny	Bez Agregacji	40
+ROLAP	Ogólny	Bez Agregacji	38
+ROLAP	Ogólny	Bez Agregacji	42
+ROLAP	Ogólny	Bez Agregacji	41
+ROLAP	Ogólny	Bez Agregacji	43
+ROLAP	Ogólny	Bez Agregacji	39
+ROLAP	Data	Agregacja	108
+ROLAP	Data	Agregacja	94
+ROLAP	Data	Agregacja	96
+ROLAP	Data	Agregacja	93
+ROLAP	Data	Agregacja	94
+ROLAP	Data	Agregacja	100
+ROLAP	Data	Agregacja	94
+ROLAP	Data	Agregacja	94
+ROLAP	Data	Agregacja	98
+ROLAP	Data	Agregacja	101
+ROLAP	Wymiar	Agregacja	133
+ROLAP	Wymiar	Agregacja	133
+ROLAP	Wymiar	Agregacja	125
+ROLAP	Wymiar	Agregacja	124
+ROLAP	Wymiar	Agregacja	132
+ROLAP	Wymiar	Agregacja	127
+ROLAP	Wymiar	Agregacja	130
+ROLAP	Wymiar	Agregacja	131
+ROLAP	Wymiar	Agregacja	127
+ROLAP	Wymiar	Agregacja	127
+ROLAP	Ogólny	Agregacja	40
+ROLAP	Ogólny	Agregacja	41
+ROLAP	Ogólny	Agregacja	50
+ROLAP	Ogólny	Agregacja	42
+ROLAP	Ogólny	Agregacja	42
+ROLAP	Ogólny	Agregacja	42
+ROLAP	Ogólny	Agregacja	40
+ROLAP	Ogólny	Agregacja	43
+ROLAP	Ogólny	Agregacja	41
+ROLAP	Ogólny	Agregacja	42
+HOLAP	Data	Bez Agregacji	126
+HOLAP	Data	Bez Agregacji	99
+HOLAP	Data	Bez Agregacji	93
+HOLAP	Data	Bez Agregacji	100
+HOLAP	Data	Bez Agregacji	93
+HOLAP	Data	Bez Agregacji	93
+HOLAP	Data	Bez Agregacji	98
+HOLAP	Data	Bez Agregacji	98
+HOLAP	Data	Bez Agregacji	97
+HOLAP	Data	Bez Agregacji	96
+HOLAP	Wymiar	Bez Agregacji	132
+HOLAP	Wymiar	Bez Agregacji	130
+HOLAP	Wymiar	Bez Agregacji	132
+HOLAP	Wymiar	Bez Agregacji	119
+HOLAP	Wymiar	Bez Agregacji	128
+HOLAP	Wymiar	Bez Agregacji	129
+HOLAP	Wymiar	Bez Agregacji	128
+HOLAP	Wymiar	Bez Agregacji	125
+HOLAP	Wymiar	Bez Agregacji	127
+HOLAP	Wymiar	Bez Agregacji	132
+HOLAP	Ogólny	Bez Agregacji	51
+HOLAP	Ogólny	Bez Agregacji	41
+HOLAP	Ogólny	Bez Agregacji	39
+HOLAP	Ogólny	Bez Agregacji	40
+HOLAP	Ogólny	Bez Agregacji	42
+HOLAP	Ogólny	Bez Agregacji	40
+HOLAP	Ogólny	Bez Agregacji	40
+HOLAP	Ogólny	Bez Agregacji	41
+HOLAP	Ogólny	Bez Agregacji	41
+HOLAP	Ogólny	Bez Agregacji	44
+HOLAP	Data	Agregacja	38
+HOLAP	Data	Agregacja	5
+HOLAP	Data	Agregacja	5
+HOLAP	Data	Agregacja	4
+HOLAP	Data	Agregacja	4
+HOLAP	Data	Agregacja	5
+HOLAP	Data	Agregacja	6
+HOLAP	Data	Agregacja	5
+HOLAP	Data	Agregacja	5
+HOLAP	Data	Agregacja	5
+HOLAP	Wymiar	Agregacja	58
+HOLAP	Wymiar	Agregacja	43
+HOLAP	Wymiar	Agregacja	74
+HOLAP	Wymiar	Agregacja	43
+HOLAP	Wymiar	Agregacja	43
+HOLAP	Wymiar	Agregacja	44
+HOLAP	Wymiar	Agregacja	47
+HOLAP	Wymiar	Agregacja	44
+HOLAP	Wymiar	Agregacja	43
+HOLAP	Wymiar	Agregacja	45
+HOLAP	Ogólny	Agregacja	49
+HOLAP	Ogólny	Agregacja	42
+HOLAP	Ogólny	Agregacja	40
+HOLAP	Ogólny	Agregacja	41
+HOLAP	Ogólny	Agregacja	42
+HOLAP	Ogólny	Agregacja	39
+HOLAP	Ogólny	Agregacja	44
+HOLAP	Ogólny	Agregacja	42
+HOLAP	Ogólny	Agregacja	39
+HOLAP	Ogólny	Agregacja	42
+MOLAP	Data	Bez Agregacji	31
+MOLAP	Data	Bez Agregacji	14
+MOLAP	Data	Bez Agregacji	14
+MOLAP	Data	Bez Agregacji	17
+MOLAP	Data	Bez Agregacji	14
+MOLAP	Data	Bez Agregacji	16
+MOLAP	Data	Bez Agregacji	14
+MOLAP	Data	Bez Agregacji	15
+MOLAP	Data	Bez Agregacji	17
+MOLAP	Data	Bez Agregacji	15
+MOLAP	Wymiar	Bez Agregacji	73
+MOLAP	Wymiar	Bez Agregacji	59
+MOLAP	Wymiar	Bez Agregacji	59
+MOLAP	Wymiar	Bez Agregacji	58
+MOLAP	Wymiar	Bez Agregacji	57
+MOLAP	Wymiar	Bez Agregacji	56
+MOLAP	Wymiar	Bez Agregacji	57
+MOLAP	Wymiar	Bez Agregacji	57
+MOLAP	Wymiar	Bez Agregacji	68
+MOLAP	Wymiar	Bez Agregacji	60
+MOLAP	Ogólny	Bez Agregacji	21
+MOLAP	Ogólny	Bez Agregacji	7
+MOLAP	Ogólny	Bez Agregacji	6
+MOLAP	Ogólny	Bez Agregacji	5
+MOLAP	Ogólny	Bez Agregacji	9
+MOLAP	Ogólny	Bez Agregacji	6
+MOLAP	Ogólny	Bez Agregacji	5
+MOLAP	Ogólny	Bez Agregacji	8
+MOLAP	Ogólny	Bez Agregacji	5
+MOLAP	Ogólny	Bez Agregacji	6
+MOLAP	Data	Agregacja	37
+MOLAP	Data	Agregacja	4
+MOLAP	Data	Agregacja	4
+MOLAP	Data	Agregacja	5
+MOLAP	Data	Agregacja	6
+MOLAP	Data	Agregacja	4
+MOLAP	Data	Agregacja	5
+MOLAP	Data	Agregacja	7
+MOLAP	Data	Agregacja	5
+MOLAP	Data	Agregacja	5
+MOLAP	Wymiar	Agregacja	54
+MOLAP	Wymiar	Agregacja	44
+MOLAP	Wymiar	Agregacja	51
+MOLAP	Wymiar	Agregacja	44
+MOLAP	Wymiar	Agregacja	43
+MOLAP	Wymiar	Agregacja	44
+MOLAP	Wymiar	Agregacja	45
+MOLAP	Wymiar	Agregacja	43
+MOLAP	Wymiar	Agregacja	51
+MOLAP	Wymiar	Agregacja	44
+MOLAP	Ogólny	Agregacja	22
+MOLAP	Ogólny	Agregacja	7
+MOLAP	Ogólny	Agregacja	6
+MOLAP	Ogólny	Agregacja	6
+MOLAP	Ogólny	Agregacja	6
+MOLAP	Ogólny	Agregacja	6
+MOLAP	Ogólny	Agregacja	7
+MOLAP	Ogólny	Agregacja	8
+MOLAP	Ogólny	Agregacja	6
+MOLAP	Ogólny	Agregacja	6
