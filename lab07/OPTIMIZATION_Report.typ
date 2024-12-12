@@ -182,8 +182,8 @@ WHERE
 #table(
   columns: (1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
   align: center+horizon,
-  table.cell(rowspan: 2)[_średnia (odch. std.)_], table.cell(colspan: 2)[*ROLAP*], table.cell(colspan: 2)[*HOLAP*], table.cell(colspan: 2)[*MOLAP*],
-  [_Bez Agregacji_], [_Agregacja_], [_Bez Agregacji_], [_Agregacja_], [_Bez Agregacji_], [_Agregacja_],
+  table.cell(rowspan: 2)[*średnia (odch. std.)*], table.cell(colspan: 2)[*ROLAP*], table.cell(colspan: 2)[*HOLAP*], table.cell(colspan: 2)[*MOLAP*],
+  [Bez Agregacji], [Agregacja], [Bez Agregacji], [Agregacja], [Bez Agregacji], [Agregacja],
   [Czas zapytania dot. Daty \[ms\]], [103,2 (24,21)], [97,2 (4,71)], [99,3 (9,73)], [8,2 (10,49)], [16,7 (5,17)], [8,2 (10,16)],
   [Czas zapytania dot. wymiaru \[ms\]], [131,5 (29,51)], [128,9 (3,31)], [128,2 (3,39)], [48,4 (10,09)], [60,4 (5,58)], [46,3 (4,06)],
   [Czas zapytania ogólnego \[ms\]], [41,1 (4,18)], [42,3 (2,87)], [41,9 (3,48)], [42 (2,91)], [7,8 (4,83)], [8 (4,97)],
@@ -191,11 +191,56 @@ WHERE
   [Rozmiar hurtowni \[MB\]], [9,95], [9,95], [9,95], [11,2], [24,6], [25,92]
 )
 
+==== Wnioski
+
+Czas przetwarzania, zgodnie z oczekiwaniami, jest najkrótszy w typie ROLAP. Dane nie są w tym trybie przetwarzane na tabele wielowymiarowe, ale są zapisywane w tabelach relacyjnych, dlatego jest to działanie szybsze. Z kolei w typie MOLAP czas przetwarzania jest najdłuższy, ponieważ dane są przetwarzane na tabele wielowymiarowe, co wymaga więcej czasu. HOLAP jest pośrednim rozwiązaniem, które łączy zalety ROLAP i MOLAP, dlatego czas przetwarzania jest dłuższy niż w ROLAP, ale krótszy niż w MOLAP.
+
+Rozmiar hurtowni danych jest najmniejszy w ROLAP, jest to oczekiwane zachowanie, ponieważ dane nie są przechowywane w tabelach wielowymiarowych. HOLAP ma identyczny rozmiar hurtowni jak ROLAP. MOLAP z kolei jest ponad dwukrotnie większy, ponieważ dane są rozłożone na tabele wielowymiarowe.
+
+Czas zapytań są za to najkrótsze w MOLAP, ponieważ dane są już przetworzone i gotowe do zapytań. W ROLAP czas zapytań jest znacznie dłuższy, ponieważ dane są przetwarzane na bieżąco. HOLAP, pomimo że powinien mieć krótszy czas zapytań niż ROLAP, ma czas zapytań zbliżony do ROLAP. Jest to spowodowane brakiem agregacji.
+
+Z agregacjami czas przetwarzania dla ROLAP jest zbliżony do czasu bez agregacji, rozmiar hurtowni też pozostaje taki sam. Dla HOLAP czas przetwarzania jest znacznie dłuższy, a rozmiar hurtowni trochę większy. Dla MOLAP czas przetwarzania też jest dłuższy, ale stosunkowo nie zmienił się on tak bardzo jak dla HOLAP. Rozmiar hurtowni dla MOLAP też się zwiększył, podobnie jak dla HOLAP.
+
+Czas zapytań z agregacjami dla ROLAP jest nieznacznie krótszy niż bez agregacji, a dla zapytania ogólnego jest on nawet trochę dłuższy. Dla HOLAP i MOLAP czas zapytań z agregacjami jest znacznie krótszy niż bez agregacji dla zapytań dotyczących daty i wymiaru. Zapytanie ogólne w obu typach jest za to nieznacznie dłuższe.
+
+Podsumowując, dobór typu bazy danych zależy od potrzeb użytkownika: ROLAP jest najlepszy, gdy ważna jest elastyczność i oszczędność miejsca, ale z dłuższym czasem zapytań. MOLAP sprawdza się, gdy kluczowa jest szybkość zapytań, zwłaszcza z agregacjami, kosztem większego rozmiaru hurtowni i dłuższego przetwarzania. HOLAP łączy zalety obu rozwiązań, oferując kompromis między czasem przetwarzania, przestrzenią i szybkością zapytań.
+
+#pagebreak()
+
 ==== Pełna lista pomiarów
 
-#let results = csv("data.tsv", delimiter: "\t")
 #table(
-  columns: 4,
-  [*Typ Hurtowni*],	[*Zapytanie*],	[*Agregacje*],	[*Czas Przetwarzania \[ms\]*],
-  ..results.flatten()
+  columns: 13,
+  align: center+horizon,
+  table.header([*Typ Hurtowni*], [*Zapytanie*], [*Agregacje*], table.cell(colspan: 10)[*Czasy przetwarzania \[ms\]*]),
+  table.cell(rowspan: 6)[ROLAP],
+    table.cell(rowspan: 2)[Zapytanie dot. daty], 
+      [Bez Agregacji], [172],[95],[96],[96],[95],[94],[98],[95],[97],[94],
+      [Z Agregacjami], [108],[94],[96],[93],[94],[100],[94],[94],[98],[101],
+    table.cell(rowspan: 2)[Zapytanie dot. wymiaru],
+      [Bez Agregacji], [215],[120],[122],[119],[124],[130],[120],[122],[120],[123],
+      [Z Agregacjami], [133],[133],[125],[124],[132],[127],[130],[131],[127],[127],
+    table.cell(rowspan: 2)[Zapytanie ogólne],
+      [Bez Agregacji], [52],[39],[38],[39],[40],[38],[42],[41],[43],[39],
+      [Z Agregacjami], [40],[41],[50],[42],[42],[42],[40],[43],[41],[42],
+  table.cell(rowspan: 6)[HOLAP],
+    table.cell(rowspan: 2)[Zapytanie dot. daty], 
+      [Bez Agregacji], [126],[99],[93],[100],[93],[93],[98],[98],[97],[96],
+      [Z Agregacjami], [38],[5],[5],[4],[4],[5],[6],[5],[5],[5],
+    table.cell(rowspan: 2)[Zapytanie dot. wymiaru],
+      [Bez Agregacji], [132],[130],[132],[119],[128],[129],[128],[125],[127],[132],
+      [Z Agregacjami], [58],[43],[74],[43],[43],[44],[47],[44],[43],[45],
+    table.cell(rowspan: 2)[Zapytanie ogólne],
+      [Bez Agregacji], [51],[41],[39],[40],[42],[40],[40],[41],[41],[44],
+      [Z Agregacjami], [49],[42],[40],[41],[42],[39],[44],[42],[39],[42],
+  table.cell(rowspan: 6)[MOLAP],
+    table.cell(rowspan: 2)[Zapytanie dot. daty], 
+      [Bez Agregacji], [31],[14],[14],[17],[14],[16],[14],[15],[17],[15],
+      [Z Agregacjami], [37],[4],[4],[5],[6],[4],[5],[7],[5],[5],
+    table.cell(rowspan: 2)[Zapytanie dot. wymiaru],
+      [Bez Agregacji], [37],[4],[4],[5],[6],[4],[5],[7],[5],[5],
+      [Z Agregacjami], [54],[44],[51],[44],[43],[44],[45],[43],[51],[44],
+    table.cell(rowspan: 2)[Zapytanie ogólne],
+      [Bez Agregacji], [21],[7],[6],[5],[9],[6],[5],[8],[5],[6],
+      [Z Agregacjami], [22],[7],[6],[6],[6],[6],[7],[8],[6],[6],
 )
