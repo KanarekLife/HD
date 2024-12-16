@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="LoadLatestData"
   DTS:PackageType="5"
-  DTS:VersionBuild="183"
-  DTS:VersionGUID="{DFBC3F8B-A1E3-48B4-89E4-74F842A33678}">
+  DTS:VersionBuild="184"
+  DTS:VersionGUID="{A00659BC-9DC2-4731-A979-017A1D4028EF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5669,7 +5669,7 @@ where [refTable].[Godzina] = ? and [refTable].[Minuty] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\500:invalid};#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\501:invalid};</property>
+                  name="ParameterMap">#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\312:invalid};#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\313:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5845,7 +5845,7 @@ where [refTable].[Data] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\502:invalid};</property>
+                  name="ParameterMap">#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\314:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6004,7 +6004,7 @@ where [refTable].[Pesel] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\503:invalid};</property>
+                  name="ParameterMap">#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\315:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6163,7 +6163,7 @@ where [refTable].[PKK] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\504:invalid};</property>
+                  name="ParameterMap">#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\316:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6322,7 +6322,7 @@ where [refTable].[Tresc] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\505:invalid};</property>
+                  name="ParameterMap">#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\317:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6481,7 +6481,7 @@ where [refTable].[TypEgzaminu] = ? and [refTable].[TypSkargi] = ? and [refTable]
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\506:invalid};#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\507:invalid};#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\508:invalid};#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\509:invalid};</property>
+                  name="ParameterMap">#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\318:invalid};#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\319:invalid};#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\320:invalid};#{Package\Populating OdpowiedzenieNaPytaniePodczasEgzaminuZeSkarga\321:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7737,7 +7737,7 @@ where [refTable].[Godzina] = ? and [refTable].[Minuty] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating TerminyEgzaminow Table\510:invalid};#{Package\Populating TerminyEgzaminow Table\511:invalid};</property>
+                  name="ParameterMap">#{Package\Populating TerminyEgzaminow Table\322:invalid};#{Package\Populating TerminyEgzaminow Table\323:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7913,7 +7913,7 @@ where [refTable].[Data] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating TerminyEgzaminow Table\512:invalid};</property>
+                  name="ParameterMap">#{Package\Populating TerminyEgzaminow Table\324:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8072,7 +8072,7 @@ where [refTable].[Pesel] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating TerminyEgzaminow Table\513:invalid};</property>
+                  name="ParameterMap">#{Package\Populating TerminyEgzaminow Table\325:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10382,7 +10382,7 @@ where [refTable].[Godzina] = ? and [refTable].[Minuty] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating ZlozenieSkargi\315:invalid};#{Package\Populating ZlozenieSkargi\316:invalid};</property>
+                  name="ParameterMap">#{Package\Populating ZlozenieSkargi\326:invalid};#{Package\Populating ZlozenieSkargi\327:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10558,7 +10558,7 @@ where [refTable].[Data] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating ZlozenieSkargi\321:invalid};</property>
+                  name="ParameterMap">#{Package\Populating ZlozenieSkargi\328:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10717,7 +10717,7 @@ where [refTable].[Pesel] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating ZlozenieSkargi\322:invalid};</property>
+                  name="ParameterMap">#{Package\Populating ZlozenieSkargi\329:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10876,7 +10876,7 @@ where [refTable].[PKK] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating ZlozenieSkargi\314:invalid};</property>
+                  name="ParameterMap">#{Package\Populating ZlozenieSkargi\330:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -11035,7 +11035,7 @@ where [refTable].[TypEgzaminu] = ? and [refTable].[TypSkargi] = ? and [refTable]
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Populating ZlozenieSkargi\317:invalid};#{Package\Populating ZlozenieSkargi\318:invalid};#{Package\Populating ZlozenieSkargi\320:invalid};#{Package\Populating ZlozenieSkargi\319:invalid};</property>
+                  name="ParameterMap">#{Package\Populating ZlozenieSkargi\331:invalid};#{Package\Populating ZlozenieSkargi\332:invalid};#{Package\Populating ZlozenieSkargi\333:invalid};#{Package\Populating ZlozenieSkargi\334:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -11743,13 +11743,25 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
           Id="Package\Create Temp Table"
           TopLeft="1166.51632887928,299.544537895466" />
         <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\Create Temp Table 1"
+          TopLeft="99.9765308199564,294.688235124869" />
+        <NodeLayout
           Size="168,41.6"
           Id="Package\Delete Temp Table"
           TopLeft="1169.52857382112,527.215125926989" />
         <NodeLayout
+          Size="168,41.6"
+          Id="Package\Delete Temp Table 1"
+          TopLeft="119.060204367437,518.535293747978" />
+        <NodeLayout
           Size="163.2,41.6"
           Id="Package\Import Excel Data"
           TopLeft="1164.48775745831,383.603361091741" />
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Import Excel Data 1"
+          TopLeft="114.019388004627,374.923528912731" />
         <NodeLayout
           Size="228.8,41.6"
           Id="Package\Populating Egzaminatorzy Table"
@@ -11778,6 +11790,10 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
           Size="320.8,41.6"
           Id="Package\Populating ZarezerwowanieTerminuPrzezKandydata"
           TopLeft="331.571429265549,416.147058463581" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\Populating ZlozenieSkargi"
+          TopLeft="97.6785716365034,445.764705368906" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="874.542858685432,199.452941069223">
@@ -11937,6 +11953,28 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13 1]"
+          TopLeft="196.248979820565,416.523528912731">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.2411764561756"
+              Start="0,0"
+              End="0,21.7411764561756">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7411764561756" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 14]"
           TopLeft="1248.3020431688,341.144537895466">
           <EdgeLayout.Curve>
@@ -11950,6 +11988,28 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,34.9588231962753" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 14 1]"
+          TopLeft="192.197959412292,336.288235124869">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.6352937878617"
+              Start="0,0"
+              End="0,31.1352937878617">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.1352937878617" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12083,6 +12143,28 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 18 1]"
+          TopLeft="199.96938800197,487.364705368906">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.1705883790725"
+              Start="0,0"
+              End="0,23.6705883790725">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6705883790725" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="832.571430063826,302.511764482004">
           <EdgeLayout.Curve>
@@ -12151,6 +12233,40 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="203.060204367437,560.135293747978">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="341.068368016786,181.62941148419"
+              Start="0,0"
+              End="341.068368016786,174.12941148419">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,123.877509278845" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,123.877509278845"
+                    Point2="0,127.877509278845"
+                    Point3="4,127.877509278845" />
+                  <mssgle:LineSegment
+                    End="337.068368016786,127.877509278845" />
+                  <mssgle:CubicBezierSegment
+                    Point1="337.068368016786,127.877509278845"
+                    Point2="341.068368016786,127.877509278845"
+                    Point3="341.068368016786,131.877509278845" />
+                  <mssgle:LineSegment
+                    End="341.068368016786,174.12941148419" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="1253.52857382112,568.815125926989">
           <EdgeLayout.Curve>
@@ -12176,88 +12292,6 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
                     Point3="-572.600001436897,125.766410250663" />
                   <mssgle:LineSegment
                     End="-572.600001436897,165.449579305178" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177.6,41.6"
-          Id="Package\Create Temp Table 1"
-          TopLeft="99.9765308199564,294.688235124869" />
-        <NodeLayout
-          Size="168,41.6"
-          Id="Package\Delete Temp Table 1"
-          TopLeft="119.060204367437,518.535293747978" />
-        <NodeLayout
-          Size="163.2,41.6"
-          Id="Package\Import Excel Data 1"
-          TopLeft="114.019388004627,374.923528912731" />
-        <NodeLayout
-          Size="198.4,41.6"
-          Id="Package\Populating ZlozenieSkargi"
-          TopLeft="97.6785716365034,445.764705368906" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 13 1]"
-          TopLeft="196.248979820565,416.523528912731">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.2411764561756"
-              Start="0,0"
-              End="0,21.7411764561756">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.7411764561756" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 14 1]"
-          TopLeft="192.197959412292,336.288235124869">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.6352937878617"
-              Start="0,0"
-              End="0,31.1352937878617">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.1352937878617" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 18 1]"
-          TopLeft="199.96938800197,487.364705368906">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.1705883790725"
-              Start="0,0"
-              End="0,23.6705883790725">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.6705883790725" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12326,40 +12360,6 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
                     Point3="-218.497449621935,33.776470642865" />
                   <mssgle:LineSegment
                     End="-421.494899243869,33.776470642865" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="203.060204367437,560.135293747978">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="341.068368016786,181.62941148419"
-              Start="0,0"
-              End="341.068368016786,174.12941148419">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,123.877509278845" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,123.877509278845"
-                    Point2="0,127.877509278845"
-                    Point3="4,127.877509278845" />
-                  <mssgle:LineSegment
-                    End="337.068368016786,127.877509278845" />
-                  <mssgle:CubicBezierSegment
-                    Point1="337.068368016786,127.877509278845"
-                    Point2="341.068368016786,127.877509278845"
-                    Point3="341.068368016786,131.877509278845" />
-                  <mssgle:LineSegment
-                    End="341.068368016786,174.12941148419" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12442,6 +12442,96 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Excel Data.Paths[Derived Column Output]"
+          TopLeft="635.107929648098,250.551732677906">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.9253906535634"
+              Start="0,0"
+              End="0,37.4253906535634">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.4253906535634" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Import Excel Data 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Import Excel Data 1\OLE DB Command 2"
+          TopLeft="549.302811567463,393.266674590096" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Import Excel Data 1\Remove old columns 1"
+          TopLeft="545.015866180531,295.477123331469" />
+        <NodeLayout
+          Size="221.6,41.6"
+          Id="Package\Import Excel Data 1\Convert data to correct format 1"
+          TopLeft="521.999993115664,208.951732677906" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Import Excel Data 1\Skargi (Skargi Excel) 1"
+          TopLeft="550.604388415463,105.999999314547" />
+        <EdgeLayout
+          Id="Package\Import Excel Data 1.Paths[Union All Output 1]"
+          TopLeft="636.959338873997,337.077123331469">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.1895512586271"
+              Start="0,0"
+              End="0,48.6895512586271">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.6895512586271" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Excel Data 1.Paths[Excel Source Output]"
+          TopLeft="635.502190765564,147.599999314547">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.3517333633589"
+              Start="0,0"
+              End="0,53.8517333633589">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.8517333633589" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Excel Data 1.Paths[Derived Column Output]"
           TopLeft="635.107929648098,250.551732677906">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14321,96 +14411,6 @@ where [refTable].[ID_Daty] = ? and [refTable].[ID_Czasu] = ? and [refTable].[ID_
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Import Excel Data 1">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Import Excel Data 1\OLE DB Command 2"
-          TopLeft="549.302811567463,393.266674590096" />
-        <NodeLayout
-          Size="184.8,41.6"
-          Id="Package\Import Excel Data 1\Remove old columns 1"
-          TopLeft="545.015866180531,295.477123331469" />
-        <NodeLayout
-          Size="221.6,41.6"
-          Id="Package\Import Excel Data 1\Convert data to correct format 1"
-          TopLeft="521.999993115664,208.951732677906" />
-        <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\Import Excel Data 1\Skargi (Skargi Excel) 1"
-          TopLeft="550.604388415463,105.999999314547" />
-        <EdgeLayout
-          Id="Package\Import Excel Data 1.Paths[Union All Output 1]"
-          TopLeft="636.959338873997,337.077123331469">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56.1895512586271"
-              Start="0,0"
-              End="0,48.6895512586271">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.6895512586271" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Excel Data 1.Paths[Excel Source Output]"
-          TopLeft="635.502190765564,147.599999314547">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.3517333633589"
-              Start="0,0"
-              End="0,53.8517333633589">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.8517333633589" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Excel Data 1.Paths[Derived Column Output]"
-          TopLeft="635.107929648098,250.551732677906">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.9253906535634"
-              Start="0,0"
-              End="0,37.4253906535634">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.4253906535634" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <TaskHost
     design-time-name="Package\Populating ZlozenieSkargi">
     <LayoutInfo>
